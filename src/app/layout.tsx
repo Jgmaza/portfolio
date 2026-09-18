@@ -1,41 +1,36 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit } from "next/font/google";
+import { Chakra_Petch, Sora } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const chakra = Chakra_Petch({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-chakra",
   display: "swap",
 });
 
-const outfit = Outfit({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-sora",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-nine-sand-57.vercel.app"),
   title: {
-    default: "José Maza — Fullstack Product Engineer",
+    default: "José Maza — Build Catalog",
     template: "%s · José Maza",
   },
   description:
-    "Portafolio de José Maza (Jgmaza): productos fullstack, agentes AI e integraciones — demos vivas y case studies.",
+    "Catálogo estilo videojuego de productos, agentes AI e integraciones — demos vivas con preview.",
   openGraph: {
-    title: "José Maza — Fullstack Product Engineer",
+    title: "José Maza — Build Catalog",
     description:
       "Productos, agentes AI e integraciones con demos desplegadas.",
     type: "website",
     locale: "es_CO",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "José Maza — Fullstack Product Engineer",
-    description:
-      "Productos, agentes AI e integraciones con demos desplegadas.",
   },
 };
 
@@ -45,12 +40,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${fraunces.variable} ${outfit.variable}`}>
+    <html lang="es" className={`${chakra.variable} ${sora.variable}`}>
       <body
         style={
           {
-            ["--font-display" as string]: "var(--font-fraunces)",
-            ["--font-body" as string]: "var(--font-outfit)",
+            ["--font-display" as string]: "var(--font-chakra)",
+            ["--font-body" as string]: "var(--font-sora)",
           } as React.CSSProperties
         }
       >

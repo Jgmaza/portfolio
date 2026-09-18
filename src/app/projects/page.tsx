@@ -2,19 +2,20 @@ import type { Metadata } from "next";
 import { ProjectGrid } from "@/components/ProjectGrid";
 
 export const metadata: Metadata = {
-  title: "Proyectos",
+  title: "Catalog",
   description:
-    "Catálogo de productos, agentes AI, demos laborales sanitizadas y hackathones.",
+    "Inventario de builds: productos, agentes AI, laborales sanitizados y hackathones.",
 };
 
 export default function ProjectsPage() {
   return (
-    <section className="container py-16">
+    <section className="container py-14">
       <div className="mb-10 max-w-2xl">
-        <h1 className="display text-4xl sm:text-5xl">Proyectos</h1>
+        <p className="hud-label">World map · Apps</p>
+        <h1 className="display mt-3 text-4xl sm:text-5xl">Catalog</h1>
         <p className="mt-4 text-lg text-[var(--ink-soft)]">
-          Catálogo curado. Los laborales se muestran como demos sanitizadas o
-          narrativas sin código de cliente.
+          Colección de builds desbloqueadas. Filtra por clase y abre cada card
+          para lore, stack y demo.
         </p>
       </div>
       <ProjectGrid />

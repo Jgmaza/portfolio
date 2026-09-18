@@ -26,20 +26,27 @@ export function ProjectGrid() {
 
   return (
     <div>
+      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+        <p className="hud-label">Inventory / {filtered.length} builds</p>
+        <p className="max-w-md text-right text-xs text-[var(--muted)]">
+          El catálogo crece con cada deploy. Las cards LIVE tienen preview real
+          de la demo.
+        </p>
+      </div>
       <div className="mb-8 flex flex-wrap gap-2">
         {filters.map((filter) => {
           const label =
-            filter === "all" ? "Todos" : categoryLabels[filter];
+            filter === "all" ? "ALL" : categoryLabels[filter].toUpperCase();
           const isActive = active === filter;
           return (
             <button
               key={filter}
               type="button"
               onClick={() => setActive(filter)}
-              className={`rounded-full px-3.5 py-1.5 text-sm transition ${
+              className={`rounded-sm px-3 py-1.5 font-[family-name:var(--font-display)] text-xs tracking-wider transition ${
                 isActive
-                  ? "bg-[var(--ink)] text-[var(--bg)]"
-                  : "border border-[var(--line)] bg-[var(--bg-elevated)] text-[var(--ink-soft)] hover:border-[var(--accent)]"
+                  ? "bg-[var(--accent)] text-[#04110a]"
+                  : "border border-[var(--line)] bg-[var(--bg-elevated)] text-[var(--ink-soft)] hover:border-[var(--hud)] hover:text-[var(--hud)]"
               }`}
             >
               {label}
@@ -47,9 +54,9 @@ export function ProjectGrid() {
           );
         })}
       </div>
-      <div className="grid gap-5 sm:grid-cols-2">
-        {filtered.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        {filtered.map((project, index) => (
+          <ProjectCard key={project.slug} project={project} index={index} />
         ))}
       </div>
     </div>
