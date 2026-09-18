@@ -167,9 +167,8 @@ export const projects: Project[] = [
       "Dashboard e insights cruzados padre↔cafetería",
       "Mocks de POS y checkout para demo",
     ],
-    outcome: "Demos públicas en S3 + API demo del hackathon.",
-    demoUrl:
-      "https://bioalert-web-hackathon-642722971137.s3.us-east-1.amazonaws.com/feature-catalog/index.html",
+    outcome:
+      "Demos del hackathon (bucket S3 ya no público). Lore + repo del equipo.",
     repoUrl: "https://github.com/miguelnietoa/bioalert-caribetech-hackathon",
     accent: "#c1121f",
     preview: "/previews/bioalert.png",
