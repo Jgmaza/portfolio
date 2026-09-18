@@ -69,10 +69,12 @@ export default function AboutPage() {
         <p className="mt-4 text-[var(--ink-soft)]">
           Para procesos de selección o feedback:{" "}
           <a
-            href="mailto:jgmaza.dev@gmail.com"
+            href="https://github.com/Jgmaza"
             className="text-[var(--accent)]"
+            target="_blank"
+            rel="noreferrer"
           >
-            jgmaza.dev@gmail.com
+            github.com/Jgmaza
           </a>{" "}
           ·{" "}
           <Link href="/projects" className="text-[var(--accent)]">
