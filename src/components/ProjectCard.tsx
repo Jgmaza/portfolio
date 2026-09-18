@@ -18,18 +18,27 @@ const rarityColor = {
 export function ProjectCard({
   project,
   index = 0,
+  dense = false,
 }: {
   project: Project;
   index?: number;
+  dense?: boolean;
 }) {
   const rarity = project.rarity ?? "common";
+  const stackLimit = dense ? 3 : 4;
 
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="card-unlock group block overflow-hidden rounded-[var(--radius)] border border-[var(--line)] bg-[var(--panel)] shadow-[var(--shadow)] transition duration-300 hover:-translate-y-1 hover:border-[var(--accent)]"
+      className="card-unlock group relative block overflow-hidden rounded-[var(--radius)] border border-[var(--line)] bg-[var(--panel)] shadow-[var(--shadow)] transition duration-300 hover:-translate-y-1 hover:border-[var(--accent)]"
       style={{ animationDelay: `${Math.min(index, 8) * 0.06}s` }}
     >
+      <span
+        aria-hidden
+        className="absolute bottom-0 left-0 top-0 w-1"
+        style={{ background: project.accent }}
+      />
+
       <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--line)] bg-[#070d18]">
         {project.preview ? (
           <Image
@@ -42,7 +51,7 @@ export function ProjectCard({
         ) : (
           <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(94,200,255,0.15),transparent_55%)]">
             <span className="font-[family-name:var(--font-display)] text-xs tracking-[0.2em] text-[var(--muted)]">
-              NO PREVIEW · LORE ONLY
+              {project.title.toUpperCase()}
             </span>
           </div>
         )}
@@ -58,15 +67,19 @@ export function ProjectCard({
           >
             {rarityLabel[rarity]}
           </span>
-          {project.demoUrl && (
+          {project.demoUrl ? (
             <span className="rounded-sm border border-[var(--accent)]/40 bg-[var(--accent)]/10 px-2 py-0.5 font-[family-name:var(--font-display)] text-[10px] tracking-wider text-[var(--accent)]">
               LIVE
+            </span>
+          ) : (
+            <span className="rounded-sm border border-[var(--line)] bg-black/30 px-2 py-0.5 font-[family-name:var(--font-display)] text-[10px] tracking-wider text-[var(--muted)]">
+              LORE
             </span>
           )}
         </div>
       </div>
 
-      <div className="p-5">
+      <div className={dense ? "p-4" : "p-5"}>
         <div className="mb-3 flex items-center justify-between gap-3">
           <span
             className="inline-flex rounded-sm px-2 py-0.5 font-[family-name:var(--font-display)] text-[10px] tracking-wider"
@@ -81,14 +94,18 @@ export function ProjectCard({
             {project.year}
           </span>
         </div>
-        <h3 className="display text-xl leading-tight transition-colors group-hover:text-[var(--accent)]">
+        <h3
+          className={`display leading-tight transition-colors group-hover:text-[var(--accent)] ${
+            dense ? "text-lg" : "text-xl"
+          }`}
+        >
           {project.title}
         </h3>
         <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">
           {project.tagline}
         </p>
         <div className="mt-4 flex flex-wrap gap-1.5">
-          {project.stack.slice(0, 3).map((tech) => (
+          {project.stack.slice(0, stackLimit).map((tech) => (
             <span
               key={tech}
               className="rounded-sm border border-[var(--line)] px-2 py-0.5 text-[11px] text-[var(--muted)]"
