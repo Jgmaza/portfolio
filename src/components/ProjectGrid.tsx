@@ -27,7 +27,9 @@ export function ProjectGrid() {
   return (
     <div>
       <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-        <p className="hud-label">Inventory / {filtered.length} builds</p>
+        <p className="hud-label">
+          Inventory / {String(filtered.length).padStart(2, "0")} builds
+        </p>
         <p className="max-w-md text-right text-xs text-[var(--muted)]">
           El catálogo crece con cada deploy. Las cards LIVE tienen preview real
           de la demo.
@@ -54,10 +56,28 @@ export function ProjectGrid() {
           );
         })}
       </div>
-      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {filtered.map((project, index) => (
-          <ProjectCard key={project.slug} project={project} index={index} />
+          <ProjectCard
+            key={project.slug}
+            project={project}
+            index={index}
+            dense
+          />
         ))}
+        {active === "all" && (
+          <div className="flex min-h-[240px] flex-col items-start justify-between rounded-[var(--radius)] border border-dashed border-[var(--line)] bg-[var(--bg-elevated)]/40 p-5">
+            <div>
+              <p className="hud-label">Empty slot</p>
+              <h3 className="display mt-3 text-xl text-[var(--hud)]">
+                MORE UNLOCKS
+              </h3>
+              <p className="mt-2 text-sm text-[var(--ink-soft)]">
+                El catálogo crece con cada deploy.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

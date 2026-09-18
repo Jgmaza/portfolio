@@ -5,11 +5,13 @@
   --ink: #e8eef8;
   --ink-soft: #a8b6cc;
   --muted: #6f8199;
-  --line: rgba(120, 200, 255, 0.14);
+  --line: #5ec8ff28;
   --accent: #3dff9a;
   --accent-2: #ffb020;
+  --legendary: #ffb020;
   --danger: #ff5d7a;
   --hud: #5ec8ff;
+  --on-accent: #04110a;
   --glow: rgba(61, 255, 154, 0.18);
   --font-display: "Chakra Petch", "Trebuchet MS", sans-serif;
   --font-body: "Sora", "Helvetica Neue", sans-serif;
