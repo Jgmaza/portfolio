@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/content/projects";
 import { categoryLabels } from "@/content/projects";
@@ -15,6 +14,164 @@ const rarityColor = {
   common: "#6f8199",
 } as const;
 
+function categoryShort(project: Project) {
+  return categoryLabels[project.category].split(" ")[0].toUpperCase();
+}
+
+/** Soft label color used on buildCard for teal accents (LABORAL → #7fd3d6). */
+function categoryTint(accent: string) {
+  if (accent.toLowerCase() === "#0d7377") return "#7fd3d6";
+  return accent;
+}
+
+function StatusBadges({
+  project,
+  dense,
+}: {
+  project: Project;
+  dense?: boolean;
+}) {
+  const rarity = project.rarity ?? "common";
+  const isLive = Boolean(project.demoUrl);
+  const color = rarityColor[rarity];
+
+  return (
+    <div className={dense ? "dense-card__badges" : "build-card__badges"}>
+      <span
+        className={`card-badge${dense ? " card-badge--dense" : ""}`}
+        style={{
+          borderColor: `${color}${dense ? "55" : "66"}`,
+          color,
+          background: `${color}18`,
+        }}
+      >
+        {rarityLabel[rarity]}
+      </span>
+      <span
+        className={`card-badge${dense ? " card-badge--dense" : ""}`}
+        style={
+          isLive
+            ? {
+                borderColor: "#3dff9a55",
+                color: "var(--accent)",
+                background: "#3dff9a14",
+              }
+            : {
+                borderColor: "#6f819966",
+                color: "var(--muted)",
+                background: "#6f819918",
+              }
+        }
+      >
+        {isLive ? "LIVE" : "LORE"}
+      </span>
+    </div>
+  );
+}
+
+export function CartridgePreview({
+  project,
+  dense = false,
+  size = "card",
+}: {
+  project: Project;
+  dense?: boolean;
+  size?: "card" | "detail";
+}) {
+  const isDetail = size === "detail";
+
+  if (isDetail) {
+    return (
+      <div className="quest-cartridge-preview">
+        <div
+          aria-hidden
+          className="absolute left-[80px] top-[-40px] h-[220px] w-[320px] rounded-full opacity-70"
+          style={{
+            background: `radial-gradient(circle, ${project.accent}66 0%, transparent 70%)`,
+          }}
+        />
+        <span
+          aria-hidden
+          className="absolute left-0 top-[calc(50%+8px)] z-10 h-14 w-3 -translate-y-1/2 rounded-r bg-[#0b1220]"
+        />
+        <span
+          aria-hidden
+          className="absolute right-0 top-[calc(50%+8px)] z-10 h-14 w-3 -translate-y-1/2 rounded-l bg-[#0b1220]"
+        />
+        <div className="absolute left-9 right-9 top-12 rounded-md border border-[#5ec8ff22] bg-[#101a2c] p-4">
+          <div
+            className="mb-2 h-2.5 w-[168px] rounded-sm opacity-85"
+            style={{ background: project.accent }}
+          />
+          <div className="mb-3 h-[7px] w-[260px] max-w-full rounded-sm bg-[var(--hud)]/20" />
+          <div className="grid grid-cols-3 gap-3">
+            <div className="h-[72px] rounded bg-[var(--hud)]/10" />
+            <div className="h-[72px] rounded bg-[var(--accent)]/10" />
+            <div className="h-[72px] rounded bg-[var(--legendary)]/10" />
+          </div>
+        </div>
+        <p className="absolute bottom-8 left-9 z-[5] font-display text-sm font-bold tracking-[0.16em] text-[var(--ink)]">
+          {project.title.toUpperCase()}
+        </p>
+        <StatusBadges project={project} />
+      </div>
+    );
+  }
+
+  if (dense) {
+    return (
+      <div className="dense-card__preview">
+        <div
+          aria-hidden
+          className="dense-card__glow"
+          style={{
+            background: `radial-gradient(circle, ${project.accent}55 0%, transparent 70%)`,
+          }}
+        />
+        <StatusBadges project={project} dense />
+        <p className="dense-card__label">{project.title.toUpperCase()}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="build-card__preview">
+      <div
+        aria-hidden
+        className="build-card__glow"
+        style={{
+          background: `radial-gradient(circle, ${project.accent}66 0%, transparent 70%)`,
+        }}
+      />
+      <span aria-hidden className="build-card__notch-l" />
+      <span aria-hidden className="build-card__notch-r" />
+      <div aria-hidden className="build-card__chrome" />
+      <div
+        aria-hidden
+        className="build-card__fake-1"
+        style={{ background: project.accent }}
+      />
+      <div aria-hidden className="build-card__fake-2" />
+      <div aria-hidden className="build-card__fake-row">
+        <div
+          className="build-card__fake-tile"
+          style={{ width: 86, background: "#5ec8ff14" }}
+        />
+        <div
+          className="build-card__fake-tile"
+          style={{ width: 86, background: "#3dff9a14" }}
+        />
+        <div
+          className="build-card__fake-tile"
+          style={{ width: 104, background: "#ffb02014" }}
+        />
+      </div>
+      <p className="build-card__label">{project.title.toUpperCase()}</p>
+      <StatusBadges project={project} />
+    </div>
+  );
+}
+
 export function ProjectCard({
   project,
   index = 0,
@@ -24,116 +181,68 @@ export function ProjectCard({
   index?: number;
   dense?: boolean;
 }) {
-  const rarity = project.rarity ?? "common";
   const stackLimit = dense ? 3 : 4;
+  const cat = categoryShort(project);
+  const tint = categoryTint(project.accent);
+
+  if (dense) {
+    return (
+      <Link
+        href={`/projects/${project.slug}`}
+        className="dense-card card-unlock"
+        style={{ animationDelay: `${Math.min(index, 8) * 0.06}s` }}
+      >
+        <span
+          aria-hidden
+          className="dense-card__accent"
+          style={{ background: project.accent }}
+        />
+        <CartridgePreview project={project} dense />
+        <div className="dense-card__body">
+          <p className="dense-card__cat" style={{ color: project.accent }}>
+            {cat}
+          </p>
+          <h3 className="dense-card__title">{project.title}</h3>
+          <p className="dense-card__tag">{project.tagline}</p>
+          <div className="dense-card__chips">
+            {project.stack.slice(0, stackLimit).map((tech) => (
+              <span key={tech} className="card-chip">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Link>
+    );
+  }
 
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="card-unlock group relative flex flex-col overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--panel)] shadow-[var(--shadow)] transition duration-300 hover:-translate-y-1 hover:border-[var(--accent)]"
+      className="build-card card-unlock"
       style={{ animationDelay: `${Math.min(index, 8) * 0.06}s` }}
     >
       <span
         aria-hidden
-        className="block h-[3px] w-full"
+        className="build-card__accent"
         style={{ background: project.accent }}
       />
-
-      <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--line)] bg-[#070d18]">
-        {project.preview ? (
-          <Image
-            src={project.preview}
-            alt={`Preview de ${project.title}`}
-            fill
-            className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(94,200,255,0.14),transparent_55%)]">
-            <div className="mx-6 w-full max-w-[85%] rounded-md border border-[var(--line)] bg-[#101a2c] p-3 shadow-inner">
-              <div
-                className="mb-2 h-2 w-1/3 rounded-sm"
-                style={{ background: project.accent }}
-              />
-              <div className="mb-3 h-1.5 w-2/3 rounded-sm bg-[var(--hud)]/20" />
-              <div className="grid grid-cols-3 gap-2">
-                <div className="h-10 rounded bg-[var(--hud)]/10" />
-                <div className="h-10 rounded bg-[var(--accent)]/10" />
-                <div className="h-10 rounded bg-[var(--legendary)]/10" />
-              </div>
-              <p className="mt-3 text-center font-[family-name:var(--font-display)] text-[10px] tracking-[0.16em] text-[var(--ink)]">
-                {project.title.toUpperCase()}
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* cartridge notches */}
-        <span
-          aria-hidden
-          className="pointer-events-none absolute left-0 top-1/2 z-10 h-12 w-2.5 -translate-y-1/2 rounded-r bg-[#0b1220]"
-        />
-        <span
-          aria-hidden
-          className="pointer-events-none absolute right-0 top-1/2 z-10 h-12 w-2.5 -translate-y-1/2 rounded-l bg-[#0b1220]"
-        />
-
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_50%,rgba(7,13,24,0.88)_100%)]" />
-
-        <div className="absolute left-3 top-3 z-10 flex gap-1.5">
+      <CartridgePreview project={project} />
+      <div className="build-card__body">
+        <div className="build-card__meta">
           <span
-            className="rounded-sm border px-2 py-0.5 font-[family-name:var(--font-display)] text-[10px] tracking-wider"
-            style={{
-              borderColor: `${rarityColor[rarity]}66`,
-              color: rarityColor[rarity],
-              background: `${rarityColor[rarity]}18`,
-            }}
+            className="build-card__cat"
+            style={{ background: `${project.accent}22`, color: tint }}
           >
-            {rarityLabel[rarity]}
+            {cat}
           </span>
-          {project.demoUrl ? (
-            <span className="rounded-sm border border-[var(--accent)]/40 bg-[var(--accent)]/10 px-2 py-0.5 font-[family-name:var(--font-display)] text-[10px] tracking-wider text-[var(--accent)]">
-              LIVE
-            </span>
-          ) : (
-            <span className="rounded-sm border border-[var(--line)] bg-black/35 px-2 py-0.5 font-[family-name:var(--font-display)] text-[10px] tracking-wider text-[var(--muted)]">
-              LORE
-            </span>
-          )}
+          <span className="build-card__year">{project.year}</span>
         </div>
-      </div>
-
-      <div className={`flex flex-1 flex-col ${dense ? "gap-2 p-4" : "gap-2 p-[18px]"}`}>
-        <div className="flex items-center justify-between gap-3">
-          <span
-            className="inline-flex rounded-sm px-2 py-0.5 font-[family-name:var(--font-display)] text-[10px] tracking-wider"
-            style={{
-              background: `${project.accent}22`,
-              color: project.accent,
-            }}
-          >
-            {categoryLabels[project.category].toUpperCase()}
-          </span>
-          <span className="font-[family-name:var(--font-display)] text-[10px] tracking-wider text-[var(--muted)]">
-            {project.year}
-          </span>
-        </div>
-        <h3
-          className={`display leading-tight transition-colors group-hover:text-[var(--accent)] ${
-            dense ? "text-lg" : "text-xl"
-          }`}
-        >
-          {project.title}
-        </h3>
-        <p className="text-sm leading-relaxed text-[var(--ink-soft)]">
-          {project.tagline}
-        </p>
-        <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
+        <h3 className="build-card__title">{project.title}</h3>
+        <p className="build-card__tag">{project.tagline}</p>
+        <div className="build-card__chips">
           {project.stack.slice(0, stackLimit).map((tech) => (
-            <span
-              key={tech}
-              className="rounded-sm border border-[var(--line)] bg-[var(--bg-elevated)] px-2 py-0.5 text-[11px] text-[var(--muted)]"
-            >
+            <span key={tech} className="card-chip">
               {tech}
             </span>
           ))}

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Chakra_Petch, Sora } from "next/font/google";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
+import { AppChrome } from "@/components/AppChrome";
 import "./globals.css";
 
 const chakra = Chakra_Petch({
@@ -40,8 +39,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${chakra.variable} ${sora.variable}`}>
+    <html lang="es" className={`${chakra.variable} ${sora.variable} h-full`}>
       <body
+        className="min-h-full"
         style={
           {
             ["--font-display" as string]: "var(--font-chakra)",
@@ -50,9 +50,7 @@ export default function RootLayout({
         }
       >
         <div className="noise" aria-hidden />
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
+        <AppChrome>{children}</AppChrome>
       </body>
     </html>
   );
