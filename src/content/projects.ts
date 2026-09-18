@@ -105,7 +105,7 @@ export const projects: Project[] = [
       "Supabase como BaaS para auth y persistencia",
     ],
     outcome: "Producto propio desplegable listo para mostrar en selección.",
-    demoUrl: "https://splitia-xi.vercel.app",
+    demoUrl: "https://splitia.vercel.app",
     repoUrl: "https://github.com/Jgmaza/splitia",
     accent: "#e85d04",
   },
