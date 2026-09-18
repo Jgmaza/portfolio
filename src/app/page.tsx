@@ -29,10 +29,12 @@ export default function HomePage() {
                 Ver proyectos
               </Link>
               <a
-                href="mailto:jgmaza.dev@gmail.com"
+                href="https://github.com/Jgmaza"
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] px-5 py-2.5 text-sm font-medium transition hover:border-[var(--accent)]"
               >
-                Escribirme
+                GitHub
               </a>
             </div>
           </div>
