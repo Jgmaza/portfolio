@@ -21,6 +21,8 @@ export type Project = {
   repoUrl?: string;
   disclaimer?: string;
   accent: string;
+  preview?: string;
+  rarity: "common" | "rare" | "legendary";
 };
 
 export const categoryLabels: Record<ProjectCategory, string> = {
@@ -63,6 +65,8 @@ export const projects: Project[] = [
     disclaimer:
       "Portfolio demo inspired by professional work. Not affiliated with any employer or government entity.",
     accent: "#0d7377",
+    preview: "/previews/stakeholder-matrix.png",
+    rarity: "legendary",
   },
   {
     slug: "mussistant",
@@ -86,6 +90,8 @@ export const projects: Project[] = [
     demoUrl: "https://mussistant.vercel.app",
     repoUrl: "https://github.com/Jgmaza/Mussistant",
     accent: "#1db954",
+    preview: "/previews/mussistant.png",
+    rarity: "legendary",
   },
   {
     slug: "splitia",
@@ -108,6 +114,8 @@ export const projects: Project[] = [
     demoUrl: "https://splitia-xi.vercel.app",
     repoUrl: "https://github.com/Jgmaza/splitia",
     accent: "#e85d04",
+    preview: "/previews/splitia.png",
+    rarity: "legendary",
   },
   {
     slug: "verificacol",
@@ -131,6 +139,8 @@ export const projects: Project[] = [
     demoUrl: "https://verificacol.vercel.app",
     repoUrl: "https://github.com/Jgmaza/verificacol",
     accent: "#1d3557",
+    preview: "/previews/verificacol.png",
+    rarity: "legendary",
   },
   {
     slug: "bioalert",
@@ -162,6 +172,8 @@ export const projects: Project[] = [
       "https://bioalert-web-hackathon-642722971137.s3.us-east-1.amazonaws.com/feature-catalog/index.html",
     repoUrl: "https://github.com/miguelnietoa/bioalert-caribetech-hackathon",
     accent: "#c1121f",
+    preview: "/previews/bioalert.png",
+    rarity: "legendary",
   },
   {
     slug: "rhythm-elegance",
@@ -183,6 +195,8 @@ export const projects: Project[] = [
     demoUrl: "https://rhythm-elegance.vercel.app",
     repoUrl: "https://github.com/Jgmaza/rhythm-elegance-landing",
     accent: "#9b2226",
+    preview: "/previews/rhythm-elegance.png",
+    rarity: "rare",
   },
   {
     slug: "mediagent",
@@ -204,6 +218,7 @@ export const projects: Project[] = [
     outcome: "Pitch + scope consolidado y app de demo del hackathon.",
     repoUrl: "https://github.com/hackaton-barranquiia/turnos-agent",
     accent: "#2a9d8f",
+    rarity: "rare",
   },
   {
     slug: "hermes",
@@ -226,6 +241,8 @@ export const projects: Project[] = [
     disclaimer:
       "Proyecto freelance para cliente. Detalles de negocio omitidos a propósito.",
     accent: "#457b9d",
+    preview: "/previews/hermes.png",
+    rarity: "rare",
   },
   {
     slug: "miobox",
@@ -248,6 +265,7 @@ export const projects: Project[] = [
       "Case study de integraciones industriales sin exponer IP del cliente.",
     disclaimer: "Narrativa profesional. Código y datos del cliente no se publican.",
     accent: "#264653",
+    rarity: "common",
   },
   {
     slug: "interledger-agent",
@@ -268,6 +286,7 @@ export const projects: Project[] = [
     ],
     outcome: "Base técnica para demos y conversaciones de producto.",
     accent: "#6a4c93",
+    rarity: "common",
   },
 ];
 

@@ -1,18 +1,20 @@
 :root {
-  --bg: #f3efe6;
-  --bg-elevated: #faf7f0;
-  --ink: #14212b;
-  --ink-soft: #3d4f5f;
-  --muted: #6b7c8a;
-  --line: rgba(20, 33, 43, 0.12);
-  --accent: #0d7377;
-  --accent-2: #e85d04;
-  --accent-soft: rgba(13, 115, 119, 0.12);
-  --glow: rgba(232, 93, 4, 0.18);
-  --font-display: "Fraunces", "Times New Roman", serif;
-  --font-body: "Outfit", "Helvetica Neue", sans-serif;
-  --radius: 1rem;
-  --shadow: 0 24px 60px rgba(20, 33, 43, 0.08);
+  --bg: #0b1220;
+  --bg-elevated: #121a2b;
+  --panel: #162033;
+  --ink: #e8eef8;
+  --ink-soft: #a8b6cc;
+  --muted: #6f8199;
+  --line: rgba(120, 200, 255, 0.14);
+  --accent: #3dff9a;
+  --accent-2: #ffb020;
+  --danger: #ff5d7a;
+  --hud: #5ec8ff;
+  --glow: rgba(61, 255, 154, 0.18);
+  --font-display: "Chakra Petch", "Trebuchet MS", sans-serif;
+  --font-body: "Sora", "Helvetica Neue", sans-serif;
+  --radius: 0.75rem;
+  --shadow: 0 0 0 1px rgba(94, 200, 255, 0.12), 0 24px 60px rgba(0, 0, 0, 0.45);
 }
 
 * {
@@ -28,11 +30,26 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(1200px 600px at 10% -10%, var(--glow), transparent 55%),
-    radial-gradient(900px 500px at 90% 0%, var(--accent-soft), transparent 50%),
-    linear-gradient(180deg, #efe9dc 0%, var(--bg) 40%, #e7eee9 100%);
+    radial-gradient(900px 500px at 12% -10%, rgba(94, 200, 255, 0.16), transparent 55%),
+    radial-gradient(700px 420px at 90% 8%, var(--glow), transparent 50%),
+    linear-gradient(180deg, #0a101c 0%, var(--bg) 45%, #0d1524 100%);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.07;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.035) 3px
+  );
 }
 
 a {
@@ -41,7 +58,7 @@ a {
 }
 
 ::selection {
-  background: rgba(13, 115, 119, 0.25);
+  background: rgba(61, 255, 154, 0.28);
 }
 
 .noise {
@@ -49,37 +66,45 @@ a {
   position: fixed;
   inset: 0;
   z-index: 50;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .container {
-  width: min(1120px, calc(100% - 2.5rem));
+  width: min(1180px, calc(100% - 2rem));
   margin-inline: auto;
 }
 
 .display {
   font-family: var(--font-display);
-  font-optical-sizing: auto;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.hud-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hud);
 }
 
 .fade-up {
-  animation: fadeUp 0.8s ease both;
+  animation: fadeUp 0.7s ease both;
 }
 
 .fade-up-delay {
-  animation: fadeUp 0.9s ease 0.12s both;
+  animation: fadeUp 0.85s ease 0.1s both;
 }
 
 .fade-up-delay-2 {
-  animation: fadeUp 1s ease 0.22s both;
+  animation: fadeUp 0.95s ease 0.2s both;
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -87,25 +112,41 @@ a {
   }
 }
 
-@keyframes drift {
+@keyframes pulse-bar {
   0%,
   100% {
-    transform: translateY(0);
+    opacity: 0.55;
   }
   50% {
-    transform: translateY(-10px);
+    opacity: 1;
   }
 }
 
-.drift {
-  animation: drift 7s ease-in-out infinite;
+@keyframes unlock-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-unlock {
+  animation: unlock-in 0.55s ease both;
+}
+
+.pulse-bar {
+  animation: pulse-bar 2.4s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .fade-up,
   .fade-up-delay,
   .fade-up-delay-2,
-  .drift {
+  .card-unlock,
+  .pulse-bar {
     animation: none;
   }
 }
