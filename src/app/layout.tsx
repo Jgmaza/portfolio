@@ -17,7 +17,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jgmaza-portfolio.vercel.app"),
+  metadataBase: new URL("https://portfolio-nine-sand-57.vercel.app"),
   title: {
     default: "José Maza — Fullstack Product Engineer",
     template: "%s · José Maza",
