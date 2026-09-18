@@ -37,7 +37,7 @@ export default function AboutPage() {
           <p className="hud-label">Player profile</p>
           <h1 className="display mt-3 text-4xl sm:text-5xl">José Maza</h1>
 
-          <div className="mt-8 flex gap-4 rounded-[var(--radius)] border border-[var(--line)] bg-[var(--panel)] p-5 shadow-[var(--shadow)]">
+          <div className="mt-8 flex gap-4 rounded-xl border border-[var(--accent)]/25 bg-[var(--panel)] p-4 shadow-[var(--shadow)] sm:p-5">
             <div className="flex h-24 w-24 shrink-0 flex-col items-center justify-center rounded-sm border border-[var(--line)] bg-[#070d18]">
               <span className="display text-2xl text-[var(--accent)]">JM</span>
               <span className="mt-1 font-[family-name:var(--font-display)] text-[10px] tracking-wider text-[var(--hud)]">
