@@ -12,12 +12,6 @@ export function SiteFooter() {
           >
             GitHub
           </a>
-          <a
-            href="mailto:jgmaza.dev@gmail.com"
-            className="hover:text-[var(--accent)]"
-          >
-            Email
-          </a>
         </div>
       </div>
     </footer>

@@ -23,10 +23,12 @@ export function SiteHeader() {
             </Link>
           ))}
           <a
-            href="mailto:jgmaza.dev@gmail.com"
+            href="https://github.com/Jgmaza"
+            target="_blank"
+            rel="noreferrer"
             className="rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] px-3 py-1.5 text-[var(--ink)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
           >
-            Contacto
+            GitHub
           </a>
         </nav>
       </div>
