@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <section className="container py-14">
-      <div className="mb-10 max-w-2xl">
-        <p className="hud-label">World map · Apps</p>
-        <h1 className="display mt-3 text-4xl sm:text-5xl">Catalog</h1>
-        <p className="mt-4 text-lg text-[var(--ink-soft)]">
+    <section className="mission-board">
+      <header className="mission-board__head">
+        <p className="hud-label m-0">WORLD MAP · APPS</p>
+        <h1 className="mission-board__title">Catalog</h1>
+        <p className="mission-board__sub">
           Colección de builds desbloqueadas. Filtra por clase y abre cada card
           para lore, stack y demo.
         </p>
-      </div>
+      </header>
       <ProjectGrid />
     </section>
   );

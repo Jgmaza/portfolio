@@ -1,57 +1,78 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useLocale } from "@/components/LocaleProvider";
 import { projects } from "@/content/projects";
 
-const links = [
-  { href: "/projects", label: "Catalog" },
-  { href: "/about", label: "Player" },
-];
-
 export function SiteHeader() {
+  const pathname = usePathname();
+  const { openSettings } = useLocale();
   const unlocked = projects.filter((p) => p.demoUrl || p.preview).length;
+  const xpPct = Math.min(
+    100,
+    Math.round((unlocked / Math.max(projects.length, 1)) * 100),
+  );
+
+  const links = [
+    { href: "/projects", label: "Catalog" },
+    { href: "/player", label: "Player" },
+  ];
 
   return (
-    <div className="sticky top-0 z-40">
-      <div
-        aria-hidden
-        className="h-0.5 w-full bg-[linear-gradient(90deg,var(--accent),var(--hud),transparent_70%)]"
-      />
-      <header className="border-b border-[var(--line)] bg-[rgba(11,18,32,0.9)] backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between gap-4">
-          <Link
-            href="/"
-            className="display text-base tracking-[0.08em] text-[var(--accent)] sm:text-lg"
-          >
+    <div className="site-chrome-top sticky top-0 z-40">
+      <div aria-hidden className="site-signal" />
+      <header className="site-header">
+        <div className="site-header__inner">
+          <Link href="/" className="site-header__brand">
             JM://BUILD_CATALOG
           </Link>
 
-          <div className="hidden items-center gap-2.5 md:flex">
-            <span className="hud-label !text-[0.65rem]">XP</span>
-            <div className="h-2 w-[120px] overflow-hidden rounded-sm border border-[var(--line)] bg-black/40">
+          <div className="site-header__xp">
+            <span className="site-header__xp-label">XP</span>
+            <div className="site-header__xp-track">
               <div
-                className="pulse-bar h-full bg-[linear-gradient(90deg,var(--accent),var(--hud))]"
-                style={{ width: `${Math.min(100, unlocked * 12)}%` }}
+                className="site-header__xp-fill pulse-bar"
+                style={{ width: `${Math.max(12, xpPct)}%` }}
               />
             </div>
-            <span className="font-[family-name:var(--font-display)] text-[11px] tracking-wide text-[var(--ink-soft)]">
+            <span className="site-header__xp-val">
               {String(unlocked).padStart(2, "0")} UNLOCKED
             </span>
           </div>
 
-          <nav className="flex items-center gap-4 text-sm text-[var(--ink-soft)] sm:gap-5">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-[family-name:var(--font-display)] tracking-wide transition-colors hover:text-[var(--accent)]"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="site-header__nav">
+            {links.map((link) => {
+              const active =
+                link.href === "/player"
+                  ? pathname === "/player" || pathname === "/about"
+                  : pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href + link.label}
+                  href={link.href}
+                  className={
+                    active
+                      ? "site-header__link site-header__link--on"
+                      : "site-header__link"
+                  }
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+            <button
+              type="button"
+              className="site-header__sys"
+              onClick={openSettings}
+            >
+              SYS
+            </button>
             <a
               href="https://github.com/Jgmaza"
               target="_blank"
               rel="noreferrer"
-              className="rounded-sm border border-[var(--line)] bg-[var(--panel)] px-3 py-1.5 font-[family-name:var(--font-display)] text-xs tracking-wider text-[var(--ink)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              className="site-header__github"
             >
               GITHUB
             </a>
