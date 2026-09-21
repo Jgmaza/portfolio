@@ -8,6 +8,7 @@ export function HomePortals() {
   const { t, openSettings } = useLocale();
   const liveCount = projects.filter((p) => p.demoUrl).length;
   const previews = projects.filter((p) => p.demoUrl).slice(0, 3);
+  const { credential, agentId, clearance, status, level, initials } = t.avatar;
 
   return (
     <section className="home-portals">
@@ -39,16 +40,64 @@ export function HomePortals() {
         <Link href={t.ctas.player.href} className="portal-card portal-card--player">
           <p className="hud-label m-0">{t.playerPortal.label}</p>
           <h2 className="portal-card__title">{t.playerPortal.title}</h2>
-          <div className="portal-card__medallion-row">
-            <div className="portal-medallion">
-              <span>{t.avatar.initials}</span>
+
+          <div className="agent-cred" aria-hidden={false}>
+            <div className="agent-cred__rail" aria-hidden />
+            <p className="agent-cred__eyebrow">
+              AGENT CREDENTIAL · {clearance}
+            </p>
+            <div className="agent-cred__body">
+              <div className="agent-cred__photo-wrap">
+                {credential ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={credential}
+                    alt=""
+                    className="agent-cred__photo"
+                  />
+                ) : (
+                  <span className="agent-cred__fallback">{initials}</span>
+                )}
+                <span className="agent-cred__corner agent-cred__corner--tl" />
+                <span className="agent-cred__corner agent-cred__corner--tr" />
+                <span className="agent-cred__corner agent-cred__corner--bl" />
+                <span className="agent-cred__corner agent-cred__corner--br" />
+              </div>
+              <div className="agent-cred__meta">
+                <p className="agent-cred__name">{t.name}</p>
+                <p className="agent-cred__class">{t.classTitle}</p>
+                <dl className="agent-cred__fields">
+                  <div>
+                    <dt>ID</dt>
+                    <dd>{agentId}</dd>
+                  </div>
+                  <div>
+                    <dt>RANK</dt>
+                    <dd>{level}</dd>
+                  </div>
+                  <div>
+                    <dt>STATUS</dt>
+                    <dd className="agent-cred__status">{status}</dd>
+                  </div>
+                </dl>
+              </div>
             </div>
-            <div>
-              <p className="portal-card__lvl">{t.avatar.level}</p>
-              <p className="portal-card__class">{t.classTitle}</p>
-              <p className="portal-card__acts">{t.playerPortal.acts}</p>
+            <div className="agent-cred__barcode" aria-hidden>
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
             </div>
           </div>
+
           <p className="portal-card__hint">{t.playerPortal.hint}</p>
           <span className="btn-source portal-card__cta portal-card__cta--ghost">
             {t.playerPortal.cta}

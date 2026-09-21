@@ -1,0 +1,39 @@
+{
+  "frames": 12,
+  "angles": [
+    0,
+    30,
+    60,
+    90,
+    120,
+    150,
+    180,
+    210,
+    240,
+    270,
+    300,
+    330
+  ],
+  "frameWidth": 172,
+  "frameHeight": 469,
+  "strip": "/assets/player/turntable-360.png",
+  "portrait": "/assets/player/portrait.png",
+  "credential": "/assets/player/id-neutro.png",
+  "frameFiles": [
+    "/assets/player/frame-000.png",
+    "/assets/player/frame-030.png",
+    "/assets/player/frame-060.png",
+    "/assets/player/frame-090.png",
+    "/assets/player/frame-120.png",
+    "/assets/player/frame-150.png",
+    "/assets/player/frame-180.png",
+    "/assets/player/frame-210.png",
+    "/assets/player/frame-240.png",
+    "/assets/player/frame-270.png",
+    "/assets/player/frame-300.png",
+    "/assets/player/frame-330.png"
+  ],
+  "source": "docs/12frames.png",
+  "order": "sheet L\u2192R = 0..330 clockwise; frame-300 synthesized",
+  "frame300": "synthetic 270+330 blend @0.50 \u2014 source slots 9\u224810 were duplicates from ChatGPT"
+}

@@ -266,7 +266,8 @@
               "fill": "$color.muted",
               "content": "Matriz interés-poder · React + FastAPI",
               "fontFamily": "Sora",
-              "fontSize": 11
+              "fontSize": 11,
+              "fontWeight": "normal"
             }
           ]
         },
@@ -610,7 +611,8 @@
               "content": "Matriz interés-poder con catálogos y CRUD de actores",
               "lineHeight": 1.4,
               "fontFamily": "Sora",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
@@ -903,7 +905,8 @@
               "content": "Landing craft para marca de ritmo y estilo",
               "lineHeight": 1.35,
               "fontFamily": "Sora",
-              "fontSize": 11
+              "fontSize": 11,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
@@ -1025,1423 +1028,10 @@
     },
     {
       "type": "frame",
-      "id": "bi8Au",
-      "x": 0,
-      "y": 0,
-      "name": "01 HOME — Hero / Player select",
-      "clip": true,
-      "width": 1440,
-      "height": 1024,
-      "fill": [
-        "$color.bg",
-        {
-          "type": "gradient",
-          "gradientType": "radial",
-          "enabled": true,
-          "rotation": 0,
-          "size": {
-            "width": 0.72,
-            "height": 0.52
-          },
-          "colors": [
-            {
-              "color": "#5ec8ff24",
-              "position": 0
-            },
-            {
-              "color": "#0b122000",
-              "position": 1
-            }
-          ],
-          "center": {
-            "x": 0.16,
-            "y": 0.02
-          }
-        },
-        {
-          "type": "gradient",
-          "gradientType": "radial",
-          "enabled": true,
-          "rotation": 0,
-          "size": {
-            "width": 0.5,
-            "height": 0.46
-          },
-          "colors": [
-            {
-              "color": "#3dff9a22",
-              "position": 0
-            },
-            {
-              "color": "#0b122000",
-              "position": 1
-            }
-          ],
-          "center": {
-            "x": 0.9,
-            "y": 0.1
-          }
-        }
-      ],
-      "layout": "vertical",
-      "children": [
-        {
-          "type": "rectangle",
-          "id": "heroSignal",
-          "name": "signal",
-          "fill": {
-            "type": "gradient",
-            "gradientType": "linear",
-            "enabled": true,
-            "rotation": 90,
-            "size": {
-              "height": 1
-            },
-            "colors": [
-              {
-                "color": "#5ec8ff",
-                "position": 0
-              },
-              {
-                "color": "#3dff9a",
-                "position": 1
-              }
-            ]
-          },
-          "width": "fill_container",
-          "height": 2
-        },
-        {
-          "id": "heroHeader",
-          "type": "ref",
-          "ref": "hudHeader"
-        },
-        {
-          "type": "frame",
-          "id": "heroBody",
-          "name": "hero",
-          "width": "fill_container",
-          "height": "fill_container",
-          "gap": 56,
-          "padding": [
-            48,
-            130,
-            56,
-            130
-          ],
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "frame",
-              "id": "heroLeft",
-              "name": "player",
-              "width": 620,
-              "layout": "vertical",
-              "gap": 16,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "heroEyebrow",
-                  "fill": "$color.hud",
-                  "content": "PLAYER SELECT · JOSÉ MAZA",
-                  "fontFamily": "Chakra Petch",
-                  "fontSize": 11,
-                  "fontWeight": "600",
-                  "letterSpacing": 2.2
-                },
-                {
-                  "type": "text",
-                  "id": "heroClass",
-                  "fill": "$color.accent",
-                  "content": "FULLSTACK / PRODUCT ENGINEER",
-                  "fontFamily": "Chakra Petch",
-                  "fontSize": 12,
-                  "fontWeight": "600",
-                  "letterSpacing": 1.8
-                },
-                {
-                  "type": "frame",
-                  "id": "heroTitleRow",
-                  "name": "title",
-                  "gap": 10,
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "heroH1",
-                      "fill": "$color.ink",
-                      "content": "Build Catalog",
-                      "fontFamily": "Chakra Petch",
-                      "fontSize": 76,
-                      "fontWeight": "700",
-                      "letterSpacing": -1.4
-                    },
-                    {
-                      "type": "rectangle",
-                      "cornerRadius": 1,
-                      "id": "heroCursor",
-                      "fill": "$color.accent",
-                      "width": 10,
-                      "height": 52
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "id": "heroSub",
-                  "fill": "$color.inkSoft",
-                  "textGrowth": "fixed-width",
-                  "width": 520,
-                  "content": "Inventario de apps desbloqueadas: productos, agentes AI e integraciones. Cada card es una build desplegada.",
-                  "lineHeight": 1.5,
-                  "fontFamily": "Sora",
-                  "fontSize": 16
-                },
-                {
-                  "type": "text",
-                  "id": "heroPitch",
-                  "fill": "$color.muted",
-                  "textGrowth": "fixed-width",
-                  "width": 500,
-                  "content": "Cierro el ciclo — problema, UI, API, deploy — y dejo demos que se puedan tocar en una entrevista.",
-                  "lineHeight": 1.45,
-                  "fontFamily": "Sora",
-                  "fontSize": 13,
-                  "fontStyle": "italic"
-                },
-                {
-                  "type": "frame",
-                  "id": "heroKit",
-                  "name": "kit",
-                  "gap": 6,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "kit1",
-                      "name": "NEXT/REACT",
-                      "fill": "$color.elevated",
-                      "cornerRadius": 2,
-                      "stroke": "$color.line",
-                      "strokeWidth": 1,
-                      "padding": [
-                        5,
-                        8
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "kit1t",
-                          "fill": "$color.muted",
-                          "content": "NEXT/REACT",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 10,
-                          "fontWeight": "500",
-                          "letterSpacing": 0.8
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "kit2",
-                      "name": "SUPABASE",
-                      "fill": "$color.elevated",
-                      "cornerRadius": 2,
-                      "stroke": "$color.line",
-                      "strokeWidth": 1,
-                      "padding": [
-                        5,
-                        8
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "kit2t",
-                          "fill": "$color.muted",
-                          "content": "SUPABASE",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 10,
-                          "fontWeight": "500",
-                          "letterSpacing": 0.8
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "kit3",
-                      "name": "VERCEL",
-                      "fill": "$color.elevated",
-                      "cornerRadius": 2,
-                      "stroke": "$color.line",
-                      "strokeWidth": 1,
-                      "padding": [
-                        5,
-                        8
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "kit3t",
-                          "fill": "$color.muted",
-                          "content": "VERCEL",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 10,
-                          "fontWeight": "500",
-                          "letterSpacing": 0.8
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "kit4",
-                      "name": "AGENTS / IA",
-                      "fill": "$color.elevated",
-                      "cornerRadius": 2,
-                      "stroke": "$color.line",
-                      "strokeWidth": 1,
-                      "padding": [
-                        5,
-                        8
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "kit4t",
-                          "fill": "$color.muted",
-                          "content": "AGENTS / IA",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 10,
-                          "fontWeight": "500",
-                          "letterSpacing": 0.8
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "heroCtas",
-                  "name": "ctas",
-                  "gap": 12,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "heroOpen",
-                      "name": "OPEN CATALOG",
-                      "fill": "$color.accent",
-                      "cornerRadius": 2,
-                      "effect": {
-                        "type": "shadow",
-                        "shadowType": "outer",
-                        "color": "#3dff9a44",
-                        "blur": 18
-                      },
-                      "padding": [
-                        11,
-                        20
-                      ],
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "heroOpent",
-                          "fill": "$color.onAccent",
-                          "content": "OPEN CATALOG",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 13,
-                          "fontWeight": "700",
-                          "letterSpacing": 1.4
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "heroSource",
-                      "name": "SOURCE",
-                      "fill": "$color.panel",
-                      "cornerRadius": 2,
-                      "stroke": "$color.line",
-                      "strokeWidth": 1,
-                      "padding": [
-                        11,
-                        20
-                      ],
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "heroSourcet",
-                          "fill": "$color.ink",
-                          "content": "SOURCE",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 13,
-                          "fontWeight": "600",
-                          "letterSpacing": 1.4
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "heroStats",
-                  "name": "stats HUD",
-                  "gap": 10,
-                  "children": [
-                    {
-                      "id": "stat1",
-                      "type": "ref",
-                      "ref": "statCell"
-                    },
-                    {
-                      "id": "stat2",
-                      "type": "ref",
-                      "ref": "statCell",
-                      "descendants": {
-                        "statLabel": {
-                          "content": "LIVE DEMOS"
-                        },
-                        "statValue": {
-                          "content": "07"
-                        }
-                      }
-                    },
-                    {
-                      "id": "stat3",
-                      "type": "ref",
-                      "ref": "statCell",
-                      "descendants": {
-                        "statLabel": {
-                          "content": "CLASS"
-                        },
-                        "statValue": {
-                          "content": "FULLSTACK",
-                          "fontSize": 14
-                        }
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "missionBoard",
-              "name": "Mission board",
-              "clip": true,
-              "width": 488,
-              "height": 548,
-              "fill": "$color.panel",
-              "cornerRadius": 16,
-              "stroke": "#3dff9a40",
-              "strokeWidth": 1,
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "#3dff9a22",
-                "blur": 28
-              },
-              "layout": "none",
-              "children": [
-                {
-                  "type": "rectangle",
-                  "id": "mbInner",
-                  "x": 0,
-                  "y": 0,
-                  "fill": {
-                    "type": "gradient",
-                    "gradientType": "linear",
-                    "enabled": true,
-                    "rotation": 160,
-                    "size": {
-                      "height": 1
-                    },
-                    "colors": [
-                      {
-                        "color": "#101a2c",
-                        "position": 0
-                      },
-                      {
-                        "color": "#0b1220",
-                        "position": 1
-                      }
-                    ]
-                  },
-                  "width": 488,
-                  "height": 548
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbscan0",
-                  "x": 0,
-                  "y": 0,
-                  "fill": "#ffffff0a",
-                  "width": 488,
-                  "height": 1
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbscan1",
-                  "x": 0,
-                  "y": 69,
-                  "fill": "#ffffff0a",
-                  "width": 488,
-                  "height": 1
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbscan2",
-                  "x": 0,
-                  "y": 137,
-                  "fill": "#ffffff0a",
-                  "width": 488,
-                  "height": 1
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbscan3",
-                  "x": 0,
-                  "y": 206,
-                  "fill": "#ffffff0a",
-                  "width": 488,
-                  "height": 1
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbscan4",
-                  "x": 0,
-                  "y": 274,
-                  "fill": "#ffffff0a",
-                  "width": 488,
-                  "height": 1
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbscan5",
-                  "x": 0,
-                  "y": 343,
-                  "fill": "#ffffff0a",
-                  "width": 488,
-                  "height": 1
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbscan6",
-                  "x": 0,
-                  "y": 411,
-                  "fill": "#ffffff0a",
-                  "width": 488,
-                  "height": 1
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbscan7",
-                  "x": 0,
-                  "y": 480,
-                  "fill": "#ffffff0a",
-                  "width": 488,
-                  "height": 1
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbTL1",
-                  "x": 0,
-                  "y": 0,
-                  "fill": "$color.accent",
-                  "width": 16,
-                  "height": 2
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbTL2",
-                  "x": 0,
-                  "y": 0,
-                  "fill": "$color.accent",
-                  "width": 2,
-                  "height": 16
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbTR1",
-                  "x": 472,
-                  "y": 0,
-                  "fill": "$color.accent",
-                  "width": 16,
-                  "height": 2
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbTR2",
-                  "x": 486,
-                  "y": 0,
-                  "fill": "$color.accent",
-                  "width": 2,
-                  "height": 16
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbBL1",
-                  "x": 0,
-                  "y": 546,
-                  "fill": "$color.accent",
-                  "width": 16,
-                  "height": 2
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbBL2",
-                  "x": 0,
-                  "y": 532,
-                  "fill": "$color.accent",
-                  "width": 2,
-                  "height": 16
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbBR1",
-                  "x": 472,
-                  "y": 546,
-                  "fill": "$color.accent",
-                  "width": 16,
-                  "height": 2
-                },
-                {
-                  "type": "rectangle",
-                  "id": "mbBR2",
-                  "x": 486,
-                  "y": 532,
-                  "fill": "$color.accent",
-                  "width": 2,
-                  "height": 16
-                },
-                {
-                  "type": "frame",
-                  "id": "mbContent",
-                  "layoutPosition": "absolute",
-                  "x": 22,
-                  "y": 22,
-                  "name": "content",
-                  "width": 444,
-                  "height": 504,
-                  "layout": "vertical",
-                  "gap": 12,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "mbHead",
-                      "name": "head",
-                      "width": "fill_container",
-                      "justifyContent": "space_between",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "mbTitle",
-                          "fill": "$color.hud",
-                          "content": "MISSION BOARD",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 11,
-                          "fontWeight": "600",
-                          "letterSpacing": 2.2
-                        },
-                        {
-                          "type": "frame",
-                          "id": "mbOnline",
-                          "name": "online",
-                          "cornerRadius": 2,
-                          "stroke": "#3dff9a55",
-                          "strokeWidth": 1,
-                          "gap": 6,
-                          "padding": [
-                            4,
-                            8
-                          ],
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "ellipse",
-                              "id": "mbDot",
-                              "fill": "$color.accent",
-                              "width": 6,
-                              "height": 6
-                            },
-                            {
-                              "type": "text",
-                              "id": "mbOnlineT",
-                              "fill": "$color.accent",
-                              "content": "ONLINE",
-                              "fontFamily": "Chakra Petch",
-                              "fontSize": 10,
-                              "fontWeight": "700",
-                              "letterSpacing": 1.3
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "ms1",
-                      "type": "ref",
-                      "ref": "missionSlot"
-                    },
-                    {
-                      "id": "ms2",
-                      "type": "ref",
-                      "ref": "missionSlot",
-                      "descendants": {
-                        "missionIdx": {
-                          "content": "02"
-                        },
-                        "missionPip": {
-                          "fill": "#1db954"
-                        },
-                        "missionTitle": {
-                          "content": "Mussistant"
-                        },
-                        "missionTag": {
-                          "content": "Setlist → playlist Spotify · OCR + PKCE"
-                        }
-                      }
-                    },
-                    {
-                      "id": "ms3",
-                      "type": "ref",
-                      "ref": "missionSlot",
-                      "descendants": {
-                        "missionIdx": {
-                          "content": "03"
-                        },
-                        "missionPip": {
-                          "fill": "#e85d04"
-                        },
-                        "missionTitle": {
-                          "content": "Splitia"
-                        },
-                        "missionTag": {
-                          "content": "Gastos compartidos · Next + Supabase"
-                        }
-                      }
-                    },
-                    {
-                      "id": "ms4",
-                      "type": "ref",
-                      "ref": "missionSlot",
-                      "descendants": {
-                        "missionIdx": {
-                          "content": "04"
-                        },
-                        "missionPip": {
-                          "fill": "#457b9d"
-                        },
-                        "missionTitle": {
-                          "content": "VerificaCol"
-                        },
-                        "missionTag": {
-                          "content": "Validador electoral · LLM"
-                        }
-                      }
-                    },
-                    {
-                      "type": "frame",
-                      "id": "mbFoot",
-                      "name": "footer",
-                      "width": "fill_container",
-                      "padding": [
-                        8,
-                        2,
-                        0,
-                        2
-                      ],
-                      "justifyContent": "space_between",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "mbFootL",
-                          "fill": "$color.muted",
-                          "content": "04 / 04 LIVE QUESTS",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 11,
-                          "fontWeight": "600",
-                          "letterSpacing": 1.2
-                        },
-                        {
-                          "type": "text",
-                          "id": "mbFootR",
-                          "fill": "$color.hud",
-                          "content": "TOUCH DEMOS →",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 11,
-                          "fontWeight": "700",
-                          "letterSpacing": 1.2
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "frame",
-      "id": "frameFeatured",
-      "x": 1560,
-      "y": 0,
-      "name": "02 HOME — Featured drops",
-      "clip": true,
-      "width": 1440,
-      "height": 1100,
-      "fill": [
-        "$color.bg",
-        {
-          "type": "gradient",
-          "gradientType": "radial",
-          "enabled": true,
-          "rotation": 0,
-          "size": {
-            "width": 0.72,
-            "height": 0.52
-          },
-          "colors": [
-            {
-              "color": "#5ec8ff24",
-              "position": 0
-            },
-            {
-              "color": "#0b122000",
-              "position": 1
-            }
-          ],
-          "center": {
-            "x": 0.16,
-            "y": 0.02
-          }
-        },
-        {
-          "type": "gradient",
-          "gradientType": "radial",
-          "enabled": true,
-          "rotation": 0,
-          "size": {
-            "width": 0.5,
-            "height": 0.46
-          },
-          "colors": [
-            {
-              "color": "#3dff9a22",
-              "position": 0
-            },
-            {
-              "color": "#0b122000",
-              "position": 1
-            }
-          ],
-          "center": {
-            "x": 0.9,
-            "y": 0.1
-          }
-        }
-      ],
-      "layout": "vertical",
-      "children": [
-        {
-          "type": "rectangle",
-          "id": "featSignal",
-          "name": "signal",
-          "fill": {
-            "type": "gradient",
-            "gradientType": "linear",
-            "enabled": true,
-            "rotation": 90,
-            "size": {
-              "height": 1
-            },
-            "colors": [
-              {
-                "color": "#5ec8ff",
-                "position": 0
-              },
-              {
-                "color": "#3dff9a",
-                "position": 1
-              }
-            ]
-          },
-          "width": "fill_container",
-          "height": 2
-        },
-        {
-          "id": "featHeader",
-          "type": "ref",
-          "ref": "hudHeader"
-        },
-        {
-          "type": "frame",
-          "id": "featBody",
-          "name": "body",
-          "width": "fill_container",
-          "height": "fill_container",
-          "layout": "vertical",
-          "gap": 28,
-          "padding": [
-            40,
-            130,
-            48,
-            130
-          ],
-          "children": [
-            {
-              "type": "frame",
-              "id": "featHead",
-              "name": "section head",
-              "width": "fill_container",
-              "justifyContent": "space_between",
-              "alignItems": "end",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "featHeadL",
-                  "name": "titles",
-                  "layout": "vertical",
-                  "gap": 8,
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "featEyebrow",
-                      "fill": "$color.hud",
-                      "content": "FEATURED DROPS",
-                      "fontFamily": "Chakra Petch",
-                      "fontSize": 11,
-                      "fontWeight": "600",
-                      "letterSpacing": 2.2
-                    },
-                    {
-                      "type": "text",
-                      "id": "featH2",
-                      "fill": "$color.ink",
-                      "content": "Legendary builds",
-                      "fontFamily": "Chakra Petch",
-                      "fontSize": 36,
-                      "fontWeight": "700",
-                      "letterSpacing": -0.6
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "id": "featLink",
-                  "fill": "$color.hud",
-                  "content": "FULL INVENTORY →",
-                  "fontFamily": "Chakra Petch",
-                  "fontSize": 13,
-                  "fontWeight": "700",
-                  "letterSpacing": 1.4
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "featRow1",
-              "name": "row 1",
-              "gap": 20,
-              "children": [
-                {
-                  "id": "featSM",
-                  "type": "ref",
-                  "ref": "buildCard",
-                  "descendants": {
-                    "cardAccent": {
-                      "fill": "#0d7377"
-                    },
-                    "cardPreviewGlow": {
-                      "fill": {
-                        "type": "gradient",
-                        "gradientType": "radial",
-                        "enabled": true,
-                        "rotation": 0,
-                        "size": {
-                          "width": 1,
-                          "height": 1
-                        },
-                        "colors": [
-                          {
-                            "color": "#0d737766",
-                            "position": 0
-                          },
-                          {
-                            "color": "#070d1800",
-                            "position": 1
-                          }
-                        ]
-                      }
-                    },
-                    "cardFake1": {
-                      "fill": "#0d7377"
-                    },
-                    "cardPreviewLabel": {
-                      "content": "STAKEHOLDER MATRIX"
-                    },
-                    "cardRarityWrap": {
-                      "fill": "#ffb02018",
-                      "stroke": "#ffb02066"
-                    },
-                    "cardRarity": {
-                      "content": "LEGENDARY",
-                      "fill": "$color.legendary"
-                    },
-                    "cardLiveWrap": {
-                      "fill": "#3dff9a14",
-                      "stroke": "#3dff9a55"
-                    },
-                    "cardLive": {
-                      "content": "LIVE",
-                      "fill": "$color.accent"
-                    },
-                    "cardCatWrap": {
-                      "fill": "#0d737722"
-                    },
-                    "cardCategory": {
-                      "content": "LABORAL",
-                      "fill": "#7fd3d6"
-                    },
-                    "cardYear": {
-                      "content": "2025"
-                    },
-                    "cardTitle": {
-                      "content": "Stakeholder Matrix"
-                    },
-                    "cardTag": {
-                      "content": "Matriz interés-poder con catálogos y CRUD de actores"
-                    },
-                    "cardChip1t": {
-                      "content": "React"
-                    },
-                    "cardChip2t": {
-                      "content": "FastAPI"
-                    },
-                    "cardChip3t": {
-                      "content": "TypeScript"
-                    },
-                    "cardChip4t": {
-                      "content": "MSW"
-                    }
-                  }
-                },
-                {
-                  "id": "featMuss",
-                  "type": "ref",
-                  "ref": "buildCard",
-                  "descendants": {
-                    "cardAccent": {
-                      "fill": "#1db954"
-                    },
-                    "cardPreviewGlow": {
-                      "fill": {
-                        "type": "gradient",
-                        "gradientType": "radial",
-                        "enabled": true,
-                        "rotation": 0,
-                        "size": {
-                          "width": 1,
-                          "height": 1
-                        },
-                        "colors": [
-                          {
-                            "color": "#1db95466",
-                            "position": 0
-                          },
-                          {
-                            "color": "#070d1800",
-                            "position": 1
-                          }
-                        ]
-                      }
-                    },
-                    "cardFake1": {
-                      "fill": "#1db954"
-                    },
-                    "cardPreviewLabel": {
-                      "content": "MUSSISTANT"
-                    },
-                    "cardRarityWrap": {
-                      "fill": "#ffb02018",
-                      "stroke": "#ffb02066"
-                    },
-                    "cardRarity": {
-                      "content": "LEGENDARY",
-                      "fill": "$color.legendary"
-                    },
-                    "cardLiveWrap": {
-                      "fill": "#3dff9a14",
-                      "stroke": "#3dff9a55"
-                    },
-                    "cardLive": {
-                      "content": "LIVE",
-                      "fill": "$color.accent"
-                    },
-                    "cardCatWrap": {
-                      "fill": "#1db95422"
-                    },
-                    "cardCategory": {
-                      "content": "PRODUCTO",
-                      "fill": "#7ee2a8"
-                    },
-                    "cardYear": {
-                      "content": "2026"
-                    },
-                    "cardTitle": {
-                      "content": "Mussistant"
-                    },
-                    "cardTag": {
-                      "content": "De setlist a playlist de Spotify en minutos"
-                    },
-                    "cardChip1t": {
-                      "content": "React"
-                    },
-                    "cardChip2t": {
-                      "content": "OCR"
-                    },
-                    "cardChip3t": {
-                      "content": "Spotify"
-                    },
-                    "cardChip4t": {
-                      "content": "PKCE"
-                    }
-                  }
-                },
-                {
-                  "id": "featSplit",
-                  "type": "ref",
-                  "ref": "buildCard",
-                  "descendants": {
-                    "cardAccent": {
-                      "fill": "#e85d04"
-                    },
-                    "cardPreviewGlow": {
-                      "fill": {
-                        "type": "gradient",
-                        "gradientType": "radial",
-                        "enabled": true,
-                        "rotation": 0,
-                        "size": {
-                          "width": 1,
-                          "height": 1
-                        },
-                        "colors": [
-                          {
-                            "color": "#e85d0466",
-                            "position": 0
-                          },
-                          {
-                            "color": "#070d1800",
-                            "position": 1
-                          }
-                        ]
-                      }
-                    },
-                    "cardFake1": {
-                      "fill": "#e85d04"
-                    },
-                    "cardPreviewLabel": {
-                      "content": "SPLITIA"
-                    },
-                    "cardRarityWrap": {
-                      "fill": "#ffb02018",
-                      "stroke": "#ffb02066"
-                    },
-                    "cardRarity": {
-                      "content": "LEGENDARY",
-                      "fill": "$color.legendary"
-                    },
-                    "cardLiveWrap": {
-                      "fill": "#3dff9a14",
-                      "stroke": "#3dff9a55"
-                    },
-                    "cardLive": {
-                      "content": "LIVE",
-                      "fill": "$color.accent"
-                    },
-                    "cardCatWrap": {
-                      "fill": "#e85d0422"
-                    },
-                    "cardCategory": {
-                      "content": "PRODUCTO",
-                      "fill": "#ffb088"
-                    },
-                    "cardYear": {
-                      "content": "2026"
-                    },
-                    "cardTitle": {
-                      "content": "Splitia"
-                    },
-                    "cardTag": {
-                      "content": "Reparto de gastos compartidos sin fricción"
-                    },
-                    "cardChip1t": {
-                      "content": "Next.js"
-                    },
-                    "cardChip2t": {
-                      "content": "Supabase"
-                    },
-                    "cardChip3t": {
-                      "content": "Tailwind"
-                    },
-                    "cardChip4": {
-                      "enabled": false
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "featRow2",
-              "name": "row 2",
-              "gap": 20,
-              "children": [
-                {
-                  "id": "featVer",
-                  "type": "ref",
-                  "ref": "buildCard",
-                  "descendants": {
-                    "cardAccent": {
-                      "fill": "#1d3557"
-                    },
-                    "cardPreviewGlow": {
-                      "fill": {
-                        "type": "gradient",
-                        "gradientType": "radial",
-                        "enabled": true,
-                        "rotation": 0,
-                        "size": {
-                          "width": 1,
-                          "height": 1
-                        },
-                        "colors": [
-                          {
-                            "color": "#5ec8ff55",
-                            "position": 0
-                          },
-                          {
-                            "color": "#070d1800",
-                            "position": 1
-                          }
-                        ]
-                      }
-                    },
-                    "cardFake1": {
-                      "fill": "#1d3557"
-                    },
-                    "cardPreviewLabel": {
-                      "content": "VERIFICACOL"
-                    },
-                    "cardRarityWrap": {
-                      "fill": "#ffb02018",
-                      "stroke": "#ffb02066"
-                    },
-                    "cardRarity": {
-                      "content": "LEGENDARY",
-                      "fill": "$color.legendary"
-                    },
-                    "cardLiveWrap": {
-                      "fill": "#3dff9a14",
-                      "stroke": "#3dff9a55"
-                    },
-                    "cardLive": {
-                      "content": "LIVE",
-                      "fill": "$color.accent"
-                    },
-                    "cardCatWrap": {
-                      "fill": "#1d355722"
-                    },
-                    "cardCategory": {
-                      "content": "AI / AGENTS",
-                      "fill": "#9bb8d4"
-                    },
-                    "cardYear": {
-                      "content": "2026"
-                    },
-                    "cardTitle": {
-                      "content": "VerificaCol"
-                    },
-                    "cardTag": {
-                      "content": "Validador de información electoral con LLM"
-                    },
-                    "cardChip1t": {
-                      "content": "TypeScript"
-                    },
-                    "cardChip2t": {
-                      "content": "FastAPI"
-                    },
-                    "cardChip3t": {
-                      "content": "OpenAI"
-                    },
-                    "cardChip4": {
-                      "enabled": false
-                    }
-                  }
-                },
-                {
-                  "id": "featBio",
-                  "type": "ref",
-                  "ref": "buildCard",
-                  "descendants": {
-                    "cardAccent": {
-                      "fill": "#c1121f"
-                    },
-                    "cardPreviewGlow": {
-                      "fill": {
-                        "type": "gradient",
-                        "gradientType": "radial",
-                        "enabled": true,
-                        "rotation": 0,
-                        "size": {
-                          "width": 1,
-                          "height": 1
-                        },
-                        "colors": [
-                          {
-                            "color": "#c1121f66",
-                            "position": 0
-                          },
-                          {
-                            "color": "#070d1800",
-                            "position": 1
-                          }
-                        ]
-                      }
-                    },
-                    "cardFake1": {
-                      "fill": "#c1121f"
-                    },
-                    "cardPreviewLabel": {
-                      "content": "BIOALERT+"
-                    },
-                    "cardRarityWrap": {
-                      "fill": "#ffb02018",
-                      "stroke": "#ffb02066"
-                    },
-                    "cardRarity": {
-                      "content": "LEGENDARY",
-                      "fill": "$color.legendary"
-                    },
-                    "cardLiveWrap": {
-                      "fill": "#3dff9a14",
-                      "stroke": "#3dff9a55"
-                    },
-                    "cardLive": {
-                      "content": "LIVE",
-                      "fill": "$color.accent"
-                    },
-                    "cardCatWrap": {
-                      "fill": "#c1121f22"
-                    },
-                    "cardCategory": {
-                      "content": "HACKATHON",
-                      "fill": "#ff8a93"
-                    },
-                    "cardYear": {
-                      "content": "2026"
-                    },
-                    "cardTitle": {
-                      "content": "BioAlert+"
-                    },
-                    "cardTag": {
-                      "content": "WhatsApp agent sobre data de cafeterías escolares"
-                    },
-                    "cardChip1t": {
-                      "content": "Lambda"
-                    },
-                    "cardChip2t": {
-                      "content": "Claude"
-                    },
-                    "cardChip3t": {
-                      "content": "WhatsApp"
-                    },
-                    "cardChip4": {
-                      "enabled": false
-                    }
-                  }
-                },
-                {
-                  "type": "frame",
-                  "id": "moreSlot",
-                  "name": "Full inventory slot",
-                  "width": 380,
-                  "height": "fill_container",
-                  "fill": "#121a2b80",
-                  "cornerRadius": 12,
-                  "stroke": "$color.hud",
-                  "strokeWidth": 1,
-                  "layout": "vertical",
-                  "gap": 12,
-                  "padding": 24,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "moreEyebrow",
-                      "fill": "$color.hud",
-                      "content": "SIDE QUESTS",
-                      "fontFamily": "Chakra Petch",
-                      "fontSize": 10,
-                      "fontWeight": "600",
-                      "letterSpacing": 2.2
-                    },
-                    {
-                      "type": "text",
-                      "id": "moreTitle",
-                      "fill": "$color.hud",
-                      "content": "FULL INVENTORY →",
-                      "fontFamily": "Chakra Petch",
-                      "fontSize": 22,
-                      "fontWeight": "700"
-                    },
-                    {
-                      "type": "text",
-                      "id": "moreSub",
-                      "fill": "$color.inkSoft",
-                      "textGrowth": "fixed-width",
-                      "width": 280,
-                      "content": "Rhythm, MediAgent, Hermes, MIOBOX y más builds rare/common.",
-                      "lineHeight": 1.4,
-                      "textAlign": "center",
-                      "fontFamily": "Sora",
-                      "fontSize": 13
-                    },
-                    {
-                      "type": "text",
-                      "id": "moreCount",
-                      "fill": "$color.accent",
-                      "content": "05 LOCKED-IN",
-                      "fontFamily": "Chakra Petch",
-                      "fontSize": 12,
-                      "fontWeight": "600",
-                      "letterSpacing": 1.4
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "frame",
       "id": "frameAbout",
       "x": 0,
       "y": 1220,
-      "name": "03 ABOUT — Player profile",
+      "name": "03 HOME — Dual portal",
       "clip": true,
       "width": 1440,
       "height": 1024,
@@ -2535,27 +1125,32 @@
           "name": "body",
           "width": "fill_container",
           "height": "fill_container",
-          "gap": 48,
+          "layout": "vertical",
+          "gap": 40,
           "padding": [
             48,
             130,
             56,
             130
           ],
+          "justifyContent": "center",
+          "alignItems": "center",
           "children": [
             {
               "type": "frame",
-              "id": "aboutLeft",
-              "name": "identity",
-              "width": 520,
+              "id": "UsYnN",
+              "name": "intro",
+              "width": "fill_container",
               "layout": "vertical",
-              "gap": 16,
+              "gap": 10,
+              "alignItems": "center",
               "children": [
                 {
                   "type": "text",
-                  "id": "aboutEyebrow",
+                  "id": "dDhVN",
+                  "name": "eyebrow",
                   "fill": "$color.hud",
-                  "content": "PLAYER PROFILE",
+                  "content": "BUILD CATALOG · SELECT DESTINATION",
                   "fontFamily": "Chakra Petch",
                   "fontSize": 11,
                   "fontWeight": "600",
@@ -2563,198 +1158,215 @@
                 },
                 {
                   "type": "text",
-                  "id": "aboutName",
+                  "id": "FsE9q",
+                  "name": "title",
                   "fill": "$color.ink",
                   "content": "José Maza",
                   "fontFamily": "Chakra Petch",
-                  "fontSize": 52,
+                  "fontSize": 42,
                   "fontWeight": "700",
                   "letterSpacing": -1
                 },
                 {
+                  "type": "text",
+                  "id": "AqyBd",
+                  "name": "line",
+                  "fill": "$color.inkSoft",
+                  "content": "Elige un camino. Builds para tocar, o el dossier del player.",
+                  "textAlign": "center",
+                  "fontFamily": "Sora",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "I1IxDz",
+              "name": "portals",
+              "width": "fill_container",
+              "gap": 24,
+              "justifyContent": "center",
+              "children": [
+                {
                   "type": "frame",
-                  "id": "aboutPortrait",
-                  "name": "player card",
-                  "width": "fill_container",
+                  "id": "xRcKP",
+                  "name": "portal catalog",
+                  "width": 520,
                   "fill": "$color.panel",
                   "cornerRadius": 12,
-                  "stroke": "#3dff9a40",
+                  "stroke": "$color.line",
                   "strokeWidth": 1,
+                  "layout": "vertical",
                   "gap": 16,
-                  "padding": 16,
-                  "alignItems": "center",
+                  "padding": 28,
                   "children": [
                     {
-                      "type": "frame",
-                      "id": "avatar",
-                      "name": "avatar",
-                      "width": 88,
-                      "height": 88,
-                      "fill": "#070d18",
-                      "cornerRadius": 8,
-                      "stroke": "$color.accent",
-                      "strokeWidth": 1,
-                      "layout": "vertical",
-                      "gap": 2,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "avatarJM",
-                          "fill": "$color.accent",
-                          "content": "JM",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 28,
-                          "fontWeight": "700"
-                        },
-                        {
-                          "type": "text",
-                          "id": "avatarLvl",
-                          "fill": "$color.hud",
-                          "content": "LVL 30",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 8,
-                          "fontWeight": "600",
-                          "letterSpacing": 1.4
-                        }
-                      ]
+                      "type": "text",
+                      "id": "icZOd",
+                      "name": "cat label",
+                      "fill": "$color.hud",
+                      "content": "CATALOG",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 2.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "v6sAP7",
+                      "name": "cat title",
+                      "fill": "$color.ink",
+                      "content": "Mission board",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 28,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "TbIvH",
+                      "name": "cat live",
+                      "fill": "$color.accent",
+                      "content": "06 LIVE",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 14,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.4
                     },
                     {
                       "type": "frame",
-                      "id": "avatarMeta",
-                      "name": "meta",
-                      "layout": "vertical",
-                      "gap": 6,
+                      "id": "l5diy",
+                      "name": "mini slots",
+                      "width": "fill_container",
+                      "gap": 10,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "avatarClass",
-                          "fill": "$color.ink",
-                          "content": "Fullstack / Product engineer",
-                          "fontFamily": "Chakra Petch",
-                          "fontSize": 16,
-                          "fontWeight": "600"
-                        },
-                        {
-                          "type": "text",
-                          "id": "avatarSrc",
-                          "fill": "$color.muted",
-                          "content": "github.com/Jgmaza  ·  ~30 repos públicos",
-                          "fontFamily": "Sora",
-                          "fontSize": 12
+                          "type": "frame",
+                          "id": "XNBkr",
+                          "name": "Stakeholder",
+                          "width": "fill_container",
+                          "fill": "#070d1866",
+                          "cornerRadius": 6,
+                          "stroke": "$color.line",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": 12,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rRnLT",
+                              "name": "Stakeholder n",
+                              "fill": "$color.ink",
+                              "content": "Stakeholder",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "wn6aW",
+                              "name": "Stakeholder s",
+                              "fill": "$color.accent",
+                              "content": "LIVE",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 9,
+                              "fontWeight": "700",
+                              "letterSpacing": 1
+                            }
+                          ]
                         },
                         {
                           "type": "frame",
-                          "id": "avatarTags",
-                          "name": "tags",
-                          "gap": 6,
+                          "id": "xtd0q",
+                          "name": "Mussistant",
+                          "width": "fill_container",
+                          "fill": "#070d1866",
+                          "cornerRadius": 6,
+                          "stroke": "$color.line",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": 12,
                           "children": [
                             {
-                              "type": "frame",
-                              "id": "av1",
-                              "name": "UI",
-                              "fill": "$color.elevated",
-                              "cornerRadius": 2,
-                              "stroke": "$color.line",
-                              "strokeWidth": 1,
-                              "padding": [
-                                5,
-                                8
-                              ],
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "av1t",
-                                  "fill": "$color.muted",
-                                  "content": "UI",
-                                  "fontFamily": "Chakra Petch",
-                                  "fontSize": 10,
-                                  "fontWeight": "500",
-                                  "letterSpacing": 0.8
-                                }
-                              ]
+                              "type": "text",
+                              "id": "KEgk0",
+                              "name": "Mussistant n",
+                              "fill": "$color.ink",
+                              "content": "Mussistant",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 12,
+                              "fontWeight": "600"
                             },
                             {
-                              "type": "frame",
-                              "id": "av2",
-                              "name": "API",
-                              "fill": "$color.elevated",
-                              "cornerRadius": 2,
-                              "stroke": "$color.line",
-                              "strokeWidth": 1,
-                              "padding": [
-                                5,
-                                8
-                              ],
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "av2t",
-                                  "fill": "$color.muted",
-                                  "content": "API",
-                                  "fontFamily": "Chakra Petch",
-                                  "fontSize": 10,
-                                  "fontWeight": "500",
-                                  "letterSpacing": 0.8
-                                }
-                              ]
+                              "type": "text",
+                              "id": "H0bt1Q",
+                              "name": "Mussistant s",
+                              "fill": "$color.accent",
+                              "content": "LIVE",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 9,
+                              "fontWeight": "700",
+                              "letterSpacing": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "iFPU4",
+                          "name": "Splitia",
+                          "width": "fill_container",
+                          "fill": "#070d1866",
+                          "cornerRadius": 6,
+                          "stroke": "$color.line",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": 12,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "o3zlb",
+                              "name": "Splitia n",
+                              "fill": "$color.ink",
+                              "content": "Splitia",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 12,
+                              "fontWeight": "600"
                             },
                             {
-                              "type": "frame",
-                              "id": "av3",
-                              "name": "DEPLOY",
-                              "fill": "$color.elevated",
-                              "cornerRadius": 2,
-                              "stroke": "$color.line",
-                              "strokeWidth": 1,
-                              "padding": [
-                                5,
-                                8
-                              ],
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "av3t",
-                                  "fill": "$color.muted",
-                                  "content": "DEPLOY",
-                                  "fontFamily": "Chakra Petch",
-                                  "fontSize": 10,
-                                  "fontWeight": "500",
-                                  "letterSpacing": 0.8
-                                }
-                              ]
+                              "type": "text",
+                              "id": "dTaPK",
+                              "name": "Splitia s",
+                              "fill": "$color.accent",
+                              "content": "LIVE",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 9,
+                              "fontWeight": "700",
+                              "letterSpacing": 1
                             }
                           ]
                         }
                       ]
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "id": "aboutPitch",
-                  "fill": "$color.inkSoft",
-                  "textGrowth": "fixed-width",
-                  "width": 500,
-                  "content": "Cierro el ciclo — problema, UI, API, deploy — y dejo demos que se puedan tocar en una entrevista. Este sitio no es un CV: es un build catalog.",
-                  "lineHeight": 1.55,
-                  "fontFamily": "Sora",
-                  "fontSize": 16
-                },
-                {
-                  "type": "frame",
-                  "id": "aboutCtas",
-                  "name": "ctas",
-                  "gap": 10,
-                  "children": [
+                    },
+                    {
+                      "type": "text",
+                      "id": "NxtP4",
+                      "name": "cat hint",
+                      "fill": "$color.muted",
+                      "textGrowth": "fixed-width",
+                      "width": 460,
+                      "content": "Builds públicos que puedes abrir y probar.",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Sora",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
                     {
                       "type": "frame",
-                      "id": "aboutOpen",
-                      "name": "OPEN CATALOG",
+                      "id": "VbFg4",
+                      "name": "ENTER CATALOG",
                       "fill": "$color.accent",
                       "cornerRadius": 2,
                       "effect": {
@@ -2764,47 +1376,173 @@
                         "blur": 18
                       },
                       "padding": [
-                        11,
-                        20
+                        12,
+                        22
                       ],
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
-                          "id": "aboutOpent",
+                          "id": "VdnCk",
+                          "name": "ENTER CATALOG t",
                           "fill": "$color.onAccent",
-                          "content": "OPEN CATALOG",
+                          "content": "ENTER CATALOG",
                           "fontFamily": "Chakra Petch",
                           "fontSize": 13,
                           "fontWeight": "700",
                           "letterSpacing": 1.4
                         }
                       ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ioyUN",
+                  "name": "portal player",
+                  "width": 520,
+                  "fill": "$color.panel",
+                  "cornerRadius": 12,
+                  "stroke": "#3dff9a40",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qUK8x",
+                      "name": "pl label",
+                      "fill": "$color.hud",
+                      "content": "PLAYER",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 2.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "t4qey",
+                      "name": "pl title",
+                      "fill": "$color.ink",
+                      "content": "Dossier file",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 28,
+                      "fontWeight": "700"
                     },
                     {
                       "type": "frame",
-                      "id": "aboutGh",
-                      "name": "GITHUB.COM/JGMAZA",
-                      "fill": "$color.panel",
+                      "id": "yuKmT",
+                      "name": "medallion row",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "S35Yl",
+                          "name": "medallion",
+                          "width": 88,
+                          "height": 88,
+                          "fill": "#070d18",
+                          "cornerRadius": 44,
+                          "stroke": "$color.accent",
+                          "strokeWidth": 2,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "C8cLQU",
+                              "name": "JM",
+                              "fill": "$color.accent",
+                              "content": "JM",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 28,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "zD8iW",
+                          "name": "meta",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "mYCJi",
+                              "name": "lvl",
+                              "fill": "$color.accent",
+                              "content": "LVL 30",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 14,
+                              "fontWeight": "700",
+                              "letterSpacing": 1.2
+                            },
+                            {
+                              "type": "text",
+                              "id": "kzW7v",
+                              "name": "class",
+                              "fill": "$color.inkSoft",
+                              "content": "Fullstack Product Engineer",
+                              "fontFamily": "Sora",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "AxMUD",
+                              "name": "tag",
+                              "fill": "$color.muted",
+                              "content": "Origin · Clears · Trophies",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 11,
+                              "fontWeight": "600",
+                              "letterSpacing": 0.8
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "qtpFP",
+                      "name": "pl hint",
+                      "fill": "$color.muted",
+                      "textGrowth": "fixed-width",
+                      "width": 460,
+                      "content": "Trasfondo, misiones cleared y trofeos personales.",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Sora",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "I6VYY",
+                      "name": "LOAD DOSSIER",
+                      "fill": "$color.elevated",
                       "cornerRadius": 2,
-                      "stroke": "$color.line",
+                      "stroke": "$color.accent",
                       "strokeWidth": 1,
                       "padding": [
-                        11,
-                        20
+                        12,
+                        22
                       ],
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
-                          "id": "aboutGht",
-                          "fill": "$color.ink",
-                          "content": "GITHUB.COM/JGMAZA",
+                          "id": "h1zMWj",
+                          "name": "LOAD DOSSIER t",
+                          "fill": "$color.accent",
+                          "content": "LOAD DOSSIER",
                           "fontFamily": "Chakra Petch",
                           "fontSize": 13,
-                          "fontWeight": "600",
+                          "fontWeight": "700",
                           "letterSpacing": 1.4
                         }
                       ]
@@ -2815,301 +1553,42 @@
             },
             {
               "type": "frame",
-              "id": "aboutRight",
-              "name": "sheets",
-              "width": 612,
-              "layout": "vertical",
-              "gap": 16,
+              "id": "UizDr",
+              "name": "sys hint",
+              "gap": 8,
+              "alignItems": "center",
               "children": [
                 {
-                  "type": "frame",
-                  "id": "kitPanel",
-                  "name": "Class kit",
-                  "fill": "$color.panel",
-                  "cornerRadius": 12,
-                  "stroke": "$color.line",
-                  "strokeWidth": 1,
-                  "layout": "vertical",
-                  "gap": 12,
-                  "padding": 20,
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "kitTitle",
-                      "fill": "$color.hud",
-                      "content": "CLASS KIT",
-                      "fontFamily": "Chakra Petch",
-                      "fontSize": 11,
-                      "fontWeight": "600",
-                      "letterSpacing": 2.2
-                    },
-                    {
-                      "type": "text",
-                      "id": "kitLine1",
-                      "fill": "$color.inkSoft",
-                      "textGrowth": "fixed-width",
-                      "width": 560,
-                      "content": "Productos propios — Next/React, Supabase, deploys en Vercel.",
-                      "fontFamily": "Sora",
-                      "fontSize": 14
-                    },
-                    {
-                      "type": "text",
-                      "id": "kitLine2",
-                      "fill": "$color.inkSoft",
-                      "textGrowth": "fixed-width",
-                      "width": 560,
-                      "content": "Agentes e IA aplicada — OCR, LLMs, voice cuando el problema lo pide.",
-                      "fontFamily": "Sora",
-                      "fontSize": 14
-                    },
-                    {
-                      "type": "text",
-                      "id": "kitLine3",
-                      "fill": "$color.inkSoft",
-                      "textGrowth": "fixed-width",
-                      "width": 560,
-                      "content": "Integraciones backend — Nest, FastAPI, SOAP/ERP. Lore cuando el código es de cliente.",
-                      "fontFamily": "Sora",
-                      "fontSize": 14
-                    }
-                  ]
+                  "type": "text",
+                  "id": "NIQaI",
+                  "name": "sys",
+                  "fill": "$color.muted",
+                  "content": "SYS · SETTINGS",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.6
                 },
                 {
-                  "type": "frame",
-                  "id": "questPanel",
-                  "name": "Side quests",
-                  "fill": "$color.panel",
-                  "cornerRadius": 12,
-                  "stroke": "$color.line",
-                  "strokeWidth": 1,
-                  "layout": "vertical",
-                  "gap": 10,
-                  "padding": 20,
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "questTitle",
-                      "fill": "$color.hud",
-                      "content": "SIDE QUESTS · LABORAL SANITIZADO",
-                      "fontFamily": "Chakra Petch",
-                      "fontSize": 11,
-                      "fontWeight": "600",
-                      "letterSpacing": 2.2
-                    },
-                    {
-                      "type": "frame",
-                      "id": "q1",
-                      "name": "Sector público / energía",
-                      "width": "fill_container",
-                      "fill": "#070d1866",
-                      "cornerRadius": 4,
-                      "stroke": "$color.line",
-                      "strokeWidth": 1,
-                      "gap": 12,
-                      "padding": 12,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "rectangle",
-                          "cornerRadius": 1,
-                          "id": "q1pip",
-                          "fill": "#0d7377",
-                          "width": 3,
-                          "height": 36
-                        },
-                        {
-                          "type": "frame",
-                          "id": "q1copy",
-                          "name": "copy",
-                          "width": "fill_container",
-                          "layout": "vertical",
-                          "gap": 3,
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "q1t",
-                              "fill": "$color.ink",
-                              "content": "Sector público / energía",
-                              "fontFamily": "Chakra Petch",
-                              "fontSize": 14,
-                              "fontWeight": "600"
-                            },
-                            {
-                              "type": "text",
-                              "id": "q1b",
-                              "fill": "$color.inkSoft",
-                              "textGrowth": "fixed-width",
-                              "width": 420,
-                              "content": "Stakeholders e interoperabilidad. En público, solo demos sanitizadas.",
-                              "lineHeight": 1.35,
-                              "fontFamily": "Sora",
-                              "fontSize": 12
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "q2",
-                      "name": "Sofinsa / MIOBOX",
-                      "width": "fill_container",
-                      "fill": "#070d1866",
-                      "cornerRadius": 4,
-                      "stroke": "$color.line",
-                      "strokeWidth": 1,
-                      "gap": 12,
-                      "padding": 12,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "rectangle",
-                          "cornerRadius": 1,
-                          "id": "q2pip",
-                          "fill": "#264653",
-                          "width": 3,
-                          "height": 36
-                        },
-                        {
-                          "type": "frame",
-                          "id": "q2copy",
-                          "name": "copy",
-                          "width": "fill_container",
-                          "layout": "vertical",
-                          "gap": 3,
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "q2t",
-                              "fill": "$color.ink",
-                              "content": "Sofinsa / MIOBOX",
-                              "fontFamily": "Chakra Petch",
-                              "fontSize": 14,
-                              "fontWeight": "600"
-                            },
-                            {
-                              "type": "text",
-                              "id": "q2b",
-                              "fill": "$color.inkSoft",
-                              "textGrowth": "fixed-width",
-                              "width": 420,
-                              "content": "Puente NestJS ERP ↔ planta. Sin código de cliente.",
-                              "lineHeight": 1.35,
-                              "fontFamily": "Sora",
-                              "fontSize": 12
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "q3",
-                      "name": "Guarapo / Cata",
-                      "width": "fill_container",
-                      "fill": "#070d1866",
-                      "cornerRadius": 4,
-                      "stroke": "$color.line",
-                      "strokeWidth": 1,
-                      "gap": 12,
-                      "padding": 12,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "rectangle",
-                          "cornerRadius": 1,
-                          "id": "q3pip",
-                          "fill": "#e85d04",
-                          "width": 3,
-                          "height": 36
-                        },
-                        {
-                          "type": "frame",
-                          "id": "q3copy",
-                          "name": "copy",
-                          "width": "fill_container",
-                          "layout": "vertical",
-                          "gap": 3,
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "q3t",
-                              "fill": "$color.ink",
-                              "content": "Guarapo / Cata",
-                              "fontFamily": "Chakra Petch",
-                              "fontSize": 14,
-                              "fontWeight": "600"
-                            },
-                            {
-                              "type": "text",
-                              "id": "q3b",
-                              "fill": "$color.inkSoft",
-                              "textGrowth": "fixed-width",
-                              "width": 420,
-                              "content": "Tools internas Next + Supabase.",
-                              "lineHeight": 1.35,
-                              "fontFamily": "Sora",
-                              "fontSize": 12
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "q4",
-                      "name": "Hermes",
-                      "width": "fill_container",
-                      "fill": "#070d1866",
-                      "cornerRadius": 4,
-                      "stroke": "$color.line",
-                      "strokeWidth": 1,
-                      "gap": 12,
-                      "padding": 12,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "rectangle",
-                          "cornerRadius": 1,
-                          "id": "q4pip",
-                          "fill": "#457b9d",
-                          "width": 3,
-                          "height": 36
-                        },
-                        {
-                          "type": "frame",
-                          "id": "q4copy",
-                          "name": "copy",
-                          "width": "fill_container",
-                          "layout": "vertical",
-                          "gap": 3,
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "q4t",
-                              "fill": "$color.ink",
-                              "content": "Hermes",
-                              "fontFamily": "Chakra Petch",
-                              "fontSize": 14,
-                              "fontWeight": "600"
-                            },
-                            {
-                              "type": "text",
-                              "id": "q4b",
-                              "fill": "$color.inkSoft",
-                              "textGrowth": "fixed-width",
-                              "width": 420,
-                              "content": "UI operativa freelance en Vercel.",
-                              "lineHeight": 1.35,
-                              "fontFamily": "Sora",
-                              "fontSize": 12
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
+                  "type": "text",
+                  "id": "g1kSg",
+                  "name": "sys sep",
+                  "fill": "$color.muted",
+                  "content": "·",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "SS8OW",
+                  "name": "sys lang",
+                  "fill": "$color.hud",
+                  "content": "ES / EN",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.6
                 }
               ]
             }
@@ -3260,7 +1739,8 @@
                   "width": 640,
                   "content": "Colección de builds desbloqueadas. Filtra por clase y abre cada card para lore, stack y demo.",
                   "fontFamily": "Sora",
-                  "fontSize": 16
+                  "fontSize": 16,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -4108,7 +2588,8 @@
                       "width": 220,
                       "content": "El catálogo crece con cada deploy.",
                       "fontFamily": "Sora",
-                      "fontSize": 12
+                      "fontSize": 12,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -4312,7 +2793,8 @@
               "content": "Inventario de apps desbloqueadas: productos, agentes AI e integraciones.",
               "lineHeight": 1.4,
               "fontFamily": "Sora",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
@@ -4584,6 +3066,2753 @@
               "fontSize": 9,
               "fontWeight": "600",
               "letterSpacing": 2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "cnYAl",
+      "x": 3080,
+      "y": 1220,
+      "name": "06 PROJECT DETAIL — Quest + START",
+      "clip": true,
+      "width": 1440,
+      "height": 1024,
+      "fill": [
+        "$color.bg",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.72,
+            "height": 0.52
+          },
+          "colors": [
+            {
+              "color": "#5ec8ff24",
+              "position": 0
+            },
+            {
+              "color": "#0b122000",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.16,
+            "y": 0.02
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.5,
+            "height": 0.46
+          },
+          "colors": [
+            {
+              "color": "#3dff9a22",
+              "position": 0
+            },
+            {
+              "color": "#0b122000",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.9,
+            "y": 0.1
+          }
+        }
+      ],
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "Pac3h",
+          "name": "signal",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 90,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#5ec8ff",
+                "position": 0
+              },
+              {
+                "color": "#3dff9a",
+                "position": 1
+              }
+            ]
+          },
+          "width": "fill_container",
+          "height": 2
+        },
+        {
+          "id": "rHf61",
+          "type": "ref",
+          "ref": "hudHeader",
+          "name": "HUD Header"
+        },
+        {
+          "type": "frame",
+          "id": "dXqeg",
+          "name": "body",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            36,
+            130,
+            40,
+            130
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "gOLnf",
+              "name": "quest header",
+              "width": "fill_container",
+              "gap": 40,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "dYSf1",
+                  "name": "lore intro",
+                  "width": 620,
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "r3dEYt",
+                      "name": "meta row",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "lv1je",
+                          "name": "category",
+                          "fill": "#0d737722",
+                          "cornerRadius": 2,
+                          "padding": [
+                            4,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "CmGQt",
+                              "name": "category label",
+                              "fill": "#7fd3d6",
+                              "content": "LABORAL",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 10,
+                              "fontWeight": "700",
+                              "letterSpacing": 1.2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "EnlZJ",
+                          "name": "year",
+                          "fill": "$color.muted",
+                          "content": "2025",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "K3Ox37",
+                          "name": "rarity",
+                          "fill": "#ffb02018",
+                          "cornerRadius": 2,
+                          "stroke": "#ffb02066",
+                          "strokeWidth": 1,
+                          "padding": [
+                            4,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "wLjkj",
+                              "name": "rarity label",
+                              "fill": "$color.legendary",
+                              "content": "LEGENDARY",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 9,
+                              "fontWeight": "700",
+                              "letterSpacing": 1.3
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "EJjUx",
+                          "name": "status",
+                          "fill": "#3dff9a14",
+                          "cornerRadius": 2,
+                          "stroke": "#3dff9a55",
+                          "strokeWidth": 1,
+                          "padding": [
+                            4,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "aCzMK",
+                              "name": "status label",
+                              "fill": "$color.accent",
+                              "content": "LIVE",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 9,
+                              "fontWeight": "700",
+                              "letterSpacing": 1.3
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "SRgpm",
+                      "name": "eyebrow",
+                      "fill": "$color.hud",
+                      "content": "QUEST DETAIL · /PROJECTS/STAKEHOLDER-MATRIX",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 2.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "lOP96",
+                      "name": "title",
+                      "fill": "$color.ink",
+                      "content": "Stakeholder Matrix",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 44,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.8
+                    },
+                    {
+                      "type": "text",
+                      "id": "rGxk1",
+                      "name": "tagline",
+                      "fill": "$color.inkSoft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Matriz interés-poder con catálogos y CRUD de actores",
+                      "lineHeight": 1.45,
+                      "fontFamily": "Sora",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "XONKR",
+                      "name": "summary",
+                      "fill": "$color.muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Demo sanitizada de una app fullstack de gestión de stakeholders: arquitectura limpia, matriz interactiva y datos ficticios vía mocks — sin backend ni datos reales.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "Sora",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "igQp6",
+                      "name": "ctas",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "KDlNf",
+                          "name": "START",
+                          "fill": "$color.accent",
+                          "cornerRadius": 2,
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#3dff9a44",
+                            "blur": 18
+                          },
+                          "padding": [
+                            12,
+                            22
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "vJoAz",
+                              "name": "START label",
+                              "fill": "$color.onAccent",
+                              "content": "START",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": 1.4
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "pMpx6",
+                          "name": "SOURCE",
+                          "fill": "$color.panel",
+                          "cornerRadius": 2,
+                          "stroke": "$color.line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            12,
+                            22
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "RhKpw",
+                              "name": "SOURCE label",
+                              "fill": "$color.ink",
+                              "content": "SOURCE",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 13,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.4
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "hngRl",
+                      "name": "back",
+                      "fill": "$color.hud",
+                      "content": "← BACK TO CATALOG",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 12,
+                      "fontWeight": "600",
+                      "letterSpacing": 1.2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "VSb6Z",
+                  "name": "cartridge column",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "nGfMx",
+                      "name": "preview cartridge",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 320,
+                      "fill": "$color.panel",
+                      "cornerRadius": 12,
+                      "stroke": "$color.line",
+                      "strokeWidth": 1,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000073",
+                        "offset": {
+                          "x": 0,
+                          "y": 18
+                        },
+                        "blur": 36
+                      },
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "id": "UcWbq",
+                          "name": "accent",
+                          "fill": "#0d7377",
+                          "width": "fill_container",
+                          "height": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "icr5k",
+                          "name": "preview",
+                          "clip": true,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#070d18",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "rectangle",
+                              "id": "nOjRH",
+                              "x": 80,
+                              "y": -40,
+                              "name": "glow",
+                              "fill": {
+                                "type": "gradient",
+                                "gradientType": "radial",
+                                "enabled": true,
+                                "rotation": 0,
+                                "size": {
+                                  "width": 1,
+                                  "height": 1
+                                },
+                                "colors": [
+                                  {
+                                    "color": "#0d737766",
+                                    "position": 0
+                                  },
+                                  {
+                                    "color": "#070d1800",
+                                    "position": 1
+                                  }
+                                ]
+                              },
+                              "width": 320,
+                              "height": 220
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": [
+                                0,
+                                4,
+                                4,
+                                0
+                              ],
+                              "id": "O2PXI",
+                              "x": 0,
+                              "y": 120,
+                              "name": "notch L",
+                              "fill": "#0b1220",
+                              "width": 12,
+                              "height": 56
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": [
+                                4,
+                                0,
+                                0,
+                                4
+                              ],
+                              "id": "bsML4",
+                              "x": 508,
+                              "y": 120,
+                              "name": "notch R",
+                              "fill": "#0b1220",
+                              "width": 12,
+                              "height": 56
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 6,
+                              "id": "C0KIWb",
+                              "x": 36,
+                              "y": 48,
+                              "name": "chrome",
+                              "fill": "#101a2c",
+                              "width": 448,
+                              "height": 168,
+                              "stroke": "#5ec8ff22",
+                              "strokeWidth": 1
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 1,
+                              "id": "dIV9h",
+                              "x": 52,
+                              "y": 68,
+                              "name": "fake bar 1",
+                              "opacity": 0.85,
+                              "fill": "#0d7377",
+                              "width": 168,
+                              "height": 10
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 1,
+                              "id": "YFc5B",
+                              "x": 52,
+                              "y": 90,
+                              "name": "fake bar 2",
+                              "fill": "#5ec8ff33",
+                              "width": 260,
+                              "height": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 3,
+                              "id": "kvmH2",
+                              "x": 52,
+                              "y": 112,
+                              "name": "fake tile 1",
+                              "fill": "#5ec8ff14",
+                              "width": 120,
+                              "height": 72
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 3,
+                              "id": "ev6UX",
+                              "x": 184,
+                              "y": 112,
+                              "name": "fake tile 2",
+                              "fill": "#3dff9a14",
+                              "width": 120,
+                              "height": 72
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 3,
+                              "id": "DEfYE",
+                              "x": 316,
+                              "y": 112,
+                              "name": "fake tile 3",
+                              "fill": "#ffb02014",
+                              "width": 148,
+                              "height": 72
+                            },
+                            {
+                              "type": "text",
+                              "id": "LlShp",
+                              "x": 36,
+                              "y": 236,
+                              "name": "preview label",
+                              "fill": "$color.ink",
+                              "content": "STAKEHOLDER MATRIX",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 14,
+                              "fontWeight": "700",
+                              "letterSpacing": 1.6
+                            },
+                            {
+                              "type": "frame",
+                              "id": "F7Fdbq",
+                              "layoutPosition": "absolute",
+                              "x": 20,
+                              "y": 16,
+                              "name": "badges",
+                              "gap": 6,
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "tNFN4",
+                                  "name": "rarity",
+                                  "fill": "#ffb02018",
+                                  "cornerRadius": 2,
+                                  "stroke": "#ffb02066",
+                                  "strokeWidth": 1,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "qKyhX",
+                                      "name": "rarity t",
+                                      "fill": "$color.legendary",
+                                      "content": "LEGENDARY",
+                                      "fontFamily": "Chakra Petch",
+                                      "fontSize": 9,
+                                      "fontWeight": "700",
+                                      "letterSpacing": 1.3
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "LIcsP",
+                                  "name": "status",
+                                  "fill": "#3dff9a14",
+                                  "cornerRadius": 2,
+                                  "stroke": "#3dff9a55",
+                                  "strokeWidth": 1,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "jij28",
+                                      "name": "status t",
+                                      "fill": "$color.accent",
+                                      "content": "LIVE",
+                                      "fontFamily": "Chakra Petch",
+                                      "fontSize": 9,
+                                      "fontWeight": "700",
+                                      "letterSpacing": 1.3
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "YXVU8",
+                      "name": "demo hint",
+                      "fill": "$color.muted",
+                      "content": "DEMO · stakeholder-matrix-demo.vercel.app",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.8
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "nTVZ8",
+              "name": "sheets",
+              "width": "fill_container",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "l8hdRy",
+                  "name": "lore sheets",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zf0OP",
+                      "name": "QUEST",
+                      "width": "fill_container",
+                      "fill": "$color.panel",
+                      "cornerRadius": 12,
+                      "stroke": "$color.line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        16,
+                        18
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "cIlNR",
+                          "name": "QUEST title",
+                          "fill": "$color.hud",
+                          "content": "QUEST",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "B6IyA",
+                          "name": "QUEST line",
+                          "fill": "$color.inkSoft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Equipos de relacionamiento necesitan mapear actores clave por poder e interés, con catálogos jerárquicos y sin perder trazabilidad.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Sora",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wbgxB",
+                      "name": "LOADOUT",
+                      "width": "fill_container",
+                      "fill": "$color.panel",
+                      "cornerRadius": 12,
+                      "stroke": "$color.line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        16,
+                        18
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "JjZPr",
+                          "name": "LOADOUT title",
+                          "fill": "$color.hud",
+                          "content": "LOADOUT DECISIONS",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "xOWqZ",
+                          "name": "LOADOUT line",
+                          "fill": "$color.inkSoft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "• Separación domain/application/infrastructure/presentation",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Sora",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "jcuem",
+                          "name": "LOADOUT line",
+                          "fill": "$color.inkSoft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "• Matriz visual con cuadrantes accionables",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Sora",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "uvbjH",
+                          "name": "LOADOUT line",
+                          "fill": "$color.inkSoft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "• Demo pública 100% mock (MSW) para no exponer datos laborales",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Sora",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "G5s3Q",
+                      "name": "CLEAR",
+                      "width": "fill_container",
+                      "fill": "$color.panel",
+                      "cornerRadius": 12,
+                      "stroke": "$color.line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        16,
+                        18
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YJlhD",
+                          "name": "CLEAR title",
+                          "fill": "$color.hud",
+                          "content": "CLEAR",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "tb6Dh",
+                          "name": "CLEAR line",
+                          "fill": "$color.inkSoft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Case study + demo interactiva desplegada en Vercel con seed ficticio.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Sora",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "saDrG",
+                  "name": "aside",
+                  "width": 320,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "N9YxY",
+                      "name": "Role",
+                      "width": "fill_container",
+                      "fill": "$color.panel",
+                      "cornerRadius": 12,
+                      "stroke": "$color.line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        16,
+                        18
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "CoIqF",
+                          "name": "Role title",
+                          "fill": "$color.hud",
+                          "content": "ROLE",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "KBCvq",
+                          "name": "Role value",
+                          "fill": "$color.inkSoft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Fullstack — frontend React + API FastAPI (case study)",
+                          "lineHeight": 1.45,
+                          "fontFamily": "Sora",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "C6zRT",
+                      "name": "Stack",
+                      "width": "fill_container",
+                      "fill": "$color.panel",
+                      "cornerRadius": 12,
+                      "stroke": "$color.line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": [
+                        16,
+                        18
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "U6gB77",
+                          "name": "Stack title",
+                          "fill": "$color.hud",
+                          "content": "STACK",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2.2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "JA1K4",
+                          "name": "chips",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "kZN1f",
+                              "name": "React",
+                              "fill": "$color.elevated",
+                              "cornerRadius": 2,
+                              "stroke": "$color.line",
+                              "strokeWidth": 1,
+                              "padding": [
+                                5,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "bVTUV",
+                                  "name": "React t",
+                                  "fill": "$color.muted",
+                                  "content": "React",
+                                  "fontFamily": "Chakra Petch",
+                                  "fontSize": 10,
+                                  "fontWeight": "500",
+                                  "letterSpacing": 0.8
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "QL3OJ",
+                              "name": "TypeScript",
+                              "fill": "$color.elevated",
+                              "cornerRadius": 2,
+                              "stroke": "$color.line",
+                              "strokeWidth": 1,
+                              "padding": [
+                                5,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Y4P5wR",
+                                  "name": "TypeScript t",
+                                  "fill": "$color.muted",
+                                  "content": "TypeScript",
+                                  "fontFamily": "Chakra Petch",
+                                  "fontSize": 10,
+                                  "fontWeight": "500",
+                                  "letterSpacing": 0.8
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "ezn2S",
+                              "name": "Clean Architecture",
+                              "fill": "$color.elevated",
+                              "cornerRadius": 2,
+                              "stroke": "$color.line",
+                              "strokeWidth": 1,
+                              "padding": [
+                                5,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Ua7QI",
+                                  "name": "Clean Architecture t",
+                                  "fill": "$color.muted",
+                                  "content": "Clean Architecture",
+                                  "fontFamily": "Chakra Petch",
+                                  "fontSize": 10,
+                                  "fontWeight": "500",
+                                  "letterSpacing": 0.8
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "IscIR",
+                              "name": "MSW",
+                              "fill": "$color.elevated",
+                              "cornerRadius": 2,
+                              "stroke": "$color.line",
+                              "strokeWidth": 1,
+                              "padding": [
+                                5,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "qtzwe",
+                                  "name": "MSW t",
+                                  "fill": "$color.muted",
+                                  "content": "MSW",
+                                  "fontFamily": "Chakra Petch",
+                                  "fontSize": 10,
+                                  "fontWeight": "500",
+                                  "letterSpacing": 0.8
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "zI8Ky",
+                              "name": "FastAPI",
+                              "fill": "$color.elevated",
+                              "cornerRadius": 2,
+                              "stroke": "$color.line",
+                              "strokeWidth": 1,
+                              "padding": [
+                                5,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "J6q1zr",
+                                  "name": "FastAPI t",
+                                  "fill": "$color.muted",
+                                  "content": "FastAPI",
+                                  "fontFamily": "Chakra Petch",
+                                  "fontSize": 10,
+                                  "fontWeight": "500",
+                                  "letterSpacing": 0.8
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "L7Akse",
+                              "name": "MySQL",
+                              "fill": "$color.elevated",
+                              "cornerRadius": 2,
+                              "stroke": "$color.line",
+                              "strokeWidth": 1,
+                              "padding": [
+                                5,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Vb237",
+                                  "name": "MySQL t",
+                                  "fill": "$color.muted",
+                                  "content": "MySQL",
+                                  "fontFamily": "Chakra Petch",
+                                  "fontSize": 10,
+                                  "fontWeight": "500",
+                                  "letterSpacing": 0.8
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "L2ol6Q",
+                      "name": "Disclaimer",
+                      "width": "fill_container",
+                      "fill": "#0d737714",
+                      "cornerRadius": 12,
+                      "stroke": "#0d737755",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YAlog",
+                          "name": "Disclaimer title",
+                          "fill": "#7fd3d6",
+                          "content": "LORE NOTE",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 10,
+                          "fontWeight": "700",
+                          "letterSpacing": 1.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "Ui5UG",
+                          "name": "Disclaimer body",
+                          "fill": "$color.inkSoft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Portfolio demo inspired by professional work. Not affiliated with any employer or government entity.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "Sora",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "J3Jq6s",
+      "x": 4600,
+      "y": 1220,
+      "name": "07 PLAYER — Origin",
+      "clip": true,
+      "width": 1440,
+      "height": 1024,
+      "fill": [
+        "$color.bg",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.72,
+            "height": 0.52
+          },
+          "colors": [
+            {
+              "color": "#5ec8ff24",
+              "position": 0
+            },
+            {
+              "color": "#0b122000",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.16,
+            "y": 0.02
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.5,
+            "height": 0.46
+          },
+          "colors": [
+            {
+              "color": "#3dff9a22",
+              "position": 0
+            },
+            {
+              "color": "#0b122000",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.9,
+            "y": 0.1
+          }
+        }
+      ],
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "JnaJJ",
+          "name": "signal",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 90,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#5ec8ff",
+                "position": 0
+              },
+              {
+                "color": "#3dff9a",
+                "position": 1
+              }
+            ]
+          },
+          "width": "fill_container",
+          "height": 2
+        },
+        {
+          "id": "ymL4G",
+          "type": "ref",
+          "ref": "hudHeader",
+          "name": "HUD Header"
+        },
+        {
+          "type": "frame",
+          "id": "BM5b7",
+          "name": "body",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            36,
+            130,
+            40,
+            130
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "l7tFPp",
+              "name": "pager",
+              "width": "fill_container",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fFqu6",
+                  "name": "ORIGIN",
+                  "fill": "$color.accent",
+                  "cornerRadius": 2,
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MEH5f",
+                      "name": "ORIGIN t",
+                      "fill": "$color.onAccent",
+                      "content": "ORIGIN",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.6
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "OM9x2",
+                  "name": "CLEARS",
+                  "fill": "$color.elevated",
+                  "cornerRadius": 2,
+                  "stroke": "$color.line",
+                  "strokeWidth": 1,
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fMbb7",
+                      "name": "CLEARS t",
+                      "fill": "$color.inkSoft",
+                      "content": "CLEARS",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.6
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "xYwKE",
+                  "name": "TROPHIES",
+                  "fill": "$color.elevated",
+                  "cornerRadius": 2,
+                  "stroke": "$color.line",
+                  "strokeWidth": 1,
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DkIJg",
+                      "name": "TROPHIES t",
+                      "fill": "$color.inkSoft",
+                      "content": "TROPHIES",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.6
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "w7mfsu",
+              "name": "origin hero",
+              "width": "fill_container",
+              "height": "fill_container",
+              "gap": 40,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "aLnV4",
+                  "name": "portrait col",
+                  "width": 280,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "DEjci",
+                      "name": "crt portrait",
+                      "width": 240,
+                      "height": 240,
+                      "fill": "#070d18",
+                      "cornerRadius": 120,
+                      "stroke": "$color.accent",
+                      "strokeWidth": 2,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Iwjyf",
+                          "name": "JM",
+                          "fill": "$color.accent",
+                          "content": "JM",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 64,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "OTBH8",
+                          "name": "pending",
+                          "fill": "$color.hud",
+                          "content": "CRT PORTRAIT",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 10,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZYBiX",
+                      "name": "lvl",
+                      "fill": "$color.accent",
+                      "content": "LVL 30 · FULLSTACK",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 12,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Dztl5",
+                  "name": "origin copy",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "kqm6a",
+                      "name": "eyebrow",
+                      "fill": "$color.hud",
+                      "content": "ORIGIN · PLAYER LORE",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 2.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "TKbIw",
+                      "name": "name",
+                      "fill": "$color.ink",
+                      "content": "José Maza",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 40,
+                      "fontWeight": "700",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "text",
+                      "id": "v7zoW",
+                      "name": "class",
+                      "fill": "$color.accent",
+                      "content": "Fullstack Product Engineer",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "l6xV9d",
+                      "name": "p1",
+                      "fill": "$color.inkSoft",
+                      "textGrowth": "fixed-width",
+                      "width": 700,
+                      "content": "Cierro el ciclo completo: entender el problema, diseñar la UI, construir la API y llevar el producto a producción. El código es parte del build — no el jugador entero.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "Sora",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Xs1v5",
+                      "name": "p2",
+                      "fill": "$color.muted",
+                      "textGrowth": "fixed-width",
+                      "width": 700,
+                      "content": "He recorrido sector público y energía, puentes ERP↔planta, tools internas y freelance. Este dossier cuenta el trasfondo; el catálogo muestra lo que se puede tocar.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "Sora",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Hhozg",
+                      "name": "ctas",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "mQNRo",
+                          "name": "DOWNLOAD CV",
+                          "fill": "$color.accent",
+                          "cornerRadius": 2,
+                          "padding": [
+                            11,
+                            20
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "UhWni",
+                              "name": "cv t",
+                              "fill": "$color.onAccent",
+                              "content": "DOWNLOAD CV",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": 1.4
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "q9F0v",
+                          "name": "GITHUB",
+                          "fill": "$color.panel",
+                          "cornerRadius": 2,
+                          "stroke": "$color.line",
+                          "strokeWidth": 1,
+                          "padding": [
+                            11,
+                            20
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "qAlQu",
+                              "name": "gh t",
+                              "fill": "$color.ink",
+                              "content": "GITHUB",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 13,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.4
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "y01npI",
+                      "name": "next",
+                      "fill": "$color.hud",
+                      "content": "→ CLEARS · misiones ya completadas",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 1.2
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "dsavG",
+      "x": 6120,
+      "y": 1220,
+      "name": "07b PLAYER — Clears",
+      "clip": true,
+      "width": 1440,
+      "height": 1024,
+      "fill": [
+        "$color.bg",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.72,
+            "height": 0.52
+          },
+          "colors": [
+            {
+              "color": "#5ec8ff24",
+              "position": 0
+            },
+            {
+              "color": "#0b122000",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.16,
+            "y": 0.02
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.5,
+            "height": 0.46
+          },
+          "colors": [
+            {
+              "color": "#3dff9a22",
+              "position": 0
+            },
+            {
+              "color": "#0b122000",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.9,
+            "y": 0.1
+          }
+        }
+      ],
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "wO5E1",
+          "name": "signal",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 90,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#5ec8ff",
+                "position": 0
+              },
+              {
+                "color": "#3dff9a",
+                "position": 1
+              }
+            ]
+          },
+          "width": "fill_container",
+          "height": 2
+        },
+        {
+          "id": "o4ZH9",
+          "type": "ref",
+          "ref": "hudHeader",
+          "name": "HUD Header"
+        },
+        {
+          "type": "frame",
+          "id": "xGkll",
+          "name": "body",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            36,
+            130,
+            40,
+            130
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "zmlQf",
+              "name": "pager",
+              "width": "fill_container",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jIF0x",
+                  "name": "ORIGIN",
+                  "fill": "$color.elevated",
+                  "cornerRadius": 2,
+                  "stroke": "$color.line",
+                  "strokeWidth": 1,
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uUbkf",
+                      "name": "ORIGIN t",
+                      "fill": "$color.inkSoft",
+                      "content": "ORIGIN",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.6
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "LiUH2",
+                  "name": "CLEARS",
+                  "fill": "$color.accent",
+                  "cornerRadius": 2,
+                  "stroke": "$color.line",
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wDeST",
+                      "name": "CLEARS t",
+                      "fill": "$color.onAccent",
+                      "content": "CLEARS",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.6
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kQJkK",
+                  "name": "TROPHIES",
+                  "fill": "$color.elevated",
+                  "cornerRadius": 2,
+                  "stroke": "$color.line",
+                  "strokeWidth": 1,
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "baLEt",
+                      "name": "TROPHIES t",
+                      "fill": "$color.inkSoft",
+                      "content": "TROPHIES",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.6
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "R0LNt",
+              "name": "clears hero",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GMRzs",
+                  "name": "clears eyebrow",
+                  "fill": "$color.hud",
+                  "content": "MISSION CLEARS · EXPERIENCE LOG",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 2.2
+                },
+                {
+                  "type": "text",
+                  "id": "ITOfu",
+                  "name": "clears title",
+                  "fill": "$color.ink",
+                  "content": "Misiones ya completadas",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 28,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "BJLSn",
+                  "name": "clears grid",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "NvY9d",
+                      "name": "row1",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "WZYWZ",
+                          "name": "Sector público / energía",
+                          "width": "fill_container",
+                          "fill": "$color.panel",
+                          "cornerRadius": 10,
+                          "stroke": "$color.line",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 10,
+                          "padding": 18,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Dyb6g",
+                              "name": "top",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "KOic9",
+                                  "name": "t",
+                                  "fill": "$color.ink",
+                                  "content": "Sector público / energía",
+                                  "fontFamily": "Chakra Petch",
+                                  "fontSize": 15,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "XlR11",
+                                  "name": "CLEARED",
+                                  "fill": "#0d7377",
+                                  "cornerRadius": 2,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "wdv8P",
+                                      "name": "b",
+                                      "fill": "#ffffff",
+                                      "content": "CLEARED",
+                                      "fontFamily": "Chakra Petch",
+                                      "fontSize": 9,
+                                      "fontWeight": "700",
+                                      "letterSpacing": 1.2
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "bURmX",
+                              "name": "c",
+                              "fill": "$color.inkSoft",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Interoperabilidad y stakeholders en operación institucional.",
+                              "lineHeight": 1.4,
+                              "fontFamily": "Sora",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "cGJYQ",
+                          "name": "SofinSaS / MIOBOX",
+                          "width": "fill_container",
+                          "fill": "$color.panel",
+                          "cornerRadius": 10,
+                          "stroke": "$color.line",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 10,
+                          "padding": 18,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "C4sUzx",
+                              "name": "top",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "C438D3",
+                                  "name": "t",
+                                  "fill": "$color.ink",
+                                  "content": "SofinSaS / MIOBOX",
+                                  "fontFamily": "Chakra Petch",
+                                  "fontSize": 15,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "iviBt",
+                                  "name": "CLEARED",
+                                  "fill": "#264653",
+                                  "cornerRadius": 2,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "iNqTH",
+                                      "name": "b",
+                                      "fill": "#ffffff",
+                                      "content": "CLEARED",
+                                      "fontFamily": "Chakra Petch",
+                                      "fontSize": 9,
+                                      "fontWeight": "700",
+                                      "letterSpacing": 1.2
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "qpuPa",
+                              "name": "c",
+                              "fill": "$color.inkSoft",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Puente NestJS ERP ↔ planta y procesos de producción.",
+                              "lineHeight": 1.4,
+                              "fontFamily": "Sora",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rWI4c",
+                      "name": "row2",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "BDzUv",
+                          "name": "Guarapo / Cata",
+                          "width": "fill_container",
+                          "fill": "$color.panel",
+                          "cornerRadius": 10,
+                          "stroke": "$color.line",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 10,
+                          "padding": 18,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "j8ZWME",
+                              "name": "top",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "PC9z3",
+                                  "name": "t",
+                                  "fill": "$color.ink",
+                                  "content": "Guarapo / Cata",
+                                  "fontFamily": "Chakra Petch",
+                                  "fontSize": 15,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "iCzWd",
+                                  "name": "CLEARED",
+                                  "fill": "#e85d04",
+                                  "cornerRadius": 2,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "nk2Kz",
+                                      "name": "b",
+                                      "fill": "#ffffff",
+                                      "content": "CLEARED",
+                                      "fontFamily": "Chakra Petch",
+                                      "fontSize": 9,
+                                      "fontWeight": "700",
+                                      "letterSpacing": 1.2
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "enBFw",
+                              "name": "c",
+                              "fill": "$color.inkSoft",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Tools internas Next + Supabase para operación.",
+                              "lineHeight": 1.4,
+                              "fontFamily": "Sora",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "j9lIM3",
+                          "name": "Hermes",
+                          "width": "fill_container",
+                          "fill": "$color.panel",
+                          "cornerRadius": 10,
+                          "stroke": "$color.line",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 10,
+                          "padding": 18,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "OFcXB",
+                              "name": "top",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xV4R6",
+                                  "name": "t",
+                                  "fill": "$color.ink",
+                                  "content": "Hermes",
+                                  "fontFamily": "Chakra Petch",
+                                  "fontSize": 15,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "CbtUn",
+                                  "name": "CLEARED",
+                                  "fill": "#457b9d",
+                                  "cornerRadius": 2,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "umFR6",
+                                      "name": "b",
+                                      "fill": "#ffffff",
+                                      "content": "CLEARED",
+                                      "fontFamily": "Chakra Petch",
+                                      "fontSize": 9,
+                                      "fontWeight": "700",
+                                      "letterSpacing": 1.2
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "nwYNS",
+                              "name": "c",
+                              "fill": "$color.inkSoft",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "UI operativa freelance desplegada en Vercel.",
+                              "lineHeight": 1.4,
+                              "fontFamily": "Sora",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "v0ui9q",
+                  "name": "next",
+                  "fill": "$color.hud",
+                  "content": "→ TROPHIES · logros personales",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "EZ41A",
+      "x": 7640,
+      "y": 1220,
+      "name": "07c PLAYER — Trophies",
+      "clip": true,
+      "width": 1440,
+      "height": 1024,
+      "fill": [
+        "$color.bg",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.72,
+            "height": 0.52
+          },
+          "colors": [
+            {
+              "color": "#5ec8ff24",
+              "position": 0
+            },
+            {
+              "color": "#0b122000",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.16,
+            "y": 0.02
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.5,
+            "height": 0.46
+          },
+          "colors": [
+            {
+              "color": "#3dff9a22",
+              "position": 0
+            },
+            {
+              "color": "#0b122000",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.9,
+            "y": 0.1
+          }
+        }
+      ],
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "UZ9qD",
+          "name": "signal",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 90,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#5ec8ff",
+                "position": 0
+              },
+              {
+                "color": "#3dff9a",
+                "position": 1
+              }
+            ]
+          },
+          "width": "fill_container",
+          "height": 2
+        },
+        {
+          "id": "ItyuP",
+          "type": "ref",
+          "ref": "hudHeader",
+          "name": "HUD Header"
+        },
+        {
+          "type": "frame",
+          "id": "Yh6PT",
+          "name": "body",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            36,
+            130,
+            40,
+            130
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "k0OhZ7",
+              "name": "pager",
+              "width": "fill_container",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fnuRS",
+                  "name": "ORIGIN",
+                  "fill": "$color.elevated",
+                  "cornerRadius": 2,
+                  "stroke": "$color.line",
+                  "strokeWidth": 1,
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "mHmwP",
+                      "name": "ORIGIN t",
+                      "fill": "$color.inkSoft",
+                      "content": "ORIGIN",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.6
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "SueC2",
+                  "name": "CLEARS",
+                  "fill": "$color.elevated",
+                  "cornerRadius": 2,
+                  "stroke": "$color.line",
+                  "strokeWidth": 1,
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "doh88",
+                      "name": "CLEARS t",
+                      "fill": "$color.inkSoft",
+                      "content": "CLEARS",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.6
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "O3KROi",
+                  "name": "TROPHIES",
+                  "fill": "$color.accent",
+                  "cornerRadius": 2,
+                  "stroke": "$color.line",
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "HvnBj",
+                      "name": "TROPHIES t",
+                      "fill": "$color.onAccent",
+                      "content": "TROPHIES",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.6
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HAtiU",
+              "name": "trophies hero",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vcOL9",
+                  "name": "tr eyebrow",
+                  "fill": "$color.hud",
+                  "content": "TROPHY CASE · PERSONAL LOADOUT",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 2.2
+                },
+                {
+                  "type": "text",
+                  "id": "rD4ur",
+                  "name": "tr title",
+                  "fill": "$color.ink",
+                  "content": "Logros fuera del build",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 28,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "NuaHI",
+                  "name": "tr sub",
+                  "fill": "$color.inkSoft",
+                  "content": "Code is part of the build. Not the whole player.",
+                  "fontFamily": "Sora",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "uPJRt",
+                  "name": "trophy row",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "uCOXt",
+                      "name": "CHESS",
+                      "width": "fill_container",
+                      "fill": "$color.panel",
+                      "cornerRadius": 12,
+                      "stroke": "#3dff9a40",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 24,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "BwHkY",
+                          "name": "CHESS icon",
+                          "width": 72,
+                          "height": 72,
+                          "fill": "#070d18",
+                          "cornerRadius": 36,
+                          "stroke": "$color.accent",
+                          "strokeWidth": 2,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "SjVIU",
+                              "name": "ic",
+                              "fill": "$color.accent",
+                              "content": "CH",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 18,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "sdKIi",
+                          "name": "tt",
+                          "fill": "$color.accent",
+                          "content": "CHESS",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 14,
+                          "fontWeight": "700",
+                          "letterSpacing": 1.6
+                        },
+                        {
+                          "type": "text",
+                          "id": "MjOcu",
+                          "name": "st",
+                          "fill": "$color.ink",
+                          "content": "~1800 ELO",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 22,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "EAtUe",
+                          "name": "dt",
+                          "fill": "$color.muted",
+                          "content": "Strategy · Patience · Ranked play",
+                          "textAlign": "center",
+                          "fontFamily": "Sora",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e24Kl",
+                      "name": "PERCUSSION",
+                      "width": "fill_container",
+                      "fill": "$color.panel",
+                      "cornerRadius": 12,
+                      "stroke": "#3dff9a40",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 24,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "VnQHa",
+                          "name": "PERCUSSION icon",
+                          "width": 72,
+                          "height": 72,
+                          "fill": "#070d18",
+                          "cornerRadius": 36,
+                          "stroke": "$color.accent",
+                          "strokeWidth": 2,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "tRw8u",
+                              "name": "ic",
+                              "fill": "$color.accent",
+                              "content": "PE",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 18,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "dOE4X",
+                          "name": "tt",
+                          "fill": "$color.accent",
+                          "content": "PERCUSSION",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 14,
+                          "fontWeight": "700",
+                          "letterSpacing": 1.6
+                        },
+                        {
+                          "type": "text",
+                          "id": "KT6C8",
+                          "name": "st",
+                          "fill": "$color.ink",
+                          "content": "MULTI-KIT",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 22,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "q3Zmgx",
+                          "name": "dt",
+                          "fill": "$color.muted",
+                          "content": "Batería · Congas · Bongós",
+                          "textAlign": "center",
+                          "fontFamily": "Sora",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Zmh0B",
+                      "name": "GYM",
+                      "width": "fill_container",
+                      "fill": "$color.panel",
+                      "cornerRadius": 12,
+                      "stroke": "#3dff9a40",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 24,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "oSAcf",
+                          "name": "GYM icon",
+                          "width": 72,
+                          "height": 72,
+                          "fill": "#070d18",
+                          "cornerRadius": 36,
+                          "stroke": "$color.accent",
+                          "strokeWidth": 2,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "d8nIw",
+                              "name": "ic",
+                              "fill": "$color.accent",
+                              "content": "GY",
+                              "fontFamily": "Chakra Petch",
+                              "fontSize": 18,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "udsgX",
+                          "name": "tt",
+                          "fill": "$color.accent",
+                          "content": "GYM",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 14,
+                          "fontWeight": "700",
+                          "letterSpacing": 1.6
+                        },
+                        {
+                          "type": "text",
+                          "id": "r7bgM",
+                          "name": "st",
+                          "fill": "$color.ink",
+                          "content": "5 YEARS",
+                          "fontFamily": "Chakra Petch",
+                          "fontSize": 22,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "WXamg",
+                          "name": "dt",
+                          "fill": "$color.muted",
+                          "content": "Training · Progression · Consistency",
+                          "textAlign": "center",
+                          "fontFamily": "Sora",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "JCtWi",
+                  "name": "back",
+                  "fill": "$color.hud",
+                  "content": "← ORIGIN · volver al trasfondo",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Hie2Z",
+      "x": 0,
+      "y": 2324,
+      "name": "08 SETTINGS — CRT",
+      "clip": true,
+      "width": 720,
+      "height": 480,
+      "fill": [
+        "#05080fcc",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.6,
+            "height": 0.5
+          },
+          "colors": [
+            {
+              "color": "#3dff9a18",
+              "position": 0
+            },
+            {
+              "color": "#05080f00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "y": 0.4
+          }
+        }
+      ],
+      "layout": "vertical",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "c2UTy",
+          "name": "settings panel",
+          "width": 420,
+          "fill": "$color.panel",
+          "cornerRadius": 4,
+          "stroke": "$color.accent",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 20,
+          "padding": 32,
+          "children": [
+            {
+              "type": "text",
+              "id": "o7Uqdf",
+              "name": "set title",
+              "fill": "$color.accent",
+              "content": "SYS · SETTINGS",
+              "fontFamily": "Chakra Petch",
+              "fontSize": 18,
+              "fontWeight": "700",
+              "letterSpacing": 2
+            },
+            {
+              "type": "text",
+              "id": "i7gsIS",
+              "name": "set sub",
+              "fill": "$color.inkSoft",
+              "content": "Ajusta el idioma del catálogo.",
+              "fontFamily": "Sora",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "q9Y1q",
+              "name": "lang lab",
+              "fill": "$color.hud",
+              "content": "LANGUAGE",
+              "fontFamily": "Chakra Petch",
+              "fontSize": 11,
+              "fontWeight": "600",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "oOPfM",
+              "name": "langs",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "G48LD",
+                  "name": "ES",
+                  "fill": "$color.accent",
+                  "cornerRadius": 2,
+                  "padding": [
+                    10,
+                    18
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bQKc4",
+                      "name": "ES t",
+                      "fill": "$color.onAccent",
+                      "content": "ES",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 13,
+                      "fontWeight": "700",
+                      "letterSpacing": 1.4
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gpT16",
+                  "name": "EN",
+                  "fill": "$color.elevated",
+                  "cornerRadius": 2,
+                  "stroke": "$color.line",
+                  "strokeWidth": 1,
+                  "padding": [
+                    10,
+                    18
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bV9GR",
+                      "name": "EN t",
+                      "fill": "$color.ink",
+                      "content": "EN",
+                      "fontFamily": "Chakra Petch",
+                      "fontSize": 13,
+                      "fontWeight": "600",
+                      "letterSpacing": 1.4
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "W4J8s",
+              "name": "CLOSE",
+              "fill": "$color.elevated",
+              "cornerRadius": 2,
+              "stroke": "$color.line",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "N3BlA5",
+                  "name": "CLOSE t",
+                  "fill": "$color.ink",
+                  "content": "CLOSE",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.4
+                }
+              ]
             }
           ]
         }
