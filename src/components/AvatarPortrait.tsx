@@ -3,13 +3,15 @@
 import { useEffect, useState } from "react";
 import { player } from "@/content/player";
 
-type PortraitSize = "sm" | "select" | "xl";
+type PortraitSize = "sm" | "select" | "xl" | "dossier";
 
 type AvatarPortraitProps = {
   size?: PortraitSize;
   showMeta?: boolean;
   /** Sprite / Y-axis turntable — character-select vibe */
   spinning?: boolean;
+  /** Hide LVL badge under pedestal (dossier column has its own meta) */
+  hideLevel?: boolean;
 };
 
 function Placeholder({ showMeta }: { showMeta: boolean }) {
@@ -89,6 +91,7 @@ export function AvatarPortrait({
   size = "select",
   showMeta = true,
   spinning = true,
+  hideLevel = false,
 }: AvatarPortraitProps) {
   const { photo, turntable, level } = player.avatar;
   const hasTurntable = Boolean(turntable?.frames?.length);
@@ -143,7 +146,9 @@ export function AvatarPortrait({
           <span className="avatar-portrait__pedestal-glow" />
         </div>
 
-        <span className="avatar-portrait__lvl">{level}</span>
+        {hideLevel ? null : (
+          <span className="avatar-portrait__lvl">{level}</span>
+        )}
       </div>
     </div>
   );

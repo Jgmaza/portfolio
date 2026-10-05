@@ -13,6 +13,7 @@ export function SiteHeader() {
     100,
     Math.round((unlocked / Math.max(projects.length, 1)) * 100),
   );
+  const isHome = pathname === "/";
 
   const links = [
     { href: "/projects", label: "Catalog" },
@@ -24,8 +25,18 @@ export function SiteHeader() {
       <div aria-hidden className="site-signal" />
       <header className="site-header">
         <div className="site-header__inner">
-          <Link href="/" className="site-header__brand">
-            JM://BUILD_CATALOG
+          <Link
+            href="/"
+            className={
+              isHome
+                ? "site-header__brand site-header__brand--home"
+                : "site-header__brand"
+            }
+          >
+            <span className="site-header__brand-full">JM://BUILD_CATALOG</span>
+            <span className="site-header__brand-short" aria-hidden>
+              JM://CATALOG
+            </span>
           </Link>
 
           <div className="site-header__xp">

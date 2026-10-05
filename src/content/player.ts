@@ -29,6 +29,26 @@ export type PlayerTrophy = {
   quote?: string;
 };
 
+export type SkillTier = "CORE" | "STRONG" | "FAMILIAR";
+
+export type PlayerSkill = {
+  label: string;
+  /** Relative ticks 1–5 (not a fake %) */
+  ticks: 1 | 2 | 3 | 4 | 5;
+  tier: SkillTier;
+};
+
+/** Fixed-column loadout bars — honest relative tiers, shared across locales */
+export const playerSkills: PlayerSkill[] = [
+  { label: "Next / React", ticks: 5, tier: "CORE" },
+  { label: "TypeScript", ticks: 5, tier: "CORE" },
+  { label: "NestJS", ticks: 4, tier: "STRONG" },
+  { label: "FastAPI", ticks: 3, tier: "STRONG" },
+  { label: "Supabase", ticks: 3, tier: "STRONG" },
+  { label: "Vercel", ticks: 3, tier: "STRONG" },
+  { label: "AI / Agents", ticks: 2, tier: "FAMILIAR" },
+];
+
 type PlayerCopy = {
   name: string;
   classTitle: string;
@@ -37,6 +57,21 @@ type PlayerCopy = {
   identityLine: string;
   homeEyebrow: string;
   homeLine: string;
+  homeMobile: {
+    eyebrow: string;
+    classLine: string;
+    title: string;
+    sub: string;
+    openCatalog: string;
+    source: string;
+    unlocked: string;
+    liveDemos: string;
+    classLabel: string;
+    classValue: string;
+    missionBoard: string;
+    online: string;
+    featuredDrops: string;
+  };
   catalogPortal: {
     label: string;
     title: string;
@@ -53,6 +88,10 @@ type PlayerCopy = {
   };
   sysHint: string;
   acts: { origin: string; clears: string; trophies: string };
+  dossierStatus: string;
+  dossierOnline: string;
+  loadoutTitle: string;
+  actEyebrows: { origin: string; clears: string; trophies: string };
   originEyebrow: string;
   originQuote: string;
   originP1: string;
@@ -364,6 +403,21 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     identityLine: "Code is part of the build. Not the whole player.",
     homeEyebrow: "BUILD CATALOG · SELECT DESTINATION",
     homeLine: "Elige un camino. Builds para tocar, o el dossier del player.",
+    homeMobile: {
+      eyebrow: "PLAYER SELECT · JOSÉ MAZA",
+      classLine: "FULLSTACK / PRODUCT ENGINEER",
+      title: "Build Catalog",
+      sub: "Inventario de apps desbloqueadas: productos, agentes AI e integraciones.",
+      openCatalog: "OPEN CATALOG",
+      source: "SOURCE",
+      unlocked: "UNLOCKED",
+      liveDemos: "LIVE DEMOS",
+      classLabel: "CLASS",
+      classValue: "FULLSTACK",
+      missionBoard: "MISSION BOARD",
+      online: "ONLINE",
+      featuredDrops: "FEATURED DROPS ↓",
+    },
     catalogPortal: {
       label: "CATALOG",
       title: "Mission board",
@@ -380,6 +434,14 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     },
     sysHint: "SYS · SETTINGS · ES / EN",
     acts: { origin: "ORIGINS", clears: "CLEARS", trophies: "TROPHIES" },
+    dossierStatus: "PLAYER DOSSIER",
+    dossierOnline: "ONLINE",
+    loadoutTitle: "LOADOUT",
+    actEyebrows: {
+      origin: "ACT 01 · ORIGINS",
+      clears: "ACT 02 · CLEARS",
+      trophies: "ACT 03 · TROPHIES",
+    },
     originEyebrow: "ORIGINS // PLAYER BACKGROUND",
     originQuote: "Every player started somewhere.",
     originP1:
@@ -427,6 +489,21 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     identityLine: "Code is part of the build. Not the whole player.",
     homeEyebrow: "BUILD CATALOG · SELECT DESTINATION",
     homeLine: "Pick a path. Builds you can touch, or the player dossier.",
+    homeMobile: {
+      eyebrow: "PLAYER SELECT · JOSÉ MAZA",
+      classLine: "FULLSTACK / PRODUCT ENGINEER",
+      title: "Build Catalog",
+      sub: "Inventory of unlocked apps: products, AI agents, and integrations.",
+      openCatalog: "OPEN CATALOG",
+      source: "SOURCE",
+      unlocked: "UNLOCKED",
+      liveDemos: "LIVE DEMOS",
+      classLabel: "CLASS",
+      classValue: "FULLSTACK",
+      missionBoard: "MISSION BOARD",
+      online: "ONLINE",
+      featuredDrops: "FEATURED DROPS ↓",
+    },
     catalogPortal: {
       label: "CATALOG",
       title: "Mission board",
@@ -443,6 +520,14 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     },
     sysHint: "SYS · SETTINGS · ES / EN",
     acts: { origin: "ORIGINS", clears: "CLEARS", trophies: "TROPHIES" },
+    dossierStatus: "PLAYER DOSSIER",
+    dossierOnline: "ONLINE",
+    loadoutTitle: "LOADOUT",
+    actEyebrows: {
+      origin: "ACT 01 · ORIGINS",
+      clears: "ACT 02 · CLEARS",
+      trophies: "ACT 03 · TROPHIES",
+    },
     originEyebrow: "ORIGINS // PLAYER BACKGROUND",
     originQuote: "Every player started somewhere.",
     originP1:
