@@ -73,20 +73,22 @@ export const projects: Project[] = [
     title: "Mussistant",
     tagline: "De setlist a playlist de Spotify en minutos",
     summary:
-      "Asistente de música con OCR, matching inteligente al catálogo de Spotify y creación de playlists con auth PKCE.",
+      "Asistente de música con OCR, matching al catálogo de Spotify y playlists vía PKCE. Incluye lista de espera para la allowlist de Spotify Development Mode (máx. 5 usuarios) y un panel admin que sugiere a quién añadir o sacar por LRU.",
     category: "producto",
     featured: true,
     year: "2026",
     role: "Product engineer — frontend + integraciones",
     stack: ["React", "Vite", "Supabase Auth", "Spotify API", "OCR", "Tailwind"],
     problem:
-      "DJs y productores pierden tiempo pasando setlists impresos o escritos a playlists manualmente.",
+      "DJs y productores pierden tiempo pasando setlists a playlists a mano. Además, Spotify Development Mode limita la API a 5 cuentas allowlisteadas — sin cupo extendido no se puede abrir la demo a cualquiera.",
     decisions: [
       "Dual input: texto e imagen con OCR",
       "Scoring de confianza + corrección manual",
       "Spotify PKCE sin exponer secrets en el cliente",
+      "Solicitud de acceso + tracking de último uso en Supabase; panel admin con sugerencia LRU (Spotify Dashboard sigue siendo el paso manual)",
     ],
-    outcome: "Producto demoable end-to-end con auth y flujo de playlist.",
+    outcome:
+      "Demo live en Vercel con auth Supabase, flujo setlist→playlist y operación de allowlist (/spotify-access y /admin/spotify-access) para rotar testers sin pedir Extended Quota.",
     demoUrl: "https://mussistant.vercel.app",
     repoUrl: "https://github.com/Jgmaza/Mussistant",
     accent: "#1db954",
