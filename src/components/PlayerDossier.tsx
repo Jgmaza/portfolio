@@ -22,17 +22,18 @@ export function PlayerDossier() {
       <div className="player-tablet">
         <header className="player-tablet__status">
           <span className="player-tablet__status-left">{t.dossierStatus}</span>
+          <span className="player-tablet__status-right">{t.dossierOnline}</span>
           <div className="player-tablet__identity">
             <span className="player-tablet__id-name">
               {shortPlayerName(t.name)}
             </span>
-            <span className="player-tablet__id-sep" aria-hidden>
+            <span className="player-tablet__id-sep player-tablet__id-sep--name" aria-hidden>
               ·
             </span>
             <span className="player-tablet__id-lvl">
               {t.avatar.level} · {t.avatar.clearance}
             </span>
-            <span className="player-tablet__id-sep" aria-hidden>
+            <span className="player-tablet__id-sep player-tablet__id-sep--class" aria-hidden>
               ·
             </span>
             <span className="player-tablet__id-class">{t.classTitle}</span>
@@ -43,7 +44,6 @@ export function PlayerDossier() {
               ID {t.avatar.agentId}
             </span>
           </div>
-          <span className="player-tablet__status-right">{t.dossierOnline}</span>
         </header>
 
         <div className="player-tablet__screen">

@@ -16,8 +16,8 @@ export function SiteHeader() {
   const isHome = pathname === "/";
 
   const links = [
-    { href: "/projects", label: "Catalog" },
-    { href: "/player", label: "Player" },
+    { href: "/projects", label: "Catalog", key: "catalog" },
+    { href: "/player", label: "Player", key: "player" },
   ];
 
   return (
@@ -60,12 +60,12 @@ export function SiteHeader() {
                   : pathname.startsWith(link.href);
               return (
                 <Link
-                  key={link.href + link.label}
+                  key={link.key}
                   href={link.href}
                   className={
                     active
-                      ? "site-header__link site-header__link--on"
-                      : "site-header__link"
+                      ? `site-header__link site-header__link--${link.key} site-header__link--on`
+                      : `site-header__link site-header__link--${link.key}`
                   }
                 >
                   {link.label}

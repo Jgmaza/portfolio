@@ -29,13 +29,19 @@ export function HomePortals() {
           <Link href={t.ctas.catalog.href} className="btn-start home-mobile__cta">
             {m.openCatalog}
           </Link>
+          <Link
+            href={t.ctas.player.href}
+            className="btn-source home-mobile__cta"
+          >
+            {t.playerPortal.cta}
+          </Link>
           <a
             href={t.ctas.github.href}
             target="_blank"
             rel="noreferrer"
-            className="btn-source home-mobile__cta"
+            className="home-mobile__source"
           >
-            {m.source}
+            {m.source} →
           </a>
         </div>
 
