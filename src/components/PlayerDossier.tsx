@@ -198,7 +198,17 @@ export function PlayerDossier() {
                 <div className="player-sheet__trophy-grid">
                   {t.trophies.map((trophy) => (
                     <article key={trophy.id} className="trophy-row">
-                      <div className="trophy-row__mark">{trophy.mark}</div>
+                      <div
+                        className="trophy-row__mark"
+                        aria-label={trophy.mark}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={trophy.icon}
+                          alt=""
+                          className="trophy-row__icon"
+                        />
+                      </div>
                       <div className="trophy-row__body">
                         <p className="trophy-row__cat">
                           {trophy.category} · {trophy.stat}

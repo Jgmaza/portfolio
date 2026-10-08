@@ -1,5 +1,5 @@
 {
-  "version": "2.17",
+  "version": "2.20",
   "children": [
     {
       "type": "note",
@@ -2711,14 +2711,57 @@
               "letterSpacing": 0.8
             },
             {
-              "type": "text",
-              "id": "mobNav",
-              "fill": "$color.inkSoft",
-              "content": "GITHUB",
-              "fontFamily": "Chakra Petch",
-              "fontSize": 11,
-              "fontWeight": "600",
-              "letterSpacing": 1.2
+              "type": "frame",
+              "id": "myCAD",
+              "name": "nav",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Y2NOdv",
+                  "name": "Catalog",
+                  "fill": "$color.inkSoft",
+                  "content": "Catalog",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "text",
+                  "id": "RRfg7",
+                  "name": "Player",
+                  "fill": "$color.inkSoft",
+                  "content": "Player",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "text",
+                  "id": "AC8g7",
+                  "name": "SYS",
+                  "fill": "$color.inkSoft",
+                  "content": "SYS",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "text",
+                  "id": "JhOZV",
+                  "name": "GITHUB",
+                  "fill": "$color.inkSoft",
+                  "content": "GITHUB",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1
+                }
+              ]
             }
           ]
         },
@@ -2832,7 +2875,7 @@
                 {
                   "type": "frame",
                   "id": "mobSource",
-                  "name": "SOURCE",
+                  "name": "LOAD DOSSIER",
                   "width": "fill_container",
                   "fill": "$color.panel",
                   "cornerRadius": 2,
@@ -2848,13 +2891,24 @@
                       "type": "text",
                       "id": "mobSourceT",
                       "fill": "$color.ink",
-                      "content": "SOURCE",
+                      "content": "LOAD DOSSIER",
                       "fontFamily": "Chakra Petch",
                       "fontSize": 13,
                       "fontWeight": "700",
                       "letterSpacing": 1.3
                     }
                   ]
+                },
+                {
+                  "type": "text",
+                  "id": "EDKpJ",
+                  "name": "SOURCE link",
+                  "fill": "$color.hud",
+                  "content": "SOURCE →",
+                  "fontFamily": "Chakra Petch",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.4
                 }
               ]
             },

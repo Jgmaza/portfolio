@@ -25,7 +25,10 @@ export type PlayerTrophy = {
   category: string;
   stat: string;
   detail: string;
+  /** Short text fallback / aria */
   mark: string;
+  /** Pixel loadout icon from ChatGPT character sheet */
+  icon: string;
   quote?: string;
 };
 
@@ -308,6 +311,14 @@ const clearsEn: PlayerClear[] = [
   },
 ];
 
+
+const trophyIcons = {
+  music: "/assets/trophies/music.png",
+  gym: "/assets/trophies/gym.png",
+  chess: "/assets/trophies/chess.png",
+  code: "/assets/trophies/code.png",
+} as const;
+
 const trophiesEs: PlayerTrophy[] = [
   {
     id: "music",
@@ -317,6 +328,7 @@ const trophiesEs: PlayerTrophy[] = [
     detail:
       "La música ocupa un lugar central: tocar, escuchar y explorar sonidos. Siempre parte del build.",
     mark: "MU",
+    icon: trophyIcons.music,
     quote: "Always part of the build.",
   },
   {
@@ -327,6 +339,7 @@ const trophiesEs: PlayerTrophy[] = [
     detail:
       "Un proceso personal de entrenamiento y progresión que sigue en curso. Mostrarse, otra vez.",
     mark: "GY",
+    icon: trophyIcons.gym,
     quote: "Keep showing up.",
   },
   {
@@ -337,6 +350,7 @@ const trophiesEs: PlayerTrophy[] = [
     detail:
       "Partidas, posiciones y tiempo para pensar el siguiente movimiento. Estrategia y paciencia.",
     mark: "CH",
+    icon: trophyIcons.chess,
     quote: "One more move.",
   },
   {
@@ -347,6 +361,7 @@ const trophiesEs: PlayerTrophy[] = [
     detail:
       "Builds que salieron de local a una experiencia pública tocable. Deploy y entrega de producto.",
     mark: "PD",
+    icon: trophyIcons.code,
     quote: "Some trophies were never placed on a podium.",
   },
 ];
@@ -360,6 +375,7 @@ const trophiesEn: PlayerTrophy[] = [
     detail:
       "Music stays central: playing, listening, and exploring sound. Always part of the build.",
     mark: "MU",
+    icon: trophyIcons.music,
     quote: "Always part of the build.",
   },
   {
@@ -370,6 +386,7 @@ const trophiesEn: PlayerTrophy[] = [
     detail:
       "A personal training and progression arc that is still ongoing. Show up again.",
     mark: "GY",
+    icon: trophyIcons.gym,
     quote: "Keep showing up.",
   },
   {
@@ -380,6 +397,7 @@ const trophiesEn: PlayerTrophy[] = [
     detail:
       "Games, positions, and time to think the next move. Strategy and patience.",
     mark: "CH",
+    icon: trophyIcons.chess,
     quote: "One more move.",
   },
   {
@@ -390,6 +408,7 @@ const trophiesEn: PlayerTrophy[] = [
     detail:
       "Builds that left localhost for a public, touchable experience. Deploy and product delivery.",
     mark: "PD",
+    icon: trophyIcons.code,
     quote: "Some trophies were never placed on a podium.",
   },
 ];
