@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLocale } from "@/components/LocaleProvider";
 import { MissionSlot } from "@/components/MissionSlot";
+import { SpaceBattleBg } from "@/components/SpaceBattleBg";
 import { projects } from "@/content/projects";
 
 export function HomePortals() {
@@ -16,6 +17,7 @@ export function HomePortals() {
 
   return (
     <>
+      <SpaceBattleBg />
       <section className="home-mobile" aria-label="Build Catalog mobile home">
         <p className="home-mobile__eyebrow">{m.eyebrow}</p>
         <p className="home-mobile__class">{m.classLine}</p>

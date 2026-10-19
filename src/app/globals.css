@@ -1263,7 +1263,48 @@ a {
   }
 }
 
+/* —— Home space battle atmosphere (desktop 2D retro) —— */
+.home-space-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.home-space-bg__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+.home-space-bg__scrim {
+  position: absolute;
+  inset: 0;
+  /* Soft center vignette for HUD readability; leave bottom open for the chase story strip */
+  background:
+    radial-gradient(ellipse 46% 40% at 50% 36%, #070d1877 0%, transparent 64%),
+    linear-gradient(180deg, #070d18aa 0%, transparent 16%, transparent 78%, transparent 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 719px) {
+  .home-space-bg {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-space-bg {
+    display: none;
+  }
+}
+
 .home-portals {
+  position: relative;
+  z-index: 1;
   width: min(1180px, calc(100% - 2rem));
   margin-inline: auto;
   display: flex;
