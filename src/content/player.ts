@@ -711,7 +711,7 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     tagline: "Build useful things. Keep exploring.",
     identityLine: "Code is part of the build. Not the whole player.",
     homeEyebrow: "RETRO PORTFOLIO · SELECT DESTINATION",
-    homeLine: "Elige un camino. Builds para tocar, o el dossier del player.",
+    homeLine: "Conoce a Jose. ¿Qué quieres ver? Proyectos realizados, o información del jugador.",
     homeMobile: {
       eyebrow: "PLAYER SELECT · JOSÉ MAZA",
       classLine: "FULLSTACK / PRODUCT ENGINEER",
@@ -798,7 +798,7 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     tagline: "Build useful things. Keep exploring.",
     identityLine: "Code is part of the build. Not the whole player.",
     homeEyebrow: "RETRO PORTFOLIO · SELECT DESTINATION",
-    homeLine: "Pick a path. Builds you can touch, or the player dossier.",
+    homeLine: "Meet Jose. What do you want to see? Projects built, or player dossier.",
     homeMobile: {
       eyebrow: "PLAYER SELECT · JOSÉ MAZA",
       classLine: "FULLSTACK / PRODUCT ENGINEER",
