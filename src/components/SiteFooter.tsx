@@ -8,12 +8,20 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <p className="site-footer__left">
-          © {new Date().getFullYear()} José Maza · BUILD CATALOG ·{" "}
+          © {new Date().getFullYear()} José Maza · RETRO PORTFOLIO ·{" "}
           {String(live).padStart(2, "0")} LIVE
         </p>
         <Link href="/projects" className="site-footer__right">
           OPEN CATALOG →
         </Link>
+        <a
+          href="https://jgmaza.vercel.app"
+          target="_blank"
+          rel="noreferrer"
+          className="site-footer__gh"
+        >
+          jgmaza.vercel.app (pro)
+        </a>
         <a
           href="https://github.com/Jgmaza"
           target="_blank"

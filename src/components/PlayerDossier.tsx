@@ -216,6 +216,14 @@ export function PlayerDossier() {
                         {t.ctas.cv.label}
                       </a>
                       <a
+                        href={t.ctas.pro.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn-source"
+                      >
+                        {t.ctas.pro.label}
+                      </a>
+                      <a
                         href={t.ctas.github.href}
                         target="_blank"
                         rel="noreferrer"

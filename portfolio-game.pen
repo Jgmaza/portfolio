@@ -8339,27 +8339,21 @@
                                 {
                                   "type": "frame",
                                   "id": "ZFqnf",
-                                  "name": "mark",
-                                  "width": 44,
-                                  "height": 44,
-                                  "fill": "$color.elevated",
+                                  "name": "music mark",
+                                  "clip": true,
+                                  "width": 48,
+                                  "height": 48,
+                                  "fill": {
+                                    "type": "image",
+                                    "enabled": true,
+                                    "url": "public/assets/trophies/music.png",
+                                    "mode": "cover"
+                                  },
                                   "cornerRadius": 6,
-                                  "stroke": "$color.accent",
+                                  "stroke": "$color.hud",
                                   "strokeWidth": 1,
                                   "justifyContent": "center",
-                                  "alignItems": "center",
-                                  "children": [
-                                    {
-                                      "type": "text",
-                                      "id": "gWdMT",
-                                      "name": "mark t",
-                                      "fill": "$color.accent",
-                                      "content": "MU",
-                                      "fontFamily": "Chakra Petch",
-                                      "fontSize": 14,
-                                      "fontWeight": "700"
-                                    }
-                                  ]
+                                  "alignItems": "center"
                                 },
                                 {
                                   "type": "frame",
@@ -8422,27 +8416,21 @@
                                 {
                                   "type": "frame",
                                   "id": "y3g3CP",
-                                  "name": "mark",
-                                  "width": 44,
-                                  "height": 44,
-                                  "fill": "$color.elevated",
+                                  "name": "gym mark",
+                                  "clip": true,
+                                  "width": 48,
+                                  "height": 48,
+                                  "fill": {
+                                    "type": "image",
+                                    "enabled": true,
+                                    "url": "public/assets/trophies/gym.png",
+                                    "mode": "cover"
+                                  },
                                   "cornerRadius": 6,
-                                  "stroke": "$color.accent",
+                                  "stroke": "$color.hud",
                                   "strokeWidth": 1,
                                   "justifyContent": "center",
-                                  "alignItems": "center",
-                                  "children": [
-                                    {
-                                      "type": "text",
-                                      "id": "VHcSh",
-                                      "name": "mark t",
-                                      "fill": "$color.accent",
-                                      "content": "GY",
-                                      "fontFamily": "Chakra Petch",
-                                      "fontSize": 14,
-                                      "fontWeight": "700"
-                                    }
-                                  ]
+                                  "alignItems": "center"
                                 },
                                 {
                                   "type": "frame",
@@ -8514,27 +8502,21 @@
                                 {
                                   "type": "frame",
                                   "id": "R9Ozx",
-                                  "name": "mark",
-                                  "width": 44,
-                                  "height": 44,
-                                  "fill": "$color.elevated",
+                                  "name": "chess mark",
+                                  "clip": true,
+                                  "width": 48,
+                                  "height": 48,
+                                  "fill": {
+                                    "type": "image",
+                                    "enabled": true,
+                                    "url": "public/assets/trophies/chess.png",
+                                    "mode": "cover"
+                                  },
                                   "cornerRadius": 6,
-                                  "stroke": "$color.accent",
+                                  "stroke": "$color.hud",
                                   "strokeWidth": 1,
                                   "justifyContent": "center",
-                                  "alignItems": "center",
-                                  "children": [
-                                    {
-                                      "type": "text",
-                                      "id": "s7w1t4",
-                                      "name": "mark t",
-                                      "fill": "$color.accent",
-                                      "content": "CH",
-                                      "fontFamily": "Chakra Petch",
-                                      "fontSize": 14,
-                                      "fontWeight": "700"
-                                    }
-                                  ]
+                                  "alignItems": "center"
                                 },
                                 {
                                   "type": "frame",
@@ -8597,27 +8579,21 @@
                                 {
                                   "type": "frame",
                                   "id": "i6f4V",
-                                  "name": "mark",
-                                  "width": 44,
-                                  "height": 44,
-                                  "fill": "$color.elevated",
+                                  "name": "code mark",
+                                  "clip": true,
+                                  "width": 48,
+                                  "height": 48,
+                                  "fill": {
+                                    "type": "image",
+                                    "enabled": true,
+                                    "url": "public/assets/trophies/code.png",
+                                    "mode": "cover"
+                                  },
                                   "cornerRadius": 6,
-                                  "stroke": "$color.accent",
+                                  "stroke": "$color.hud",
                                   "strokeWidth": 1,
                                   "justifyContent": "center",
-                                  "alignItems": "center",
-                                  "children": [
-                                    {
-                                      "type": "text",
-                                      "id": "Nst4F",
-                                      "name": "mark t",
-                                      "fill": "$color.accent",
-                                      "content": "PD",
-                                      "fontFamily": "Chakra Petch",
-                                      "fontSize": 14,
-                                      "fontWeight": "700"
-                                    }
-                                  ]
+                                  "alignItems": "center"
                                 },
                                 {
                                   "type": "frame",

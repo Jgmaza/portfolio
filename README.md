@@ -1,6 +1,9 @@
-# José Maza — Portfolio
+# José Maza — Retro Portfolio
 
-Personal portfolio: fullstack product engineer.
+Experiencia interactiva / game (Build Catalog HUD).
+
+**Portafolio profesional (CV):** [jgmaza.vercel.app](https://jgmaza.vercel.app)  
+**Retro (este repo):** [portfolio-nine-sand-57.vercel.app](https://portfolio-nine-sand-57.vercel.app)
 
 ## Stack
 
@@ -18,4 +21,5 @@ npm run dev
 
 ## Content
 
-Project catalog lives in `src/content/projects.ts`.
+- Catálogo: `src/content/projects.ts`
+- Dossier / clears: `src/content/player.ts` (orden laboral alineado con portfolio-pro)

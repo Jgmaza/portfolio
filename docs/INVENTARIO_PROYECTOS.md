@@ -1,9 +1,24 @@
 # Inventario y clasificación de proyectos
 
-Documento de trabajo para priorizar demos, sanitización, lore-only y migración a un **Supabase unificado** (auth compartido). Revisar y responder las preguntas del final antes de implementar.
+Documento de trabajo para priorizar demos, sanitización, lore-only y migración a **jgmaza-hub** (Supabase unificado, auth compartido).
 
-Última actualización: 2026-10-07  
-Fuente: workspace `Propios/`, `portfolio/src/content/projects.ts`, Vercel (`jose-mazas-projects`), Supabase Management API.
+Última actualización: 2026-10-07 (respuestas del owner)  
+Fuente: workspace `Propios/`, otros roots (`Guarapo/`, `SofinSaS/`, `Freelance/`), portafolio, Vercel, Supabase.
+
+---
+
+## Decisiones cerradas (2026-10-07)
+
+| # | Pregunta | Respuesta |
+|---|----------|-----------|
+| 1 | Guarapo / Cata | **Sin acceso.** Solo **LORE** en dossier. No sanitizar ni clonar. |
+| 2 | Hermes | **Sí demo**, pero hay que reconstruir/completar **backend de validación** y flujos. |
+| 3a | Edunova | **Recuperar producto completo** (back + front). Front: buscar / pedir acceso a org `appEdunova`. |
+| 3b | pruebaDani | Es **VerificaCol** (carpeta mal nombrada). Ya está en catálogo como verificacol. |
+| 4 | Hub Supabase | Crear proyecto nuevo **`jgmaza-hub`**, migrar Mussistant, apuntar app a hub, **pausar** proyecto viejo. |
+| 5a | Splitia | **Terminar producto** (no solo migrar): core tipo Splitwise + bot gastos diarios (agente correos) + arreglar errores lógicos de DB. |
+| 5b | MediAgent | **Principal en portafolio** (mejor hackathon). Stack caro (Vapi/Deepgram/ElevenLabs). Definir versión “mía” sin depender de todo el stack pago — ver sección MediAgent. |
+| PD | Empresas faltantes | Añadir clears: **Infinity Tech**, **Clazz Dev**, **iCluster**. |
 
 ---
 
@@ -11,146 +26,189 @@ Fuente: workspace `Propios/`, `portfolio/src/content/projects.ts`, Vercel (`jose
 
 | Código | Significado |
 |--------|-------------|
-| **PROPIO** | Tuyos, sin NDA de empresa |
-| **EMPRESA** | Trabajo / cliente (código o datos sensibles) |
-| **HACK** | Hackathon / equipo |
-| **DEMO_OK** | Se puede mostrar en vivo (ya o fácil) |
-| **SANITIZE** | Clonar + limpiar datos/nombres/IP → demo pública |
-| **LORE** | Solo narración en portafolio (sin repo/demo real) |
-| **DB_UNIFY** | Candidato a schema en el Supabase unificado (auth compartido) |
+| **PROPIO** | Tuyos |
+| **EMPRESA** | Trabajo / cliente |
+| **HACK** | Hackathon |
+| **DEMO_OK** | Demo viva o casi |
+| **SANITIZE** | Clonar + limpiar → demo |
+| **LORE** | Solo narración |
+| **BUILD** | Hay que terminar / reconstruir |
+| **DB_UNIFY** | Schema en `jgmaza-hub` |
 
-### Estado Supabase (al inventariar)
+### Estado Supabase
 
 | Proyecto | Ref | Status |
 |----------|-----|--------|
-| Mussistant | `crejfguldfbjwztmctwt` | ACTIVE_HEALTHY |
-| SplitIA | `bzdbgmzxxgeubguhbdjs` | INACTIVE |
-| turnos-agent | `exmfigfxzqpibrvensak` | INACTIVE |
-| mazamendoza123@gmail.com's Project | `subyeogtbicmhkkmkmbz` | INACTIVE |
+| **jgmaza-hub** | `pnzkrbdlrtukthyrvdri` | **ACTIVE** — Mussistant ya vive aquí (migrado 2026-10-07) |
+| Mussistant (legacy) | `crejfguldfbjwztmctwt` | **PAUSED** tras migración |
+| SplitIA | `bzdbgmzxxgeubguhbdjs` | INACTIVE → consolidar en hub cuando esté el core |
+| turnos-agent | `exmfigfxzqpibrvensak` | INACTIVE → schema demo en hub (sin voz paga) |
+| legacy personal | `subyeogtbicmhkkmkmbz` | INACTIVE |
+
+> Free tier: ~2 proyectos activos. Hoy: hub + Mussistant. Tras migrar Mussistant, pausar el legacy.
 
 ---
 
-## A. Ya en portafolio (`projects.ts`)
+## A. Catálogo portafolio — estado actualizado
 
-| Proyecto | Origen | Qué hacer | Vercel | Supabase | Prioridad sugerida |
-|----------|--------|-----------|--------|----------|--------------------|
-| **Mussistant** | PROPIO | DEMO_OK + ya en DB (referencia del hub) | Live (`mussistant.vercel.app`) | Active | — (hecho) |
-| **Splitia** | PROPIO | DEMO_OK + **DB_UNIFY** (revive + migra schema) | Live (`splitia-xi.vercel.app`) | Inactive | **P0** |
-| **Stakeholder Matrix** | EMPRESA (sector público/energía) | DEMO_OK sanitizado (MSW, ya) | Live | No DB real | P1 — mantener |
-| **VerificaCol** | PROPIO / AI | DEMO_OK | Live | ¿sin SB propio? | P1 |
-| **Rhythm Elegance** | PROPIO | DEMO_OK (landing, sin auth) | Live | No | P3 |
-| **BioAlert+** | HACK | DEMO_OK parcial / SANITIZE demos | No en tu Vercel | No | P2 |
-| **MediAgent** (`turnos-agent`) | HACK | SANITIZE + **DB_UNIFY** + Vercel | No | Inactive | **P0** |
-| **Hermes** | EMPRESA (freelance) | DEMO_OK limitado / LORE ampliado | Live (viejo) | No | P2 — permiso cliente |
-| **MIOBOX Bridge** | EMPRESA (SofinSaS) | **LORE** definitivo | — | — | — |
-| **Interledger Agent** | PROPIO / exploratorio | SANITIZE + demo o LORE corto | No | Refs locales | P2 |
-
----
-
-## B. En disco, poco o nada en portafolio
-
-| Carpeta | Origen probable | Clasificación | Notas | Prioridad |
-|---------|-----------------|---------------|-------|-----------|
-| **portfolio** | PROPIO | DEMO_OK | El hub de presentación; no va a SB unificado como “app de producto” | Mantener |
-| **LifeOS** | PROPIO | LORE / docs | Docs + prompts, no app shippable | P3 |
-| **EdunovaBack** | EMPRESA? / propio educativo | LORE o SANITIZE backend | FastAPI; revisar NDA | P2 |
-| **API-Agent-Marketplace-Interledger** | PROPIO | SANITIZE + posible demo | Relacionado a Interledger | P2 |
-| **Interledger/openpayment-master** | Upstream / estudio | LORE / no publicar como tuyo | Código ajeno | — |
-| **spotify-mcp** | PROPIO | LORE técnico / tool | MCP, no landing de producto | P3 |
-| **vault-accounts** | PROPIO? | LORE / privado | Credenciales — **no** portafolio | — |
-| **pdf_ages_extractor** | PROPIO / util | LORE o mini demo | Python util | P3 |
-| **pruebaDani** | Prueba / freelance? | Revisar NDA → LORE o SANITIZE | En Vercel | P2 |
-| **Prueba tecnica Naowee** | Prueba técnica | LORE / no priorizar | PDF + repo | — |
-| **Taller AWS CUC** | Educativo | LORE | Keys en carpeta — no publicar | — |
+| Proyecto | Origen | Acción | Prioridad |
+|----------|--------|--------|-----------|
+| **Mussistant** | PROPIO | DEMO_OK + migrar a **jgmaza-hub** | **P0** (hub) |
+| **Splitia** | PROPIO | **BUILD** core Splitwise + agente correos + DB_UNIFY | **P0** (producto) |
+| **MediAgent** | HACK | **DEMO_OK lore + demo degradada** (ver plan) | **P0** (vitrina) |
+| **Edunova** | PROPIO/startup | **BUILD** producto completo back+front | **P0/P1** |
+| **VerificaCol** (`pruebaDani/`) | PROPIO | DEMO_OK — ya es este producto | P1 |
+| **Stakeholder Matrix** | EMPRESA (sector público) | DEMO_OK sanitizado | P1 |
+| **Hermes** | EMPRESA freelance | **BUILD** demo + API validación | P1 |
+| **Rhythm Elegance** | PROPIO | DEMO_OK estático | P3 |
+| **BioAlert+** | HACK | SANITIZE demos / lore | P2 |
+| **MIOBOX** | EMPRESA SofinSaS | **LORE** | — |
+| **Interledger Agent** | PROPIO | SANITIZE o lore | P2 |
+| **Guarapo / Cata** | EMPRESA | **LORE only** (sin acceso) | — |
 
 ---
 
-## C. Empresa (clears del dossier) → destino en catálogo
+## B. Empresas / clears del dossier
 
-| Empresa / clear | Proyecto en catálogo | Destino |
-|-----------------|----------------------|---------|
-| Sector público / energía | Stakeholder Matrix | Ya sanitizado (DEMO_OK) |
-| SofinSaS / MIOBOX | MIOBOX Bridge | **LORE only** |
-| Guarapo / Cata | *(no hay demo pública aún)* | **SANITIZE** si hay permiso → clonar tools internas; si no → LORE |
-| Hermes (freelance) | Hermes | Demo con disclaimer **o** LORE más fuerte |
-
----
-
-## D. Candidatos a la base unificada (auth único)
-
-Orden propuesto de migración a un solo proyecto Supabase (schemas tipo `mussistant`, `splitia`, `mediagent`, …):
-
-1. **Mussistant** — ya vive ahí (o será el seed del hub)
-2. **Splitia** — revive + migra tablas
-3. **MediAgent / turnos-agent** — revive + sanitiza + Vercel
-4. **VerificaCol** — si usa auth/persistencia
-5. **Guarapo/Cata clone** — solo si sanitizas algo con auth
-
-**No unificar:** Rhythm (estático), Stakeholder (mocks), portfolio, vault, talleres, código con NDA sin sanitizar.
+| Empresa | Destino en catálogo / dossier | Notas |
+|---------|-------------------------------|-------|
+| Sector público / energía | Stakeholder Matrix (demo) | Ya sanitizado |
+| SofinSaS / MIOBOX | MIOBOX Bridge | LORE |
+| Guarapo / Cata | Clear lore | Sin acceso a código |
+| Hermes (freelance) | Hermes demo | Completar backend |
+| **Infinity Tech** | Clear lore (pendiente redactar) | Añadir a `player.ts` |
+| **Clazz Dev** | Clear lore (pendiente redactar) | Añadir a `player.ts` |
+| **iCluster** | Clear lore (pendiente redactar) | Añadir a `player.ts` |
 
 ---
 
-## E. Prioridad de trabajo (propuesta)
+## C. Plan `jgmaza-hub` (Supabase unificado)
 
-### P0 — hub + demos que usen auth compartido
+### Objetivo
 
-1. Diseñar proyecto Supabase “hub” (schemas + RLS + auth)
-2. Splitia → unificar + Vercel OK
-3. MediAgent → sanitize + unificar + deploy
+Un solo proyecto Supabase: **un Auth**, schemas por app, RLS por `auth.uid()`, apps en Vercel apuntando al mismo URL/keys.
 
-### P1 — portafolio fuerte sin tocar DB
+### Pasos técnicos
 
-4. VerificaCol estable
-5. Stakeholder Matrix (ya OK)
-6. Alinear disclaimers / links en `projects.ts`
+1. Crear proyecto **`jgmaza-hub`** (región cercana, p.ej. `us-east-1` o `us-west-2`).
+2. Migrar schema + datos de Mussistant (`profiles`, `spotify_access_requests`, RPCs, storage si aplica) → schema `mussistant` o `public` con prefijos claros.
+3. Actualizar Mussistant (`.env` local + Vercel env + MCP `project_ref`) al hub.
+4. Verificar login, confirm email, Spotify allowlist flow.
+5. **Pausar** `crejfguldfbjwztmctwt` (Mussistant viejo).
+6. Después: schemas `splitia`, `mediagent_demo`, `edunova`, etc.
 
-### P2 — sanitizar o lorear con criterio
+### Convención sugerida
 
-7. BioAlert demos
-8. Interledger / Agent Marketplace
-9. Hermes (permiso)
-10. EdunovaBack / pruebaDani (decidir NDA)
-
-### P3 — baja
-
-Rhythm polish, LifeOS docs, spotify-mcp, pdf extractor
-
-### Fuera
-
-vault-accounts, taller AWS keys, openpayment upstream, MIOBOX código real
+```
+auth.users          ← compartido
+public / mussistant_*   ← ya migrado
+splitia.*               ← cuando el core exista
+mediagent.*             ← seed demo sin Vapi
+edunova.*               ← al reconstruir
+```
 
 ---
 
-## F. Vercel (referencia)
+## D. Splitia — qué falta (no es “solo migrar”)
 
-Proyectos relevantes bajo `jose-mazas-projects`:
+Propuesta de valor: botón / flujo de **gastos diarios** (agente que revisa correos).
 
-| Project Name | Production URL |
-|--------------|----------------|
-| mussistant | https://mussistant.vercel.app |
-| portfolio | https://portfolio-nine-sand-57.vercel.app |
-| verificacol | https://verificacol.vercel.app |
-| splitia | https://splitia-xi.vercel.app |
-| rhythm-elegance | https://rhythm-elegance.vercel.app |
-| stakeholder-matrix-demo | https://stakeholder-matrix-demo.vercel.app |
-| hermes | https://hermes-jose-mazas-projects.vercel.app |
+Mínimo para que valga la pena el hub:
 
----
+1. **Core tipo Splitwise**
+   - Grupos, miembros, gastos, splits (igual / porcentajes / montos)
+   - Balances y “quién le debe a quién” (simplificación de deudas)
+   - Corregir errores lógicos actuales de DB en gastos compartidos
+2. **Gastos diarios + agente de correo**
+   - Ingesta desde email (o simulación en demo)
+   - Clasificación → gasto → asignación a grupo/persona
+3. Auth vía **jgmaza-hub**
 
-## G. Preguntas abiertas (responder antes de implementar)
-
-1. **Guarapo/Cata**: ¿hay algo clonable a demo o solo lore?
-2. **Hermes**: ¿podemos dejar la demo o hay que bajarla a lore?
-3. **EdunovaBack / pruebaDani**: ¿propios o cliente?
-4. **Hub Supabase**: ¿creamos un proyecto nuevo `jgmaza-hub` o usamos el de Mussistant como base?
-5. ¿Confirmas **P0 = Splitia + MediAgent** después del hub, o prefieres otra pareja?
-
-Cuando estén respondidas, el siguiente paso es el plan técnico del schema unificado + checklist de migración proyecto por proyecto.
+Orden: arreglar **core Splitwise** → luego agente correos → luego unificar DB.
 
 ---
 
-## H. Relacionado
+## E. MediAgent — qué hacer sin quebrarse con APIs pagas
 
-- Mussistant — acceso público Spotify: `../Mussistant/docs/SPOTIFY_ACCESO_PUBLICO.md` (ruta relativa desde workspace Propios)
-- Catálogo en código: `src/content/projects.ts`
-- Dossier / clears laborales: `src/content/player.ts`
+**Realidad:** el producto “completo” (Vapi + Twilio + Deepgram + ElevenLabs Valentina + GPT-4o) es caro para demo siempre-on.
+
+**Sí conviene:** mantenerlo como **pieza principal del catálogo** (pitch + scope + UI + story).
+
+### Opciones (recomendada = híbrido)
+
+| Opción | Qué muestra | Costo | Esfuerzo |
+|--------|-------------|-------|----------|
+| **A. Lore + UI + seed** | Landing + dashboard + agenda con datos ficticios; sin llamadas reales | Bajo | Bajo |
+| **B. Demo voz “press to play”** | Un audio/video pregrabado o Web Speech API mock en español | Bajo | Medio |
+| **C. Voice on-demand con credits** | Vapi solo en demos controladas (warmup script); apagado el resto | Medio (créditos) | Medio |
+| **D. Rebuild open-source** | Whisper local / OpenAI solo + TTS barato; pierde acento CO | Medio | Alto |
+
+**Decisión (2026-10-07):** **A + B** como versión pública (UI + seed + mock/video). **C** opcional solo para demos en vivo. Portafolio: legendary + disclaimer “demo operativa sin telefonía 24/7”.
+
+No mezclar MediAgent con Splitia (productos distintos).
+
+---
+
+## F. Edunova — recuperación
+
+| Pieza | Estado |
+|-------|--------|
+| Backend | Local: `Propios/EdunovaBack` · remote `appEdunova/EdunovaBack` |
+| Frontend | **No encontrado** en disco ni en repos de `Jgmaza`. Org `appEdunova` solo lista el back desde esta cuenta. |
+
+**Acción owner:** pedirlo al compañero (confirmado 2026-10-07). Sin el front no arrancamos UI; el back local sigue en `EdunovaBack`.
+
+---
+
+## G. Prioridad de trabajo revisada
+
+### P0
+
+1. Crear **jgmaza-hub** + migrar Mussistant + pausar SB viejo  
+2. **Splitia** — core Splitwise + fix DB (luego agente correos)  
+3. **MediAgent** — empaquetar demo A+B + ficha portfolio fuerte  
+4. **Edunova** — ubicar front + plan reconstrucción producto  
+
+### P1
+
+5. Hermes — API validación + demo estable  
+6. VerificaCol — mantener / pulir  
+7. Stakeholder Matrix — mantener  
+8. Redactar clears: Infinity Tech, Clazz Dev, iCluster en `player.ts`  
+
+### P2
+
+BioAlert, Interledger, Rhythm polish  
+
+### Fuera / LORE only
+
+Guarapo/Cata código, MIOBOX código, vault-accounts, taller AWS keys  
+
+---
+
+## H. Preguntas — estado
+
+| # | Tema | Estado |
+|---|------|--------|
+| 1 | Edunova front | Owner lo pedirá a un compañero. Bloquea reconstrucción UI hasta tener repo. |
+| 2 | Infinity Tech / Clazz Dev / iCluster | Confirmado: redactar clears (pendiente texto del owner). |
+| 3 | MediAgent demo | **Confirmado: híbrido A+B** (UI + seed + mock/video; sin voz paga 24/7). |
+| 4 | Hub | Creado: `pnzkrbdlrtukthyrvdri` · `us-east-1` · Maza projects. |
+
+### Hecho (2026-10-07)
+
+1. Migración Mussistant → `jgmaza-hub` (users, profiles, allowlist, env, deploy; legacy pausado).  
+2. **Hub multi-app:** `profiles.apps` + `gmail_access_token`; schemas `splitia` + `mediagent` + views públicas; datos Splitia remapeados a Jose; seed MediAgent; env Splitia/MediAgent → hub; SplitIA SB pausado.  
+   Detalle: [`JGMAZA_HUB.md`](./JGMAZA_HUB.md).
+
+### Próximo paso técnico sugerido
+
+Terminar Splitia core (Auth real, quitar DEMO anon) / empacar MediAgent A+B en Vercel / recibir Edunova front.
+
+---
+
+## I. Relacionado
+
+- Catálogo: `src/content/projects.ts`  
+- Dossier: `src/content/player.ts`  
+- Spotify público: `Mussistant/docs/SPOTIFY_ACCESO_PUBLICO.md`  

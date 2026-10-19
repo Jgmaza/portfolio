@@ -149,7 +149,7 @@ export const projects: Project[] = [
     title: "BioAlert+",
     tagline: "WhatsApp agent sobre data de cafeterías escolares",
     summary:
-      "Hackathon Caribe Tech: agente serverless que activa transacciones de cafetería en alertas, reportes e insights para padres y operadores.",
+      "Hackathon Caribe Arena: agente serverless que convierte transacciones de cafetería en alertas, reportes e insights para padres y operadores. Participación de equipo — sin premio.",
     category: "hackathon",
     featured: true,
     year: "2026",
@@ -170,7 +170,7 @@ export const projects: Project[] = [
       "Mocks de POS y checkout para demo",
     ],
     outcome:
-      "Demos del hackathon (bucket S3 ya no público). Lore + repo del equipo.",
+      "Participación en Caribe Arena. Demos S3 ya no públicas. Lore + repo del equipo.",
     repoUrl: "https://github.com/miguelnietoa/bioalert-caribetech-hackathon",
     accent: "#c1121f",
     preview: "/previews/bioalert.png",
@@ -204,7 +204,7 @@ export const projects: Project[] = [
     title: "MediAgent",
     tagline: "Voice agent para dispensarios de medicamentos",
     summary:
-      "Hackathon Barranqui-IA: agente de voz que conecta inventario, fórmula y paciente para reducir esperas en entrega de medicamentos.",
+      "Hackathon BarranquillIA 2026: agente de voz que conecta inventario, fórmula y paciente para reducir esperas en entrega de medicamentos. Participación de equipo — sin premio.",
     category: "hackathon",
     featured: false,
     year: "2026",
@@ -216,10 +216,60 @@ export const projects: Project[] = [
       "Pipeline STT → LLM → TTS con voz colombiana",
       "Auth ligera por últimos dígitos de cédula (demo)",
     ],
-    outcome: "Pitch + scope consolidado y app de demo del hackathon.",
+    outcome:
+      "Participación en BarranquillIA 2026. Pitch + scope consolidado; demo degradada en curso.",
     repoUrl: "https://github.com/hackaton-barranquiia/turnos-agent",
     accent: "#2a9d8f",
-    rarity: "rare",
+    rarity: "legendary",
+  },
+  {
+    slug: "hold-the-box",
+    title: "Hold the Box",
+    tagline: "2.º general · Mejor diseño — Game Jam 2026",
+    summary:
+      "Game Jam 2026 (48h): coop local 2P. Dos jugadores, una caja — no botar, no mojar, no soltar. PlayCanvas + Vite. Demo en GitHub Pages.",
+    category: "hackathon",
+    featured: true,
+    year: "2026",
+    role: "Lead + deploy",
+    stack: ["PlayCanvas", "Vite", "TypeScript", "GitHub Pages"],
+    problem:
+      "Volver a la emoción de jugar de a dos en el mismo PC cuando cada uno hoy juega cosas distintas.",
+    decisions: [
+      "Coop local 2P con una sola cámara y una caja compartida",
+      "Scope jam-friendly: campaña corta + ranking arcade",
+      "Deploy público en GitHub Pages para jueceo y demos",
+    ],
+    outcome:
+      "2.º lugar general y Mejor diseño. Demo: https://jgmaza.github.io/hold-the-box/",
+    demoUrl: "https://jgmaza.github.io/hold-the-box/",
+    repoUrl: "https://github.com/Jgmaza/hold-the-box",
+    preview: "/previews/hold-the-box.png",
+    accent: "#e9c46a",
+    rarity: "legendary",
+  },
+  {
+    slug: "edunova",
+    title: "EduNova",
+    tagline: "Premio ShadAI · 4.º general — en reconstrucción",
+    summary:
+      "BarranquillIA 2025: premio a mejor proyecto usando ShadAI (tecnología USA) y 4.º lugar en la clasificación general. Hoy la prioridad es recuperar el producto completo (back + front).",
+    category: "hackathon",
+    featured: true,
+    year: "2025 → rebuild",
+    role: "Fullstack — hackathon award + product recovery",
+    stack: ["ShadAI", "Fullstack", "Product rebuild"],
+    problem:
+      "El producto educativo premiado necesita volver a pie con stack completo recuperado.",
+    decisions: [
+      "Usar ShadAI como pieza central del producto en competencia",
+      "Priorizar ubicar front + reconstruir sobre el back existente",
+      "Tratar el rebuild como producto, no solo como recuerdo de hackathon",
+    ],
+    outcome:
+      "BarranquillIA 2025: premio mejor proyecto con ShadAI + 4.º lugar general. Build en curso — backend local; front pendiente.",
+    accent: "#ffb020",
+    rarity: "legendary",
   },
   {
     slug: "hermes",
@@ -269,25 +319,26 @@ export const projects: Project[] = [
     rarity: "common",
   },
   {
-    slug: "interledger-agent",
-    title: "Agent Marketplace (Interledger)",
-    tagline: "API e ideas de marketplace para agentes de pago",
+    slug: "ledger-one",
+    title: "Ledger One",
+    tagline: "1er puesto — Interledger Hackathon",
     summary:
-      "Exploración fullstack alrededor de Open Payments / Interledger: APIs TypeScript y prototipos de marketplace de agentes.",
-    category: "ai-agents",
-    featured: false,
+      "Hackathon Interledger: primer puesto con Ledger One. Proyecto de equipo alrededor de open payments / Interledger — pitch + camino técnico en competencia.",
+    category: "hackathon",
+    featured: true,
     year: "2026",
-    role: "Fullstack explorer",
-    stack: ["TypeScript", "Nest/Node", "Open Payments"],
+    role: "Fullstack / product en equipo",
+    stack: ["TypeScript", "Nest/Node", "Open Payments", "Interledger"],
     problem:
-      "Cómo descubrir y orquestar agentes de pago en un ecosistema interoperable.",
+      "Cómo construir un producto creíble de pagos abiertos dentro de las reglas y el tiempo de un hackathon.",
     decisions: [
-      "Prototipo de API bridge",
-      "Documentación de flujos de pago abiertos",
+      "Scope de producto + demo path verificable en competencia",
+      "Base técnica reutilizable para demos post-evento",
     ],
-    outcome: "Base técnica para demos y conversaciones de producto.",
+    outcome:
+      "1er puesto en Interledger Hackathon. Caso documentado; build de follow-up en curso.",
     accent: "#6a4c93",
-    rarity: "common",
+    rarity: "legendary",
   },
 ];
 
