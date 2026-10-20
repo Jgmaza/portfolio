@@ -281,7 +281,7 @@ export const projects: Project[] = [
     featured: false,
     year: "2025",
     role: "Frontend freelance",
-    stack: ["React", "Vite", "TanStack Table", "Redux", "Vercel"],
+    stack: ["React", "Vite", "TanStack", "Redux", "Vercel"],
     problem: "Equipos necesitan una superficie operativa clara para conversaciones y seguimiento.",
     decisions: [
       "UI densa con tablas y formularios tipados",

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AvatarPortrait } from "@/components/AvatarPortrait";
+import { SkillsExpandModal } from "@/components/SkillsExpandModal";
 import { TypewriterLore } from "@/components/TypewriterLore";
 import { useLocale } from "@/components/LocaleProvider";
 import { playerSkills } from "@/content/player";
@@ -18,6 +19,7 @@ export function PlayerDossier() {
   const { t } = useLocale();
   const [act, setAct] = useState<Act>("origin");
   const [loreReady, setLoreReady] = useState(false);
+  const [skillsOpen, setSkillsOpen] = useState(false);
   const clearListRef = useRef<HTMLDivElement>(null);
 
   const onLoreDone = useCallback(() => setLoreReady(true), []);
@@ -140,11 +142,21 @@ export function PlayerDossier() {
             </div>
 
             <div className="player-sheet__skills">
-              <p className="player-sheet__skills-title">{t.loadoutTitle}</p>
-              {playerSkills.map((skill, i) => (
+              <div className="player-sheet__skills-head">
+                <p className="player-sheet__skills-title">{t.loadoutTitle}</p>
+                <button
+                  type="button"
+                  className="skills-expand-btn"
+                  onClick={() => setSkillsOpen(true)}
+                >
+                  {t.loadoutExpand}
+                  <span aria-hidden>→</span>
+                </button>
+              </div>
+              {playerSkills.slice(0, 4).map((skill, i) => (
                 <div
                   key={skill.label}
-                  className="skill-bar"
+                  className="skill-bar skill-bar--rail"
                   style={{ ["--skill-i" as string]: i }}
                 >
                   <div className="skill-bar__top">
@@ -348,6 +360,11 @@ export function PlayerDossier() {
       <Link href="/" className="player-sheet__home">
         ← HOME
       </Link>
+
+      <SkillsExpandModal
+        open={skillsOpen}
+        onClose={() => setSkillsOpen(false)}
+      />
     </section>
   );
 }

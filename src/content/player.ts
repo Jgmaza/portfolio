@@ -80,6 +80,17 @@ type PlayerCopy = {
   dossierStatus: string;
   dossierOnline: string;
   loadoutTitle: string;
+  loadoutExpand: string;
+  loadoutExpandEyebrow: string;
+  loadoutExpandTitle: string;
+  loadoutExpandIntro: string;
+  loadoutClose: string;
+  loadoutCount: string;
+  loadoutEstimateNote: string;
+  loadoutProject: string;
+  loadoutProjects: string;
+  loadoutRepo: string;
+  loadoutRepos: string;
   actEyebrows: { origin: string; clears: string; trophies: string };
   originEyebrow: string;
   originQuote: string;
@@ -247,7 +258,7 @@ const clearsEs: PlayerClear[] = [
     quest: "Deploying the Operational Interface",
     hudLabel: "CLEAR // FREELANCE · Dic 2024–Ene 2025",
     copy: "Freelance (~2 meses) antes de Clazz, con el mismo círculo: interfaz operativa (React, tablas, flujos) llevada a deploy real en Vercel. Puente freelance → incorporación a la startup. Detalle de negocio del cliente omitido.",
-    loadout: "React · TanStack Table · Redux · Vercel",
+    loadout: "React · TanStack · Redux · Vercel",
     unlocks: ["Freelance ship", "Dense UI", "Client delivery"],
     accent: "#457b9d",
     status: "CLEARED",
@@ -450,7 +461,7 @@ const clearsEn: PlayerClear[] = [
     quest: "Deploying the Operational Interface",
     hudLabel: "CLEAR // FREELANCE · Dec 2024–Jan 2025",
     copy: "Freelance (~2 months) before Clazz, with the same circle: operational interface (React, tables, flows) shipped to a real Vercel deploy. Freelance bridge into the startup. Client business details omitted.",
-    loadout: "React · TanStack Table · Redux · Vercel",
+    loadout: "React · TanStack · Redux · Vercel",
     unlocks: ["Freelance ship", "Dense UI", "Client delivery"],
     accent: "#457b9d",
     status: "CLEARED",
@@ -717,6 +728,18 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     dossierStatus: "PLAYER DOSSIER",
     dossierOnline: "ONLINE",
     loadoutTitle: "LOADOUT",
+    loadoutExpand: "EXPANDIR",
+    loadoutExpandEyebrow: "LOADOUT // FULL SCAN",
+    loadoutExpandTitle: "Stack completo",
+    loadoutExpandIntro:
+      "Todas las skills detectadas en misiones del catálogo, con estimado de exposición y proyectos vinculados.",
+    loadoutClose: "CERRAR",
+    loadoutCount: "SKILLS",
+    loadoutEstimateNote: "Estimado por overlap de misiones · no es un % de dominio",
+    loadoutProject: "misión",
+    loadoutProjects: "misiones",
+    loadoutRepo: "repo",
+    loadoutRepos: "repos",
     actEyebrows: {
       origin: "ACT 01 · ORIGINS",
       clears: "ACT 02 · CLEARS",
@@ -790,6 +813,18 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     dossierStatus: "PLAYER DOSSIER",
     dossierOnline: "ONLINE",
     loadoutTitle: "LOADOUT",
+    loadoutExpand: "EXPAND",
+    loadoutExpandEyebrow: "LOADOUT // FULL SCAN",
+    loadoutExpandTitle: "Full stack map",
+    loadoutExpandIntro:
+      "Every skill detected across catalog missions, with estimated exposure and linked projects.",
+    loadoutClose: "CLOSE",
+    loadoutCount: "SKILLS",
+    loadoutEstimateNote: "Estimated from mission overlap · not a mastery %",
+    loadoutProject: "mission",
+    loadoutProjects: "missions",
+    loadoutRepo: "repo",
+    loadoutRepos: "repos",
     actEyebrows: {
       origin: "ACT 01 · ORIGINS",
       clears: "ACT 02 · CLEARS",
