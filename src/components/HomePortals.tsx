@@ -2,101 +2,24 @@
 
 import Link from "next/link";
 import { useLocale } from "@/components/LocaleProvider";
-import { MissionSlot } from "@/components/MissionSlot";
 import { SpaceBattleBg } from "@/components/SpaceBattleBg";
 import { projects } from "@/content/projects";
 
 export function HomePortals() {
   const { t, openSettings } = useLocale();
-  const unlockedCount = projects.filter((p) => p.demoUrl || p.preview).length;
   const liveCount = projects.filter((p) => p.demoUrl).length;
   const previews = projects.filter((p) => p.demoUrl).slice(0, 3);
-  const missions = projects.filter((p) => p.demoUrl).slice(0, 3);
   const { credential, agentId, clearance, status, level, initials } = t.avatar;
-  const m = t.homeMobile;
 
   return (
     <>
       <SpaceBattleBg />
-      <section className="home-mobile" aria-label="Build Catalog mobile home">
-        <p className="home-mobile__eyebrow">{m.eyebrow}</p>
-        <p className="home-mobile__class">{m.classLine}</p>
-        <div className="home-mobile__title-row">
-          <h1 className="home-mobile__title">{m.title}</h1>
-          <span className="home-mobile__cursor" aria-hidden />
-        </div>
-        <p className="home-mobile__sub">{m.sub}</p>
-
-        <div className="home-mobile__ctas">
-          <Link href={t.ctas.catalog.href} className="btn-start home-mobile__cta">
-            {m.openCatalog}
-          </Link>
-          <Link
-            href={t.ctas.player.href}
-            className="btn-source home-mobile__cta"
-          >
-            {t.playerPortal.cta}
-          </Link>
-          <a
-            href={t.ctas.github.href}
-            target="_blank"
-            rel="noreferrer"
-            className="home-mobile__source"
-          >
-            {m.source} →
-          </a>
-        </div>
-
-        <div className="home-mobile__stats">
-          <div className="home-mobile__stat">
-            <span className="home-mobile__stat-label">{m.unlocked}</span>
-            <span className="home-mobile__stat-value">
-              {String(unlockedCount).padStart(2, "0")}
-            </span>
-          </div>
-          <div className="home-mobile__stat">
-            <span className="home-mobile__stat-label">{m.liveDemos}</span>
-            <span className="home-mobile__stat-value">
-              {String(liveCount).padStart(2, "0")}
-            </span>
-          </div>
-          <div className="home-mobile__stat">
-            <span className="home-mobile__stat-label">{m.classLabel}</span>
-            <span className="home-mobile__stat-value home-mobile__stat-value--sm">
-              {m.classValue}
-            </span>
-          </div>
-        </div>
-
-        <div className="home-mobile__board">
-          <div className="home-mobile__board-head">
-            <span className="home-mobile__board-title">{m.missionBoard}</span>
-            <span className="home-mobile__board-online">{m.online}</span>
-          </div>
-          <div className="home-mobile__slots">
-            {missions.map((p, i) => (
-              <MissionSlot
-                key={p.slug}
-                index={i + 1}
-                title={p.title}
-                tag={p.tagline}
-                accent={p.accent}
-                href={`/projects/${p.slug}`}
-                live={Boolean(p.demoUrl)}
-              />
-            ))}
-          </div>
-        </div>
-
-        <Link href={t.ctas.catalog.href} className="home-mobile__featured">
-          {m.featuredDrops}
-        </Link>
-      </section>
-
-      <section className="home-portals">
+      <section className="home-portals" aria-label="Build Catalog home">
         <div className="home-portals__intro">
-          <p className="hud-label m-0">{t.homeEyebrow}</p>
-          <h1 className="home-portals__name">{t.name}</h1>
+          <div className="home-portals__title-plate">
+            <p className="hud-label m-0">{t.homeEyebrow}</p>
+            <h1 className="home-portals__name">{t.name}</h1>
+          </div>
           <p className="home-portals__line">{t.homeLine}</p>
         </div>
 

@@ -1,0 +1,43 @@
+---
+description: Cómo trabajar en el portafolio retro (CLI > MCP, chase 2D, PlayCanvas refs, deploy)
+alwaysApply: true
+---
+
+# Portfolio retro — agent playbook
+
+## Repo
+- Path: `portfolio` (Next.js App Router, HUD arcade).
+- Prod: push a `main` → GitHub Actions `.github/workflows/deploy.yml` → Vercel.
+- URL prod típica: `https://portfolio-nine-sand-57.vercel.app`
+- Dev: puerto libre si 3000 está ocupado (`npm run dev -- -p 3001`).
+
+## CLI > MCP (obligatorio)
+1. Preferir herramientas locales: `git`, `gh`, `npx vercel`, `npm`, Playwright.
+2. Si un MCP está en `needsAuth`: avisar en una línea y continuar con CLI. No bloquearse.
+3. No asumir MCP de PlayCanvas (no está en esta setup). Fallback:
+   - Código real: `../no-sueltes-la-caja-gamejam-kit` (Hold the Box, PlayCanvas 2.x).
+   - Docs: https://developer.playcanvas.com/
+   - API local: `import * as pc from 'playcanvas'` (mismo major que el jam si se usa).
+4. MCPs útiles si `ready`: Supabase, Kinocut (video). Vercel MCP suele necesitar auth → CLI.
+
+## Home atmosphere (persecución)
+- Archivos: `src/lib/space-battle.ts`, `src/components/SpaceBattleBg.tsx`, estilos `.home-space-bg*` en `globals.css`.
+- Es **Canvas 2D retro**, no PlayCanvas en el home (PlayCanvas solo como referencia de craft/juego).
+- Un solo layout responsive (`.home-portals`) — no duplicar UI mobile/desktop.
+- Atmósfera en todos los anchos; `density: lite` en ≤719px. No montar con `prefers-reduced-motion`; pausar en tab oculta.
+- Ruta por **bordes visibles** (gutters alrededor de los portales). Evitar el centro detrás de los botones.
+- Movimiento **orgánico** (curva/redondeado, spring, trail lag) — no circuito cuadrado rígido.
+- `pointer-events: none`; no tapar CTAs.
+
+## PlayCanvas (cuando toque engine 3D)
+- Preferir patrones del jam kit: `pc.Application`, `Entity` + `render` primitives, `StandardMaterial`, cleanup `destroy()`.
+- En Next: montar **client-only**, respetar DPR cap, pause/resume, teardown en unmount.
+- No meter assets GLB pesados en el home sin pedirlo; el lobby prioriza 2D liviano.
+
+## Git / deploy
+- No commit, push ni deploy sin pedirlo explícitamente.
+- Cuando pida “súbelo”: commit + push `main` (Actions). Evitar `vercel --prod` local salvo pedido.
+
+## Comunicación
+- Respuestas cortas; preguntar solo si bloquea.
+- Tras cambios visuales del home: indicar URL localhost y puerto.

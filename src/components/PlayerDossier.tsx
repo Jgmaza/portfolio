@@ -1,13 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  useCallback,
-  useEffect,
-  useEffectEvent,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AvatarPortrait } from "@/components/AvatarPortrait";
 import { TypewriterLore } from "@/components/TypewriterLore";
 import { useLocale } from "@/components/LocaleProvider";
@@ -25,14 +19,8 @@ export function PlayerDossier() {
   const [act, setAct] = useState<Act>("origin");
   const [loreReady, setLoreReady] = useState(false);
   const clearListRef = useRef<HTMLDivElement>(null);
-  const userControlRef = useRef(false);
-  const dirRef = useRef(1);
 
   const onLoreDone = useCallback(() => setLoreReady(true), []);
-
-  const stopAutoScroll = useEffectEvent(() => {
-    userControlRef.current = true;
-  });
 
   useEffect(() => {
     if (act === "origin") setLoreReady(false);
@@ -41,49 +29,67 @@ export function PlayerDossier() {
   useEffect(() => {
     if (act !== "clears") return;
 
-    const el = clearListRef.current;
-    if (!el) return;
+    let cancelled = false;
+    let dir = 1;
+    let paused = false;
+    let intervalId = 0;
+    let startId = 0;
+    let tries = 0;
 
-    userControlRef.current = false;
-    dirRef.current = 1;
-    el.scrollTop = 0;
+    const el = () => clearListRef.current;
 
-    const halt = () => stopAutoScroll();
-    el.addEventListener("wheel", halt, { passive: true });
-    el.addEventListener("touchstart", halt, { passive: true });
-    el.addEventListener("pointerdown", halt);
-
-    let raf = 0;
-    let last = performance.now();
-    const speed = 22;
-    let started = false;
-
-    const tick = (now: number) => {
-      if (userControlRef.current) return;
-      const dt = Math.min(0.05, (now - last) / 1000);
-      last = now;
-      const max = el.scrollHeight - el.clientHeight;
-      if (max > 4) {
-        el.scrollTop += dirRef.current * speed * dt;
-        if (el.scrollTop >= max - 0.5) dirRef.current = -1;
-        if (el.scrollTop <= 0.5) dirRef.current = 1;
-      }
-      raf = requestAnimationFrame(tick);
+    const halt = () => {
+      paused = true;
     };
 
-    const startId = window.setTimeout(() => {
-      started = true;
-      last = performance.now();
-      raf = requestAnimationFrame(tick);
-    }, 900);
+    const step = () => {
+      const list = el();
+      if (cancelled || paused || !list) return;
+      const max = list.scrollHeight - list.clientHeight;
+      if (max <= 2) return;
+      const next = list.scrollTop + dir * 1.2;
+      if (next >= max) {
+        list.scrollTop = max;
+        dir = -1;
+      } else if (next <= 0) {
+        list.scrollTop = 0;
+        dir = 1;
+      } else {
+        list.scrollTop = next;
+      }
+    };
+
+    const bind = (list: HTMLDivElement) => {
+      list.scrollTop = 0;
+      list.addEventListener("wheel", halt, { passive: true });
+      list.addEventListener("touchstart", halt, { passive: true });
+    };
+
+    const unbind = (list: HTMLDivElement | null) => {
+      if (!list) return;
+      list.removeEventListener("wheel", halt);
+      list.removeEventListener("touchstart", halt);
+    };
+
+    const boot = () => {
+      if (cancelled) return;
+      const list = el();
+      tries += 1;
+      if (!list || list.scrollHeight - list.clientHeight <= 2) {
+        if (tries < 120) startId = window.setTimeout(boot, 50);
+        return;
+      }
+      bind(list);
+      intervalId = window.setInterval(step, 32);
+    };
+
+    startId = window.setTimeout(boot, 200);
 
     return () => {
+      cancelled = true;
       window.clearTimeout(startId);
-      if (started) cancelAnimationFrame(raf);
-      cancelAnimationFrame(raf);
-      el.removeEventListener("wheel", halt);
-      el.removeEventListener("touchstart", halt);
-      el.removeEventListener("pointerdown", halt);
+      window.clearInterval(intervalId);
+      unbind(el());
     };
   }, [act, t.clears.length]);
 

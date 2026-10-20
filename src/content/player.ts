@@ -61,21 +61,6 @@ type PlayerCopy = {
   identityLine: string;
   homeEyebrow: string;
   homeLine: string;
-  homeMobile: {
-    eyebrow: string;
-    classLine: string;
-    title: string;
-    sub: string;
-    openCatalog: string;
-    source: string;
-    unlocked: string;
-    liveDemos: string;
-    classLabel: string;
-    classValue: string;
-    missionBoard: string;
-    online: string;
-    featuredDrops: string;
-  };
   catalogPortal: {
     label: string;
     title: string;
@@ -120,6 +105,7 @@ type PlayerCopy = {
     title: string;
     sub: string;
     language: string;
+    colorimetry: string;
     close: string;
   };
   ctas: {
@@ -711,27 +697,12 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     tagline: "Build useful things. Keep exploring.",
     identityLine: "Code is part of the build. Not the whole player.",
     homeEyebrow: "RETRO PORTFOLIO · SELECT DESTINATION",
-    homeLine: "Conoce a Jose. ¿Qué quieres ver? Proyectos realizados, o información del jugador.",
-    homeMobile: {
-      eyebrow: "PLAYER SELECT · JOSÉ MAZA",
-      classLine: "FULLSTACK / PRODUCT ENGINEER",
-      title: "Build Catalog",
-      sub: "Inventario de apps desbloqueadas: productos, agentes AI e integraciones.",
-      openCatalog: "OPEN CATALOG",
-      source: "SOURCE",
-      unlocked: "UNLOCKED",
-      liveDemos: "LIVE DEMOS",
-      classLabel: "CLASS",
-      classValue: "FULLSTACK",
-      missionBoard: "MISSION BOARD",
-      online: "ONLINE",
-      featuredDrops: "FEATURED DROPS ↓",
-    },
+    homeLine: "Conoce a Jose. ¿Qué quieres ver? Misiones realizadas, o información del jugador.",
     catalogPortal: {
       label: "CATALOG",
       title: "Mission board",
       live: "06 LIVE",
-      hint: "Catalogo de proyectos realizados.",
+      hint: "Catálogo de misiones realizadas.",
       cta: "ENTER CATALOG",
     },
     playerPortal: {
@@ -778,8 +749,9 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     trophies: trophiesEs,
     settings: {
       title: "SYS · SETTINGS",
-      sub: "Ajusta el idioma del catálogo.",
+      sub: "Idioma y colorimetría del catálogo.",
       language: "LANGUAGE",
+      colorimetry: "COLORIMETRÍA",
       close: "CLOSE",
     },
     ctas: {
@@ -798,27 +770,12 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     tagline: "Build useful things. Keep exploring.",
     identityLine: "Code is part of the build. Not the whole player.",
     homeEyebrow: "RETRO PORTFOLIO · SELECT DESTINATION",
-    homeLine: "Meet Jose. What do you want to see? Projects built, or player dossier.",
-    homeMobile: {
-      eyebrow: "PLAYER SELECT · JOSÉ MAZA",
-      classLine: "FULLSTACK / PRODUCT ENGINEER",
-      title: "Build Catalog",
-      sub: "Inventory of unlocked apps: products, AI agents, and integrations.",
-      openCatalog: "OPEN CATALOG",
-      source: "SOURCE",
-      unlocked: "UNLOCKED",
-      liveDemos: "LIVE DEMOS",
-      classLabel: "CLASS",
-      classValue: "FULLSTACK",
-      missionBoard: "MISSION BOARD",
-      online: "ONLINE",
-      featuredDrops: "FEATURED DROPS ↓",
-    },
+    homeLine: "Meet Jose. What do you want to see? Missions cleared, or player dossier.",
     catalogPortal: {
       label: "CATALOG",
       title: "Mission board",
       live: "06 LIVE",
-      hint: "Catalog of projects built.",
+      hint: "Catalog of missions cleared.",
       cta: "ENTER CATALOG",
     },
     playerPortal: {
@@ -865,8 +822,9 @@ export const playerByLocale: Record<Locale, PlayerCopy> = {
     trophies: trophiesEn,
     settings: {
       title: "SYS · SETTINGS",
-      sub: "Set the catalog language.",
+      sub: "Catalog language and colorimetry.",
       language: "LANGUAGE",
+      colorimetry: "COLORIMETRY",
       close: "CLOSE",
     },
     ctas: {
