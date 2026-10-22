@@ -155,6 +155,7 @@ export const projects: Project[] = [
     year: "2026",
     role: "Colaborador — arquitectura / demos web",
     stack: [
+      "AWS",
       "AWS Lambda",
       "TypeScript",
       "PostgreSQL",
