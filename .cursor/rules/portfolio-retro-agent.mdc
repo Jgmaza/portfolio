@@ -15,7 +15,7 @@ alwaysApply: true
 1. Preferir herramientas locales: `git`, `gh`, `npx vercel`, `npm`, Playwright.
 2. Si un MCP está en `needsAuth`: avisar en una línea y continuar con CLI. No bloquearse.
 3. No asumir MCP de PlayCanvas (no está en esta setup). Fallback:
-   - Código real: `../no-sueltes-la-caja-gamejam-kit` (Hold the Box, PlayCanvas 2.x).
+   - Código real: `../hold-the-box` (Hold the Box, PlayCanvas 2.x).
    - Docs: https://developer.playcanvas.com/
    - API local: `import * as pc from 'playcanvas'` (mismo major que el jam si se usa).
 4. MCPs útiles si `ready`: Supabase, Kinocut (video). Vercel MCP suele necesitar auth → CLI.

@@ -12,7 +12,7 @@ Contexto
 - Home atmosphere: Canvas 2D en src/lib/space-battle.ts + SpaceBattleBg.tsx
   (persecución mensajero vs cazas por los bordes visibles)
 - Referencia PlayCanvas (craft 3D / jam, NO el home actual):
-  /Users/jgmaza/Documents/Proyectos/Propios/no-sueltes-la-caja-gamejam-kit
+  /Users/jgmaza/Documents/Proyectos/Propios/hold-the-box
   Docs: https://developer.playcanvas.com/
 - Prod: push main → GitHub Actions → Vercel
   https://portfolio-nine-sand-57.vercel.app
